@@ -6,6 +6,9 @@
 // --- Examples
 //   reverse('apple') === 'elppa'
 //   reverse('hello') === 'olleh'
+//   reverse('Greetings!') === '!sgniteerG'
+
+// Differance between For of and For in.
 
 function reverseMethodOne(str) {
     return str.split('').reverse().join('');
@@ -40,4 +43,18 @@ function reverseMethodThird(str) {
     return finalString;
 }
 
-module.exports = { reverseMethodOne, reverseMethodSecond, reverseMethodThird };
+function reverseMethodForth(str) {
+    if (!str && str.trim().length <= 0) {
+        return '';
+    }
+
+    let finalString = '';
+
+    for (let character of str) {
+        finalString = character + finalString;
+    }
+
+    return finalString;
+}
+
+module.exports = { reverseMethodOne, reverseMethodSecond, reverseMethodThird, reverseMethodForth };
