@@ -1,0 +1,22 @@
+{
+  "name": "exercises",
+  "version": "1.0.0",
+  "description": "Algorithm practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkaushikl/algorithm-practice.git"
+  },
+  "keywords": [
+    "javacript"
+  ],
+  "author": "dkaushikl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkaushikl/algorithm-practice/issues"
+  },
+  "homepage": "https://github.com/dkaushikl/algorithm-practice#readme"
+}
