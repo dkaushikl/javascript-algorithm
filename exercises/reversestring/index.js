@@ -11,13 +11,15 @@
 // Differance between For of and For in.
 
 function reverseMethodOne(str) {
+    if (!checkempty(str))
+        return '';
+
     return str.split('').reverse().join('');
 }
 
 function reverseMethodSecond(str) {
-    if (!str && str.trim().length <= 0) {
+    if (!checkempty(str))
         return '';
-    }
 
     let finalString = '', stringCount = str.length - 1;
 
@@ -29,9 +31,8 @@ function reverseMethodSecond(str) {
 }
 
 function reverseMethodThird(str) {
-    if (!str && str.trim().length <= 0) {
+    if (!checkempty(str))
         return '';
-    }
 
     let finalString = '', stringCount = str.length - 1;
 
@@ -44,17 +45,30 @@ function reverseMethodThird(str) {
 }
 
 function reverseMethodForth(str) {
-    if (!str && str.trim().length <= 0) {
+    if (!checkempty(str))
         return '';
-    }
 
     let finalString = '';
 
-    for (let character of str) {
-        finalString = character + finalString;
+    for (let newCharacter of str) {
+        finalString = newCharacter + finalString;
     }
 
     return finalString;
 }
 
-module.exports = { reverseMethodOne, reverseMethodSecond, reverseMethodThird, reverseMethodForth };
+function reverseMethodFifth(str) {
+    if (!checkempty(str))
+        return '';
+
+    // array.reduce((result, newvalue) => { newvalue + result }, initialValue)
+    return str.split('').reduce((finalString, newCharacter) => {
+        return newCharacter + finalString;
+    }, '');
+}
+
+function checkempty(str) {
+    return str == null || str == undefined || str.length == 0 ? false : true;
+}
+
+module.exports = { reverseMethodOne, reverseMethodSecond, reverseMethodThird, reverseMethodForth, reverseMethodFifth };
