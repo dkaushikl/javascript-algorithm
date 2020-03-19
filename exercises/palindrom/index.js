@@ -66,7 +66,19 @@ function palindromMethodForth(str) {
     return leftPart === rightPart;
 }
 
-module.exports = { palindromMethodOne, palindromMethodTwo, palindromMethodThree, palindromMethodForth };
+
+function palindromMethodFifth(str) {
+    if (!checkEmpty(str))
+        return '';
+
+    const re = /[\W_]/g;
+    const lowRegStr = str.toLowerCase().replace(re, '');
+    return lowRegStr.split('').every((char, i) => {
+        return char === lowRegStr[lowRegStr.length - i - 1]
+    });
+}
+
+module.exports = { palindromMethodOne, palindromMethodTwo, palindromMethodThree, palindromMethodForth, palindromMethodFifth };
 
 // https://www.freecodecamp.org/news/two-ways-to-check-for-palindromes-in-javascript-64fea8191fd7/reverseMethodOne
 

@@ -1,4 +1,4 @@
-const { palindromMethodOne, palindromMethodTwo, palindromMethodThree, palindromMethodForth } = require('./index.js');
+const { palindromMethodOne, palindromMethodTwo, palindromMethodThree, palindromMethodForth, palindromMethodFifth } = require('./index.js');
 
 test('palindrom using method 1', () => {
     expect(palindromMethodOne("appa")).toEqual(true);
@@ -43,5 +43,16 @@ test('palindrom using method 4', () => {
     expect(palindromMethodForth("My age is 0, 0 si ega ym.")).toEqual(true);
     expect(palindromMethodForth("1 eye for of 1 eye.")).toEqual(false);
     expect(palindromMethodForth("0_0  - - (: /-\ :) - 0–0")).toEqual(true);
+});
+
+test('palindrom using method 5', () => {
+    expect(palindromMethodFifth("appa")).toEqual(true);
+    expect(palindromMethodFifth("not a palindrome")).toEqual(false);
+    expect(palindromMethodFifth("A man, a plan, a canal. Panama")).toEqual(true);
+    expect(palindromMethodFifth("never odd or even")).toEqual(true);
+    expect(palindromMethodFifth("almostomla")).toEqual(false);
+    expect(palindromMethodFifth("My age is 0, 0 si ega ym.")).toEqual(true);
+    expect(palindromMethodFifth("1 eye for of 1 eye.")).toEqual(false);
+    expect(palindromMethodFifth("0_0  - - (: /-\ :) - 0–0")).toEqual(true);
 });
 
