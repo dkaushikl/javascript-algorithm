@@ -11,15 +11,17 @@
 // Differance between For of and For in.
 // Javascipt recursion function
 
+const { checkEmpty } = require('../utility.js');
+
 function reverseMethodOne(str) {
-    if (!checkempty(str))
+    if (!checkEmpty(str))
         return '';
 
     return str.split('').reverse().join('');
 }
 
 function reverseMethodSecond(str) {
-    if (!checkempty(str))
+    if (!checkEmpty(str))
         return '';
 
     let finalString = '', stringCount = str.length - 1;
@@ -32,7 +34,7 @@ function reverseMethodSecond(str) {
 }
 
 function reverseMethodThird(str) {
-    if (!checkempty(str))
+    if (!checkEmpty(str))
         return '';
 
     let finalString = '', stringCount = str.length - 1;
@@ -46,7 +48,7 @@ function reverseMethodThird(str) {
 }
 
 function reverseMethodForth(str) {
-    if (!checkempty(str))
+    if (!checkEmpty(str))
         return '';
 
     let finalString = '';
@@ -59,7 +61,7 @@ function reverseMethodForth(str) {
 }
 
 function reverseMethodFifth(str) {
-    if (!checkempty(str))
+    if (!checkEmpty(str))
         return '';
 
     // array.reduce((result, newvalue) => { newvalue + result }, initialValue)
@@ -69,14 +71,10 @@ function reverseMethodFifth(str) {
 }
 
 function reverseMethodSixth(str) {
-    if (!checkempty(str))
+    if (!checkEmpty(str))
         return '';
 
     return reverseMethodSixth(str.substr(1)) + str.charAt(0);
-}
-
-function checkempty(str) {
-    return str == null || str == undefined || str.length == 0 ? false : true;
 }
 
 module.exports = { reverseMethodOne, reverseMethodSecond, reverseMethodThird, reverseMethodForth, reverseMethodFifth, reverseMethodSixth };

@@ -51,13 +51,10 @@ test('reverse string using method 5', () => {
 });
 
 test('reverse string using method 6', () => {
-    const result = reverseMethodSixth("apple");
-    console.log(`result`, result);
-    expect(result).toEqual("elppa");
-    // expect(reverseMethodSixth("hello")).toEqual("olleh");
-    // expect(reverseMethodSixth("Greetings!")).toEqual("!sgniteerG");
-    // expect(reverseMethodSixth("")).toEqual("");
-    // expect(reverseMethodSixth("null")).toEqual("llun");
-    // expect(reverseMethodSixth(null)).toEqual("");
-    // expect(reverseMethodSixth(undefined)).toEqual("");
+    expect(reverseMethodSixth("hello")).toEqual("olleh");
+    expect(reverseMethodSixth("Greetings!")).toEqual("!sgniteerG");
+    expect(reverseMethodSixth("")).toEqual("");
+    expect(reverseMethodSixth("null")).toEqual("llun");
+    expect(reverseMethodSixth(null)).toEqual("");
+    expect(reverseMethodSixth(undefined)).toEqual("");
 });
