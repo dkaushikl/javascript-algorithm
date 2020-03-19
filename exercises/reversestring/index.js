@@ -9,6 +9,7 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 // Differance between For of and For in.
+// Javascipt recursion function
 
 function reverseMethodOne(str) {
     if (!checkempty(str))
@@ -67,8 +68,27 @@ function reverseMethodFifth(str) {
     }, '');
 }
 
+function reverseMethodSixth(str) {
+    if (!checkempty(str))
+        return '';
+
+    return reverseMethodSixth(str.substr(1)) + str.charAt(0);
+}
+
 function checkempty(str) {
     return str == null || str == undefined || str.length == 0 ? false : true;
 }
 
-module.exports = { reverseMethodOne, reverseMethodSecond, reverseMethodThird, reverseMethodForth, reverseMethodFifth };
+module.exports = { reverseMethodOne, reverseMethodSecond, reverseMethodThird, reverseMethodForth, reverseMethodFifth, reverseMethodSixth };
+
+// https://www.geeksforgeeks.org/reverse-a-string-in-javascript/
+
+// https://www.freecodecamp.org/news/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb/
+
+// For Sixth Example - reverseMethodSixth('SAD');
+// 1 CALL - (reverseMethodSixth("AD") + "S")
+// 2 CALL - ((reverseMethodSixth("D") + "A") + "S")
+// 3 CALL - (((reverseMethodSixth("") + "D") + "A") + "S")
+// 3 CALL - ((("" + "D") + "A") + "S")
+
+// https://thecodebarbarian.com/for-vs-for-each-vs-for-in-vs-for-of-in-javascript
