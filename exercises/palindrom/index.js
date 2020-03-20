@@ -12,10 +12,10 @@
 // How to use regular expression.
 
 const { reverseMethodOne } = require('../reversestring/index.js');
-const { checkStringEmpty } = require('../utils/index.js');
+const utils = require('../utils/index.js');
 
 function palindromMethodOne(str) {
-    if (!checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str))
         return '';
 
     // Custom regular expression
@@ -25,7 +25,7 @@ function palindromMethodOne(str) {
 }
 
 function palindromMethodTwo(str) {
-    if (!checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str))
         return '';
 
     // replace all the symbol by generic regular expression
@@ -36,7 +36,7 @@ function palindromMethodTwo(str) {
 }
 
 function palindromMethodThree(str) {
-    if (!checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str))
         return '';
 
     // remove symbol by below regular expression
@@ -47,7 +47,7 @@ function palindromMethodThree(str) {
 }
 
 function palindromMethodForth(str) {
-    if (!checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str))
         return '';
 
     const re = /[^A-Za-z0-9]/g;
@@ -68,7 +68,7 @@ function palindromMethodForth(str) {
 
 
 function palindromMethodFifth(str) {
-    if (!checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str))
         return '';
 
     const re = /[\W_]/g;

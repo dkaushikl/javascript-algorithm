@@ -11,17 +11,17 @@
 // Differance between For of and For in.
 // Javascipt recursion function
 
-const { checkStringEmpty } = require('../utils/index.js');
+const utils = require('../utils/index');
 
 function reverseMethodOne(str) {
-    if (!checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str))
         return '';
 
     return str.split('').reverse().join('');
 }
 
 function reverseMethodSecond(str) {
-    if (!checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str))
         return '';
 
     let finalString = '', stringCount = str.length - 1;
@@ -34,7 +34,7 @@ function reverseMethodSecond(str) {
 }
 
 function reverseMethodThird(str) {
-    if (!checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str))
         return '';
 
     let finalString = '', stringCount = str.length - 1;
@@ -48,7 +48,7 @@ function reverseMethodThird(str) {
 }
 
 function reverseMethodForth(str) {
-    if (!checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str))
         return '';
 
     let finalString = '';
@@ -61,7 +61,7 @@ function reverseMethodForth(str) {
 }
 
 function reverseMethodFifth(str) {
-    if (!checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str))
         return '';
 
     // array.reduce((result, newvalue) => { newvalue + result }, initialValue)
@@ -71,7 +71,7 @@ function reverseMethodFifth(str) {
 }
 
 function reverseMethodSixth(str) {
-    if (!checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str))
         return '';
 
     return reverseMethodSixth(str.substr(1)) + str.charAt(0);
