@@ -1,4 +1,4 @@
-const { checkStringEmpty, checkNumberEmpty } = require('./index.js');
+const { checkStringEmpty, checkNumberEmpty, convertToString, convertNagativeInteger } = require('./index.js');
 
 test('check string is empty', () => {
     expect(checkStringEmpty("")).toEqual(false);
@@ -10,11 +10,42 @@ test('check string is empty', () => {
 });
 
 test('check number is empty', () => {
-    // expect(checkNumberEmpty("")).toEqual(false);
-    // expect(checkNumberEmpty()).toEqual(false);
-    // expect(checkNumberEmpty(null)).toEqual(false);
+    expect(checkNumberEmpty("")).toEqual(false);
+    expect(checkNumberEmpty()).toEqual(false);
+    expect(checkNumberEmpty(null)).toEqual(false);
     expect(checkNumberEmpty(undefined)).toEqual(false);
-    // expect(checkNumberEmpty(" ")).toEqual(false);
-    // expect(checkNumberEmpty("5")).toEqual(true);
-    // expect(checkNumberEmpty(5)).toEqual(true);
+    expect(checkNumberEmpty(" ")).toEqual(false);
+    expect(checkNumberEmpty("5")).toEqual(true);
+    expect(checkNumberEmpty(5)).toEqual(true);
+});
+
+test('convert number to string', () => {
+    expect(convertToString("")).toEqual("");
+    expect(convertToString()).toEqual("");
+    expect(convertToString(null)).toEqual("");
+    expect(convertToString(undefined)).toEqual("");
+    expect(convertToString(5)).toEqual("5");
+    expect(convertToString(10)).toEqual("10");
+    expect(convertToString("-01")).toEqual("-01");
+    expect(convertToString("-52")).toEqual("-52");
+    expect(convertToString("5")).toEqual("5");
+    expect(convertToString("-5")).toEqual("-5");
+    expect(convertToString("-500")).toEqual("-500");
+    expect(convertToString("01")).toEqual("01");
+    expect(convertToString(543.2100)).toEqual("543.21");
+    expect(convertToString(".")).toEqual(".");
+});
+
+test('convert positive to negative number', () => {
+    expect(convertNagativeInteger("")).toEqual("");
+    expect(convertNagativeInteger()).toEqual("");
+    expect(convertNagativeInteger(null)).toEqual("");
+    expect(convertNagativeInteger(undefined)).toEqual("");
+    expect(convertNagativeInteger(5)).toEqual(-5);
+    expect(convertNagativeInteger(10)).toEqual(-10);
+    expect(convertNagativeInteger("-01")).toEqual(-1);
+    expect(convertNagativeInteger("52")).toEqual(-52);
+    expect(convertNagativeInteger(10.01)).toEqual(-10.01);
+    expect(convertNagativeInteger("-01.01")).toEqual(-1.01);
+    expect(convertNagativeInteger("52.03")).toEqual(-52.03);
 });

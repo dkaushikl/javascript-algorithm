@@ -10,6 +10,7 @@
 
 // Differance between For of and For in.
 // Javascipt recursion function
+// array reduce method
 
 const utils = require('../utils/index');
 

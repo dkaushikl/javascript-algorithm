@@ -14,14 +14,24 @@ class utills {
             return false
 
         const reg = /^.+$/g;
-        return reg.test(num)
+        return reg.test(num);
     }
 
     static convertToString(num) {
-        if (typeof (num) === 'number')
+        if (typeof num === 'number')
             return `${num}`;
 
-        return num
+        if (!utills.checkNumberEmpty(num))
+            return '';
+
+        return `${num}`;
+    }
+
+    static convertNagativeInteger(num) {
+        if (!utills.checkNumberEmpty(num))
+            return '';
+
+        return -Math.abs(num);
     }
 }
 
