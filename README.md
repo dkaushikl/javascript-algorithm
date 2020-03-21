@@ -1,2 +1,2 @@
-# algorithm-practice
-javascript algorithm
+# Algorithm-Practice
+Javascript Algorithm
