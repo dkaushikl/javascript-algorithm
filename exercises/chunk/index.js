@@ -22,16 +22,13 @@ function chunkOne(arr, size) {
 
     const finalResult = [];
     let chunked = [];
-    let isArrayChunk = false;
 
     for (const index in arr) {
         chunked.push(arr[index]);
-        isArrayChunk = chunked.length === size;
 
-        if (isArrayChunk) {
+        if (chunked.length === size) {
             finalResult.push(chunked);
             chunked = [];
-            isArrayChunk = false;
             continue;
         }
 
