@@ -33,6 +33,17 @@ class utills {
 
         return -Math.abs(num);
     }
+
+    static convertToNumber(str) {
+        if (!utills.checkNumberEmpty(str))
+            return '';
+
+        return parseFloat(str);
+    }
+
+    static checkArrayEmpty(arr) {
+        return Array.isArray(arr) && arr.length > 0;
+    }
 }
 
 module.exports = utills;

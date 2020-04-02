@@ -1,4 +1,4 @@
-const { checkStringEmpty, checkNumberEmpty, convertToString, convertNagativeInteger } = require('./index.js');
+const { checkStringEmpty, checkNumberEmpty, convertToString, convertNagativeInteger, convertToNumber, checkArrayEmpty } = require('./index.js');
 
 test('check string is empty', () => {
     expect(checkStringEmpty("")).toEqual(false);
@@ -48,4 +48,28 @@ test('convert positive to negative number', () => {
     expect(convertNagativeInteger(10.01)).toEqual(-10.01);
     expect(convertNagativeInteger("-01.01")).toEqual(-1.01);
     expect(convertNagativeInteger("52.03")).toEqual(-52.03);
+});
+
+test('convert to number', () => {
+    expect(convertToNumber("")).toEqual("");
+    expect(convertToNumber()).toEqual("");
+    expect(convertToNumber(null)).toEqual("");
+    expect(convertToNumber(undefined)).toEqual("");
+    expect(convertToNumber(5)).toEqual(5);
+    expect(convertToNumber(10)).toEqual(10);
+    expect(convertToNumber("-01")).toEqual(-1);
+    expect(convertToNumber("52")).toEqual(52);
+    expect(convertToNumber(10.01)).toEqual(10.01);
+    expect(convertToNumber("01.01")).toEqual(1.01);
+    expect(convertToNumber("52.03")).toEqual(52.03);
+});
+
+test('check array is empty', () => {
+    expect(checkArrayEmpty("")).toEqual(false);
+    expect(checkArrayEmpty()).toEqual(false);
+    expect(checkArrayEmpty(null)).toEqual(false);
+    expect(checkArrayEmpty(undefined)).toEqual(false);
+    expect(checkArrayEmpty([1,2,3])).toEqual(true);
+    expect(checkArrayEmpty(["a","b","c"])).toEqual(true);
+    expect(checkArrayEmpty([{a:1},{b:1}])).toEqual(true);
 });
