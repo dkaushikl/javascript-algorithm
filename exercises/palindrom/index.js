@@ -19,6 +19,9 @@ function palindromMethodOne(str) {
         return '';
 
     // Custom regular expression
+    // first replace used to convert dash to slash
+    // second replace used to remove dash, parenthesis, single quote, double quote and comma
+    // third replace used to remove whitespace
     const finalString = str.replace(/\-/g, '/').replace(/\.|["'()–_/,]/gi, "").replace(/\s/gi, "").toLowerCase();
     const reversed = reverseMethodOne(finalString);
     return finalString === reversed.replace(/\-/g, '/').replace(/\.|["'()–_/,]/gi, "").replace(/\s/gi, "").toLowerCase();
@@ -55,7 +58,9 @@ function palindromMethodForth(str) {
 
     const stringDevideLength = lowRegStr.length / 2;
     let finalValue = stringDevideLength;
+
     if (!Number.isInteger(stringDevideLength)) {
+        // Math.ceil is used to take nearest integer value.
         finalValue = Math.ceil(stringDevideLength);
     }
 

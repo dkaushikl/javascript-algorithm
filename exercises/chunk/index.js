@@ -74,6 +74,9 @@ function chunkThree(arr, size) {
     let index = 0;
 
     while (index < arr.length) {
+        // slice is used for cut the array.
+        // for e.g. -> [1, 2, 3].slice(1, 2) => it will return [2]
+        // for e.g. -> [1, 2, 3, 4].slice(0, 2) => it will return [1, 2]
         finalResult.push(arr.slice(index, index + size));
         index = index + size;
     }
