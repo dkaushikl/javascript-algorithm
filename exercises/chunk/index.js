@@ -13,11 +13,11 @@
 
 const utils = require('../utils/index.js');
 
-function chunkOne(arr, num) {
+function chunkOne(arr, size) {
     if (!utils.checkArrayEmpty(arr))
         return '';
 
-    if (!utils.checkNumberEmpty(num))
+    if (!utils.checkNumberEmpty(size))
         return '';
 
     const finalResult = [];
@@ -26,7 +26,7 @@ function chunkOne(arr, num) {
 
     for (const index in arr) {
         chunked.push(arr[index]);
-        isArrayChunk = chunked.length === num;
+        isArrayChunk = chunked.length === size;
 
         if (isArrayChunk) {
             finalResult.push(chunked);
@@ -44,11 +44,11 @@ function chunkOne(arr, num) {
     return finalResult;
 }
 
-function chunkTwo(arr, num) {
+function chunkTwo(arr, size) {
     if (!utils.checkArrayEmpty(arr))
         return '';
 
-    if (!utils.checkNumberEmpty(num))
+    if (!utils.checkNumberEmpty(size))
         return '';
 
     const finalResult = [];
@@ -56,7 +56,7 @@ function chunkTwo(arr, num) {
     for (const element of arr) {
         const last = finalResult[finalResult.length - 1];
 
-        if(!last || last.length == num) {
+        if (!last || last.length == size) {
             finalResult.push([element]);
         } else {
             last.push(element);
@@ -66,4 +66,22 @@ function chunkTwo(arr, num) {
     return finalResult;
 }
 
-module.exports = { chunkOne, chunkTwo };
+function chunkThree(arr, size) {
+    if (!utils.checkArrayEmpty(arr))
+        return '';
+
+    if (!utils.checkNumberEmpty(size))
+        return '';
+
+    const finalResult = [];
+    let index = 0;
+
+    while (index < arr.length) {
+        finalResult.push(arr.slice(index, index + size));
+        index = index + size;
+    }
+
+    return finalResult;
+}
+
+module.exports = { chunkOne, chunkTwo, chunkThree };
