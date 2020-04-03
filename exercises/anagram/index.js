@@ -13,29 +13,42 @@
 const utils = require('../utils/index.js');
 
 function anagramOne(mainString, checkedString) {
-    if (!utils.checkStringEmpty(mainString) ||
-        !utils.checkStringEmpty(checkedString)) {
+    if (!utils.checkStringEmpty(mainString) || !utils.checkStringEmpty(checkedString)) {
         return '';
     }
 
     // Sort is used to sorting the array alphabet wise.
-    const firstString = utils.convertToString(mainString)
-        .toLowerCase()
-        .replace(/[\W_]/g, '')
-        .split('')
-        .sort()
-        .join('');
+    const firstString = utils.clearString(mainString).split('').sort().join('');
 
-    const secondString = utils.convertToString(checkedString)
-        .toLowerCase()
-        .replace(/[\W_]/g, '')
-        .split('')
-        .sort()
-        .join('');
+    const secondString = utils.clearString(checkedString).split('').sort().join('');
 
     return firstString == secondString;
 }
 
-anagramOne('!!@##()act,{}', '!!@##()cat,{}');
+function anagramTwo(mainString, checkedString) {
+    if (!utils.checkStringEmpty(mainString) || !utils.checkStringEmpty(checkedString)) {
+        return '';
+    }
 
-module.exports = { anagramOne };
+    // Sort is used to sorting the array alphabet wise.
+    const firstString = utils.clearString(mainString);
+    const secondString = utils.clearString(checkedString);
+
+    if (firstString.length !== secondString.length) {
+        return false;
+    }
+
+    const result = {};
+    for (const char of firstString) {
+        result[char] = result[char] ? result[char] += 1 : result[char] = 1;
+    }
+
+    for (const char of secondString) {
+        if (!result[char]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+module.exports = { anagramOne, anagramTwo };
