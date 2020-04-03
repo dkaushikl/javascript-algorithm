@@ -51,6 +51,10 @@ class utills {
     static checkArrayEmpty(arr) {
         return Array.isArray(arr) && arr.length > 0;
     }
+
+    static clearString(str) {
+        return utills.convertToString(str).toLowerCase().replace(/[\W_]/g, '');
+    }
 }
 
 module.exports = utills;

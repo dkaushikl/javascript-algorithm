@@ -1,4 +1,4 @@
-const { checkStringEmpty, checkNumberEmpty, convertToString, convertNagativeInteger, convertToNumber, checkArrayEmpty } = require('./index.js');
+const { clearString, checkStringEmpty, checkNumberEmpty, convertToString, convertNagativeInteger, convertToNumber, checkArrayEmpty } = require('./index.js');
 
 test('check string is empty', () => {
     expect(checkStringEmpty('')).toEqual(false);
@@ -72,4 +72,8 @@ test('check array is empty', () => {
     expect(checkArrayEmpty([1, 2, 3])).toEqual(true);
     expect(checkArrayEmpty(['a', 'b', 'c'])).toEqual(true);
     expect(checkArrayEmpty([{a: 1}, {b: 1}])).toEqual(true);
+});
+
+test('make string clean', () => {
+    expect(clearString('!!##33123][[/.Kaushik!!##":3][[/.')).toEqual('33123kaushik3');
 });
