@@ -10,6 +10,26 @@
 //   chunk([1,2,3,4,5], 4) --> [[1,2,3,4], [5]]
 //   chunk([1,2,3,4,5], 10) --> [[1,2,3,4,5]] 
 
+// What is array slice
+// What is array splice
+
+// differance between slice and splice
+
+// splice
+// var array=[1,2,3,4,5];
+// console.log(array.splice(2));
+
+// slice
+// var array2=[1,2,3,4,5]
+// console.log(array2.slice(2));
+
+
+// console.log("----after-----");
+// console.log(array);
+// console.log(array2);
+
+// splice array returns [1, 2]
+// slice array returns [1, 2, 3, 4, 5]
 
 const utils = require('../utils/index.js');
 
@@ -84,4 +104,38 @@ function chunkThree(arr, size) {
     return finalResult;
 }
 
-module.exports = { chunkOne, chunkTwo, chunkThree };
+function chunkForth(arr, size) {
+    if (!utils.checkArrayEmpty(arr))
+        return '';
+
+    if (!utils.checkNumberEmpty(size))
+        return '';
+
+    const finalResult = [];
+
+    while (arr.length > 0) {
+        finalResult.push(arr.splice(0, size));
+    }
+    return finalResult;
+}
+
+function chunkFifth(arr, size) {
+    if (!utils.checkArrayEmpty(arr))
+        return '';
+
+    if (!utils.checkNumberEmpty(size))
+        return '';
+
+    const finalResult = [];
+    const numOfChild = Math.ceil(arr.length / size);
+
+    for (let index = 0; index < numOfChild; index++) {
+        finalResult.push(arr.splice(0, size));
+    }
+
+    return finalResult;
+}
+
+module.exports = { chunkOne, chunkTwo, chunkThree, chunkForth, chunkFifth };
+
+// https://stackoverflow.com/questions/37601282/javascript-array-splice-vs-slice
