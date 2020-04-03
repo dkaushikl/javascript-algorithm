@@ -2,7 +2,7 @@
 
 // Given a string, return true if the string is a palindrome
 // or else if it is not. Palindromes are strings that
-// form the same word if it is reversed 
+// form the same word if it is reversed
 // order of characters
 
 // --- Examples
@@ -15,21 +15,23 @@ const { reverseMethodOne } = require('../reversestring/index.js');
 const utils = require('../utils/index.js');
 
 function palindromMethodOne(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
     // Custom regular expression
     // first replace used to convert dash to slash
     // second replace used to remove dash, parenthesis, single quote, double quote and comma
     // third replace used to remove whitespace
-    const finalString = str.replace(/\-/g, '/').replace(/\.|["'()–_/,]/gi, "").replace(/\s/gi, "").toLowerCase();
+    const finalString = str.replace(/\-/g, '/').replace(/\.|["'()–_/,]/gi, '').replace(/\s/gi, '').toLowerCase();
     const reversed = reverseMethodOne(finalString);
-    return finalString === reversed.replace(/\-/g, '/').replace(/\.|["'()–_/,]/gi, "").replace(/\s/gi, "").toLowerCase();
+    return finalString === reversed.replace(/\-/g, '/').replace(/\.|["'()–_/,]/gi, '').replace(/\s/gi, '').toLowerCase();
 }
 
 function palindromMethodTwo(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
     // replace all the symbol by generic regular expression
     const re = /[\W_]/g;
@@ -39,8 +41,9 @@ function palindromMethodTwo(str) {
 }
 
 function palindromMethodThree(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
     // remove symbol by below regular expression
     const re = /[^A-Za-z0-9]/g;
@@ -50,8 +53,9 @@ function palindromMethodThree(str) {
 }
 
 function palindromMethodForth(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
     const re = /[^A-Za-z0-9]/g;
     const lowRegStr = str.toLowerCase().replace(re, '');
@@ -65,21 +69,22 @@ function palindromMethodForth(str) {
     }
 
     const leftPart = lowRegStr.substr(0, finalValue);
-    const rightPart = !Number.isInteger(stringDevideLength) ? lowRegStr.substr(stringDevideLength).split("").reverse().join("")
-        : lowRegStr.substr(finalValue).split("").reverse().join("");
+    const rightPart = !Number.isInteger(stringDevideLength) ? lowRegStr.substr(stringDevideLength).split('').reverse().join('') :
+        lowRegStr.substr(finalValue).split('').reverse().join('');
 
     return leftPart === rightPart;
 }
 
 
 function palindromMethodFifth(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
     const re = /[\W_]/g;
     const lowRegStr = str.toLowerCase().replace(re, '');
     return lowRegStr.split('').every((char, i) => {
-        return char === lowRegStr[lowRegStr.length - i - 1]
+        return char === lowRegStr[lowRegStr.length - i - 1];
     });
 }
 

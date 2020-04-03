@@ -19,22 +19,20 @@
 const utils = require('../utils/index.js');
 
 function fizzBuzzOne(num) {
-    if (!utils.checkNumberEmpty(num))
+    if (!utils.checkNumberEmpty(num)) {
         return '';
+    }
 
     let finalResult = '';
     for (let index = 1; index <= num; index++) {
         finalResult += `${finalResult ? `,` : ''}`;
         if ((index % 3) == 0 && (index % 5) == 0) {
             finalResult += 'fizzbuzz';
-        }
-        else if ((index % 3) == 0) {
+        } else if ((index % 3) == 0) {
             finalResult += 'fizz';
-        }
-        else if ((index % 5) == 0) {
+        } else if ((index % 5) == 0) {
             finalResult += 'buzz';
-        }
-        else {
+        } else {
             finalResult += index;
         }
     }
@@ -42,23 +40,21 @@ function fizzBuzzOne(num) {
 }
 
 function fizzBuzzTwo(num) {
-    if (!utils.checkNumberEmpty(num))
+    if (!utils.checkNumberEmpty(num)) {
         return '';
+    }
 
     const finalResult = [];
     let index = 1;
     while (index <= num) {
         if ((index % 3) == 0 && (index % 5) == 0) {
-            finalResult.push('fizzbuzz')
-        }
-        else if ((index % 3) == 0) {
-            finalResult.push('fizz')
-        }
-        else if ((index % 5) == 0) {
-            finalResult.push('buzz')
-        }
-        else {
-            finalResult.push(index)
+            finalResult.push('fizzbuzz');
+        } else if ((index % 3) == 0) {
+            finalResult.push('fizz');
+        } else if ((index % 5) == 0) {
+            finalResult.push('buzz');
+        } else {
+            finalResult.push(index);
         }
         index++;
     }
@@ -67,20 +63,22 @@ function fizzBuzzTwo(num) {
 }
 
 function fizzBuzzThree(num) {
-    if (!utils.checkNumberEmpty(num))
+    if (!utils.checkNumberEmpty(num)) {
         return '';
+    }
 
     let finalResult = '';
     for (let index = 1; index <= num; index++) {
-        let f = index % 3 == 0, b = index % 5 == 0;
-        finalResult = `${finalResult ? `${finalResult},` : ''}${f ? b ? "fizzbuzz" : "fizz" : b ? "buzz" : index}`
+        const f = index % 3 == 0; const b = index % 5 == 0;
+        finalResult = `${finalResult ? `${finalResult},` : ''}${f ? b ? 'fizzbuzz' : 'fizz' : b ? 'buzz' : index}`;
     }
     return finalResult;
 }
 
 function fizzBuzzForth(num) {
-    if (!utils.checkNumberEmpty(num))
+    if (!utils.checkNumberEmpty(num)) {
         return '';
+    }
 
     let finalResult = '';
     for (let index = 1; index <= num; index++) {
@@ -90,12 +88,13 @@ function fizzBuzzForth(num) {
 }
 
 function fizzBuzzFifth(num) {
-    if (!utils.checkNumberEmpty(num))
+    if (!utils.checkNumberEmpty(num)) {
         return '';
+    }
 
     let finalResult = '';
 
-    // Array[4] is used to generate empty array 
+    // Array[4] is used to generate empty array
     // For e.g. -> it will generate 4 length empty array
     // fill() method is used to fill data in array
     // For e.g. -> Array(4).fill() it will generate [undefined, undefined, undefined, undefined]
@@ -113,15 +112,16 @@ function fizzBuzzFifth(num) {
 }
 
 function fizzBuzzSixth(num) {
-    if (!utils.checkNumberEmpty(num))
+    if (!utils.checkNumberEmpty(num)) {
         return '';
+    }
 
     let finalResult = '';
 
     // Array.apply(null, 2) is used to generate undefined array
     // For e.g. -> Array.apply(null, 2) it will generate [undefined, undefined]
-
-    Array.apply(null, Array(num)).map((_, index) => {
+    // Array.apply(null, Array(num))
+    [...Array(num)].map((_, index) => {
         index++;
         finalResult += `${finalResult ? `,` : ''}${((index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz') || index)}`;
         return;
@@ -130,8 +130,9 @@ function fizzBuzzSixth(num) {
 }
 
 function fizzBuzzSeventh(num) {
-    if (!utils.checkNumberEmpty(num))
+    if (!utils.checkNumberEmpty(num)) {
         return '';
+    }
 
     let finalResult = '';
 

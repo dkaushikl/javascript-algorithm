@@ -8,7 +8,7 @@
 //   chunk([1,2,3,4,5], 2) --> [[1,2], [3,4], [5]]
 //   chunk([1,2,3,4,5, 6, 7, 8], 3) --> [[1,2,3], [4,5,6], [7,8]]
 //   chunk([1,2,3,4,5], 4) --> [[1,2,3,4], [5]]
-//   chunk([1,2,3,4,5], 10) --> [[1,2,3,4,5]] 
+//   chunk([1,2,3,4,5], 10) --> [[1,2,3,4,5]]
 
 // What is array slice
 // What is array splice
@@ -34,27 +34,31 @@
 const utils = require('../utils/index.js');
 
 function chunkOne(arr, size) {
-    if (!utils.checkArrayEmpty(arr))
+    if (!utils.checkArrayEmpty(arr)) {
         return '';
+    }
 
-    if (!utils.checkNumberEmpty(size))
+    if (!utils.checkNumberEmpty(size)) {
         return '';
+    }
 
     const finalResult = [];
     let chunked = [];
 
     for (const index in arr) {
-        chunked.push(arr[index]);
+        if (arr.hasOwnProperty(index)) {
+            chunked.push(arr[index]);
 
-        if (chunked.length === size) {
-            finalResult.push(chunked);
-            chunked = [];
-            continue;
-        }
+            if (chunked.length === size) {
+                finalResult.push(chunked);
+                chunked = [];
+                continue;
+            }
 
-        if (arr.length === (utils.convertToNumber(index) + 1)) {
-            finalResult.push(chunked);
-            break;
+            if (arr.length === (utils.convertToNumber(index) + 1)) {
+                finalResult.push(chunked);
+                break;
+            }
         }
     }
 
@@ -62,11 +66,13 @@ function chunkOne(arr, size) {
 }
 
 function chunkTwo(arr, size) {
-    if (!utils.checkArrayEmpty(arr))
+    if (!utils.checkArrayEmpty(arr)) {
         return '';
+    }
 
-    if (!utils.checkNumberEmpty(size))
+    if (!utils.checkNumberEmpty(size)) {
         return '';
+    }
 
     const finalResult = [];
 
@@ -84,11 +90,13 @@ function chunkTwo(arr, size) {
 }
 
 function chunkThree(arr, size) {
-    if (!utils.checkArrayEmpty(arr))
+    if (!utils.checkArrayEmpty(arr)) {
         return '';
+    }
 
-    if (!utils.checkNumberEmpty(size))
+    if (!utils.checkNumberEmpty(size)) {
         return '';
+    }
 
     const finalResult = [];
     let index = 0;
@@ -105,11 +113,13 @@ function chunkThree(arr, size) {
 }
 
 function chunkForth(arr, size) {
-    if (!utils.checkArrayEmpty(arr))
+    if (!utils.checkArrayEmpty(arr)) {
         return '';
+    }
 
-    if (!utils.checkNumberEmpty(size))
+    if (!utils.checkNumberEmpty(size)) {
         return '';
+    }
 
     const finalResult = [];
 
@@ -120,11 +130,13 @@ function chunkForth(arr, size) {
 }
 
 function chunkFifth(arr, size) {
-    if (!utils.checkArrayEmpty(arr))
+    if (!utils.checkArrayEmpty(arr)) {
         return '';
+    }
 
-    if (!utils.checkNumberEmpty(size))
+    if (!utils.checkNumberEmpty(size)) {
         return '';
+    }
 
     const finalResult = [];
     const numOfChild = Math.ceil(arr.length / size);

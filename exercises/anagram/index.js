@@ -13,16 +13,29 @@
 const utils = require('../utils/index.js');
 
 function anagramOne(mainString, checkedString) {
-    if (!utils.checkStringEmpty(mainString) || !utils.checkStringEmpty(checkedString))
+    if (!utils.checkStringEmpty(mainString) ||
+        !utils.checkStringEmpty(checkedString)) {
         return '';
+    }
 
     // Sort is used to sorting the array alphabet wise.
-    const firstString = utils.convertToString(mainString).toLowerCase().replace(/[\W_]/g, '').split("").sort().join("");;
-    const secondString = utils.convertToString(checkedString).toLowerCase().replace(/[\W_]/g, '').split("").sort().join("");;
+    const firstString = utils.convertToString(mainString)
+        .toLowerCase()
+        .replace(/[\W_]/g, '')
+        .split('')
+        .sort()
+        .join('');
+
+    const secondString = utils.convertToString(checkedString)
+        .toLowerCase()
+        .replace(/[\W_]/g, '')
+        .split('')
+        .sort()
+        .join('');
 
     return firstString == secondString;
 }
 
-anagramOne("!!@##()act,{}", "!!@##()cat,{}");
+anagramOne('!!@##()act,{}', '!!@##()cat,{}');
 
 module.exports = { anagramOne };

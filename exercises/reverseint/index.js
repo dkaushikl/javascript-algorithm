@@ -13,46 +13,50 @@
 const utils = require('../utils/index');
 
 function reverseIntMethodOne(number) {
-    if (!utils.checkNumberEmpty(number))
+    if (!utils.checkNumberEmpty(number)) {
         return '';
+    }
 
     const callRecursive = reverseIntMethodOne(utils.convertToString(number).substr(1));
     const result = `${callRecursive}` + `${utils.convertToString(number).charAt(0)}`;
 
-    if (Number.isInteger(number))
+    if (Number.isInteger(number)) {
         return number <= 0 ? -Math.abs(parseFloat(result)) : parseFloat(result);
-    else {
+    } else {
         return number <= 0 ? -Math.abs(result) : result;
     }
 }
 
 function reverseIntMethodTwo(number) {
-    if (!utils.checkNumberEmpty(number))
+    if (!utils.checkNumberEmpty(number)) {
         return '';
+    }
 
     const numberArray = utils.convertToString(number).split('');
 
     const result = parseFloat(numberArray.reduce((finalString, newChar) => {
-        return newChar + finalString
+        return newChar + finalString;
     }));
 
     return number <= 0 ? utils.convertNagativeInteger(result) : result;
 }
 
 function reverseIntMethodThree(number) {
-    if (!utils.checkNumberEmpty(number))
+    if (!utils.checkNumberEmpty(number)) {
         return '';
+    }
 
-    const result = parseFloat(utils.convertToString(number).split("").reverse().join(""));
+    const result = parseFloat(utils.convertToString(number).split('').reverse().join(''));
     return number <= 0 ? -Math.abs(result) : result;
 }
 
 function reverseIntMethodForth(number) {
-    if (!utils.checkNumberEmpty(number))
+    if (!utils.checkNumberEmpty(number)) {
         return '';
+    }
 
-    var stringNumber = `${number}`;
-    var arrayNumber = stringNumber.split("");
+    const stringNumber = `${number}`;
+    const arrayNumber = stringNumber.split('');
 
     let result = '';
     for (const objValue of arrayNumber) {

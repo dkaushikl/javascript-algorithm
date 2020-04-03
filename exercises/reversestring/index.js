@@ -15,17 +15,23 @@
 const utils = require('../utils/index');
 
 function reverseMethodOne(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
-    return str.split('').reverse().join('');
+    return str
+        .split('')
+        .reverse()
+        .join('');
 }
 
 function reverseMethodSecond(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
-    let finalString = '', stringCount = str.length - 1;
+    let finalString = '';
+    const stringCount = str.length - 1;
 
     for (let i = stringCount; i >= 0; i--) {
         finalString += str.charAt(i);
@@ -35,10 +41,12 @@ function reverseMethodSecond(str) {
 }
 
 function reverseMethodThird(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
-    let finalString = '', stringCount = str.length - 1;
+    let finalString = '';
+    let stringCount = str.length - 1;
 
     while (stringCount >= 0) {
         finalString += str.charAt(stringCount);
@@ -49,12 +57,13 @@ function reverseMethodThird(str) {
 }
 
 function reverseMethodForth(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
     let finalString = '';
 
-    for (let newCharacter of str) {
+    for (const newCharacter of str) {
         finalString = newCharacter + finalString;
     }
 
@@ -62,8 +71,9 @@ function reverseMethodForth(str) {
 }
 
 function reverseMethodFifth(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
     // array.reduce((result, newvalue) => { newvalue + result }, initialValue)
     return str.split('').reduce((finalString, newCharacter) => {
@@ -72,13 +82,21 @@ function reverseMethodFifth(str) {
 }
 
 function reverseMethodSixth(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
     return reverseMethodSixth(str.substr(1)) + str.charAt(0);
 }
 
-module.exports = { reverseMethodOne, reverseMethodSecond, reverseMethodThird, reverseMethodForth, reverseMethodFifth, reverseMethodSixth };
+module.exports = {
+    reverseMethodOne,
+    reverseMethodSecond,
+    reverseMethodThird,
+    reverseMethodForth,
+    reverseMethodFifth,
+    reverseMethodSixth,
+};
 
 // https://www.geeksforgeeks.org/reverse-a-string-in-javascript/
 

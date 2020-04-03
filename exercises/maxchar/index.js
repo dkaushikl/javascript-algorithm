@@ -10,13 +10,14 @@
 const utils = require('../utils/index.js');
 
 function maxCharMethodOne(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
-    let resultArray = [];
+    const resultArray = [];
 
-    str.split("").forEach(arrayKey => {
-        const keyIndex = resultArray.findIndex(x => x.key === arrayKey);
+    str.split('').forEach((arrayKey) => {
+        const keyIndex = resultArray.findIndex((x) => x.key === arrayKey);
 
         if (keyIndex >= 0) {
             resultArray[keyIndex].value = resultArray[keyIndex].value + 1;
@@ -25,7 +26,7 @@ function maxCharMethodOne(str) {
         const obj = {
             key: arrayKey,
             value: 1,
-        }
+        };
         resultArray.push(obj);
         return;
     });
@@ -38,11 +39,12 @@ function maxCharMethodOne(str) {
 }
 
 function maxCharMethodTwo(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
-    const resultArray = utils.convertToString(str).toLowerCase().split("").reduce((finalResult, newChar) => {
-        const keyIndex = finalResult.findIndex(x => x.key === newChar);
+    const resultArray = utils.convertToString(str).toLowerCase().split('').reduce((finalResult, newChar) => {
+        const keyIndex = finalResult.findIndex((x) => x.key === newChar);
         if (keyIndex >= 0) {
             finalResult[keyIndex].value = finalResult[keyIndex].value + 1;
         } else {
@@ -52,14 +54,15 @@ function maxCharMethodTwo(str) {
             });
         }
         return finalResult;
-    }, []).reduce((prev, current) => prev.value > current.value ? prev : current)
+    }, []).reduce((prev, current) => prev.value > current.value ? prev : current);
 
     return resultArray.key;
 }
 
 function maxCharMethodThree(str) {
-    if (!utils.checkStringEmpty(str))
+    if (!utils.checkStringEmpty(str)) {
         return '';
+    }
 
     const charMap = {};
     let max = 0;

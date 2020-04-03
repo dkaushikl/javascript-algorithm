@@ -4,39 +4,46 @@ class utills {
     }
 
     static checkNumberEmpty(num) {
-        if (typeof (num) === 'number')
+        if (typeof (num) === 'number') {
             return true;
+        }
 
-        if (!num)
+        if (!num) {
             return false;
+        }
 
-        if (typeof (num) !== 'string' || num.trim().length <= 0)
-            return false
+        if (typeof (num) !== 'string' || num.trim().length <= 0) {
+            return false;
+        }
 
         const reg = /^.+$/g;
         return reg.test(num);
     }
 
     static convertToString(num) {
-        if (typeof num === 'number')
+        if (typeof num === 'number') {
             return `${num}`;
+        }
 
-        if (!utills.checkNumberEmpty(num))
+        if (!utills.checkNumberEmpty(num)) {
             return '';
+        }
 
         return `${num}`;
     }
 
     static convertNagativeInteger(num) {
-        if (!utills.checkNumberEmpty(num))
+        if (!utills.checkNumberEmpty(num)) {
             return '';
+        }
 
         return -Math.abs(num);
     }
 
     static convertToNumber(str) {
-        if (!utills.checkNumberEmpty(str))
+        if (!utills.checkNumberEmpty(str)) {
             return '';
+        }
 
         return parseFloat(str);
     }
