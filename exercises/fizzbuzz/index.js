@@ -22,26 +22,23 @@ function fizzBuzzOne(num) {
     if (!utils.checkNumberEmpty(num))
         return '';
 
-    const finalResult = [];
+    let finalResult = '';
     for (let index = 1; index <= num; index++) {
+        finalResult += `${finalResult ? `,` : ''}`;
         if ((index % 3) == 0 && (index % 5) == 0) {
-            finalResult.push('fizzbuzz')
-            continue;
+            finalResult += 'fizzbuzz';
         }
-
-        if ((index % 3) == 0) {
-            finalResult.push('fizz')
-            continue;
+        else if ((index % 3) == 0) {
+            finalResult += 'fizz';
         }
-
-        if ((index % 5) == 0) {
-            finalResult.push('buzz')
-            continue;
+        else if ((index % 5) == 0) {
+            finalResult += 'buzz';
         }
-
-        finalResult.push(index)
+        else {
+            finalResult += index;
+        }
     }
-    return finalResult.join(',');
+    return finalResult;
 }
 
 function fizzBuzzTwo(num) {
@@ -102,7 +99,11 @@ function fizzBuzzFifth(num) {
     // For e.g. -> it will generate 4 length empty array
     // fill() method is used to fill data in array
     // For e.g. -> Array(4).fill() it will generate [undefined, undefined, undefined, undefined]
-    // For e.g. -> Array(4).fill(1) it will generate [1, 1, 1, 1]   
+    // For e.g. -> Array(4).fill(1) it will generate [1, 1, 1, 1]
+
+    // here you can [...Array(100)] instead of Array(num).fill()
+    // For e.g. -> [...Array(4)] it will generate [undefined, undefined, undefined, undefined]
+    // For e.g. -> [...Array(4).keys()] it will generate [1, 2, 3, 4]
     Array(num).fill().map((undefined, index) => {
         index++;
         finalResult += `${finalResult ? `,` : ''}${((index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz') || index)}`;
@@ -134,7 +135,7 @@ function fizzBuzzSeventh(num) {
 
     let finalResult = '';
 
-    // Object.keys(new Int8Array(100)) is used to generate strign wise number array
+    // Object.keys(new Int8Array(100)) is used to generate string wise number array
     // For e.g. -> Object.keys(new Int8Array(5)) it will generate ["0", "1", "2", "3", "4"]
 
     Object.keys(new Int8Array(num)).map((_, index) => {

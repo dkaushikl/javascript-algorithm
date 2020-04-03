@@ -5,7 +5,7 @@
 
 // --- Examples
 //   maxcharOne('abcccdd') === c
-//   reverse('kaushik') === k
+//   maxcharOne('kaushik') === k
 
 const utils = require('../utils/index.js');
 
