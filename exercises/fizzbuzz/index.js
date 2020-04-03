@@ -14,6 +14,8 @@
 //   4
 //   buzz
 
+// what is the differance between array.apply and array()
+
 const utils = require('../utils/index.js');
 
 function fizzBuzzOne(num) {
@@ -85,9 +87,64 @@ function fizzBuzzForth(num) {
 
     let finalResult = '';
     for (let index = 1; index <= num; index++) {
-        finalResult += `${finalResult ? `,` : ''}${((index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz')  || index)}`;
+        finalResult += `${finalResult ? `,` : ''}${((index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz') || index)}`;
     }
     return finalResult;
 }
 
-module.exports = { fizzBuzzOne, fizzBuzzTwo, fizzBuzzThree, fizzBuzzForth };
+function fizzBuzzFifth(num) {
+    if (!utils.checkNumberEmpty(num))
+        return '';
+
+    let finalResult = '';
+
+    // Array[4] is used to generate empty array 
+    // For e.g. -> it will generate 4 length empty array
+    // fill() method is used to fill data in array
+    // For e.g. -> Array(4).fill() it will generate [undefined, undefined, undefined, undefined]
+    // For e.g. -> Array(4).fill(1) it will generate [1, 1, 1, 1]   
+    Array(num).fill().map((undefined, index) => {
+        index++;
+        finalResult += `${finalResult ? `,` : ''}${((index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz') || index)}`;
+        return;
+    });
+    return finalResult;
+}
+
+function fizzBuzzSixth(num) {
+    if (!utils.checkNumberEmpty(num))
+        return '';
+
+    let finalResult = '';
+
+    // Array.apply(null, 2) is used to generate undefined array
+    // For e.g. -> Array.apply(null, 2) it will generate [undefined, undefined]
+
+    Array.apply(null, Array(num)).map((_, index) => {
+        index++;
+        finalResult += `${finalResult ? `,` : ''}${((index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz') || index)}`;
+        return;
+    });
+    return finalResult;
+}
+
+function fizzBuzzSeventh(num) {
+    if (!utils.checkNumberEmpty(num))
+        return '';
+
+    let finalResult = '';
+
+    // Object.keys(new Int8Array(100)) is used to generate strign wise number array
+    // For e.g. -> Object.keys(new Int8Array(5)) it will generate ["0", "1", "2", "3", "4"]
+
+    Object.keys(new Int8Array(num)).map((_, index) => {
+        index++;
+        finalResult += `${finalResult ? `,` : ''}${((index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz') || index)}`;
+        return;
+    });
+    return finalResult;
+}
+
+module.exports = { fizzBuzzOne, fizzBuzzTwo, fizzBuzzThree, fizzBuzzForth, fizzBuzzFifth, fizzBuzzSixth, fizzBuzzSeventh };
+
+// https://stackoverflow.com/questions/28416547/difference-between-array-applynull-arrayx-and-arrayx
