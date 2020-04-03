@@ -79,4 +79,15 @@ function fizzBuzzThree(num) {
     return finalResult;
 }
 
-module.exports = { fizzBuzzOne, fizzBuzzTwo, fizzBuzzThree };
+function fizzBuzzForth(num) {
+    if (!utils.checkNumberEmpty(num))
+        return '';
+
+    let finalResult = '';
+    for (let index = 1; index <= num; index++) {
+        finalResult += `${finalResult ? `,` : ''}${((index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz')  || index)}`;
+    }
+    return finalResult;
+}
+
+module.exports = { fizzBuzzOne, fizzBuzzTwo, fizzBuzzThree, fizzBuzzForth };
