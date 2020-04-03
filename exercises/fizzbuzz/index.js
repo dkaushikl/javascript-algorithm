@@ -67,4 +67,16 @@ function fizzBuzzTwo(num) {
     return finalResult.join(',');
 }
 
-module.exports = { fizzBuzzOne, fizzBuzzTwo };
+function fizzBuzzThree(num) {
+    if (!utils.checkNumberEmpty(num))
+        return '';
+
+    let finalResult = '';
+    for (let index = 1; index <= num; index++) {
+        let f = index % 3 == 0, b = index % 5 == 0;
+        finalResult = `${finalResult ? `${finalResult},` : ''}${f ? b ? "fizzbuzz" : "fizz" : b ? "buzz" : index}`
+    }
+    return finalResult;
+}
+
+module.exports = { fizzBuzzOne, fizzBuzzTwo, fizzBuzzThree };
