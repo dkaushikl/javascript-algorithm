@@ -27,3 +27,17 @@ test('capitalize using method 4', () => {
     expect(capitalizeForth('it was warm day')).toEqual('It Was Warm Day');
     expect(capitalizeForth('it is black day')).toEqual('It Is Black Day');
 });
+
+test('capitalize using method 5', () => {
+    expect(capitalizeFifth('rail safety')).toEqual('Rail Safety');
+    expect(capitalizeFifth('it is a great day')).toEqual('It Is A Great Day');
+    expect(capitalizeFifth('it was warm day')).toEqual('It Was Warm Day');
+    expect(capitalizeFifth('it is black day')).toEqual('It Is Black Day');
+});
+
+test('capitalize using method 6', () => {
+    expect(capitalizeSixth('rail safety')).toEqual('Rail Safety');
+    expect(capitalizeSixth('it is a great day')).toEqual('It Is A Great Day');
+    expect(capitalizeSixth('it was warm day')).toEqual('It Was Warm Day');
+    expect(capitalizeSixth('it is black day')).toEqual('It Is Black Day');
+});

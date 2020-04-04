@@ -72,4 +72,33 @@ function capitalizeForth(string) {
     return finalString;
 }
 
+function capitalizeFifth(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    const stringArray = string.split(' ');
+    const result = `${string.charAt(0).toUpperCase()}${stringArray[0].slice(1)}`;
+    const cutString = stringArray.splice(1).join(' ');
+    return `${result}${cutString ? ' ' : ''}${capitalizeFifth(cutString)}`;
+}
+
+function capitalizeSixth(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    let finalResult = string[0].toUpperCase();
+
+    for (let index = 1; index < string.length; index++) {
+        if (string[index - 1] === ' ') {
+            finalResult += string[index].toUpperCase();
+        } else {
+            finalResult += string[index];
+        }
+    }
+
+    return finalResult;
+}
+
 module.exports = { capitalizeOne, capitalizeTwo, capitalizeThree, capitalizeForth, capitalizeFifth, capitalizeSixth };
