@@ -1,4 +1,4 @@
-const { capitalizeOne, capitalizeTwo, capitalizeThree, capitalizeForth, capitalizeFifth, capitalizeSixth } = require('./index.js');
+const { capitalizeOne, capitalizeTwo, capitalizeThree, capitalizeForth, capitalizeFifth, capitalizeSixth, capitalizeSeventh, capitalizeEighth } = require('./index.js');
 
 test('capitalize using method 1', () => {
     expect(capitalizeOne('rail safety')).toEqual('Rail Safety');
@@ -58,4 +58,24 @@ test('capitalize using method 6', () => {
     expect(capitalizeSixth('I’m a little tea pot')).toEqual('I’m A Little Tea Pot');
     expect(capitalizeSixth('sHoRt AnD sToUt')).toEqual('Short And Stout');
     expect(capitalizeSixth('HERE IS MY HANDLE HERE IS MY SPOUT')).toEqual('Here Is My Handle Here Is My Spout');
+});
+
+test('capitalize using method 7', () => {
+    expect(capitalizeSeventh('rail safety')).toEqual('Rail Safety');
+    expect(capitalizeSeventh('it is a great day')).toEqual('It Is A Great Day');
+    expect(capitalizeSeventh('it was warm day')).toEqual('It Was Warm Day');
+    expect(capitalizeSeventh('it is black day')).toEqual('It Is Black Day');
+    expect(capitalizeSeventh('I’m a little tea pot')).toEqual('I’m A Little Tea Pot');
+    expect(capitalizeSeventh('sHoRt AnD sToUt')).toEqual('Short And Stout');
+    expect(capitalizeSeventh('HERE IS MY HANDLE HERE IS MY SPOUT')).toEqual('Here Is My Handle Here Is My Spout');
+});
+
+test('capitalize using method 8', () => {
+    expect(capitalizeEighth('rail safety')).toEqual('Rail Safety');
+    expect(capitalizeEighth('it is a great day')).toEqual('It Is A Great Day');
+    expect(capitalizeEighth('it was warm day')).toEqual('It Was Warm Day');
+    expect(capitalizeEighth('it is black day')).toEqual('It Is Black Day');
+    expect(capitalizeEighth('I’m a little tea pot')).toEqual('I’m A Little Tea Pot');
+    expect(capitalizeEighth('sHoRt AnD sToUt')).toEqual('Short And Stout');
+    expect(capitalizeEighth('HERE IS MY HANDLE HERE IS MY SPOUT')).toEqual('Here Is My Handle Here Is My Spout');
 });

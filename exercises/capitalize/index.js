@@ -104,4 +104,30 @@ function capitalizeSixth(string) {
     return finalResult;
 }
 
-module.exports = { capitalizeOne, capitalizeTwo, capitalizeThree, capitalizeForth, capitalizeFifth, capitalizeSixth };
+function capitalizeSeventh(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    let finalResult = '';
+    utils.convertToString(string).toLowerCase().split(' ').map((value) => {
+        finalResult += `${finalResult ? ' ' : ''}${value.charAt(0).toUpperCase() + value.slice(1)}`;
+    });
+
+    return finalResult;
+}
+
+function capitalizeEighth(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    let finalResult = '';
+    utils.convertToString(string).toLowerCase().split(' ').map((value) => {
+        finalResult += `${finalResult ? ' ' : ''}${value.replace(value[0], value[0].toUpperCase())}`;
+    });
+
+    return finalResult;
+}
+
+module.exports = { capitalizeOne, capitalizeTwo, capitalizeThree, capitalizeForth, capitalizeFifth, capitalizeSixth, capitalizeSeventh, capitalizeEighth };
