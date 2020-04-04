@@ -55,6 +55,10 @@ class utills {
     static clearString(str) {
         return utills.convertToString(str).toLowerCase().replace(/[\W_]/g, '');
     }
+
+    static convertToArray(str, separateSign) {
+        return utills.convertToString(str).split(separateSign);
+    }
 }
 
 module.exports = utills;
