@@ -43,4 +43,33 @@ function capitalizeTwo(string) {
     return finalString;
 }
 
+function capitalizeThree(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    const arrayString = utils.convertToArray(string, ' ');
+
+    const result = arrayString.reduce((finalString, newString) => {
+        return `${finalString ? `${finalString} ` : ''}${newString.charAt(0).toUpperCase() + newString.slice(1)}`;
+    }, '');
+
+    return result;
+}
+
+function capitalizeForth(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    const arrayString = utils.convertToArray(string, ' ');
+    let finalString = '';
+
+    for (let index = 0; index < arrayString.length; index++) {
+        finalString += `${finalString ? ' ' : ''}${arrayString[index].charAt(0).toUpperCase() + arrayString[index].slice(1)}`;
+    }
+
+    return finalString;
+}
+
 module.exports = { capitalizeOne, capitalizeTwo, capitalizeThree, capitalizeForth, capitalizeFifth, capitalizeSixth };
