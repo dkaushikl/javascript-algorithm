@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step algorithm</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function stepsOne(number) {
+        document.write("---- Step 1 ----");
+        document.write("<br>");
+
+        let i = 0;
+        let j = 0;
+        while (i < number) {
+            j = 0;
+            while (j < number) {
+                document.write(`${j < i ? '*' : j}`);
+                j++;
+            }
+            document.write("<br>");
+            i++;
+        }
+    }
+
+    function stepsTwo(number) {
+        document.write("<br>");
+        document.write("---- Step 2 ----");
+        document.write("<br>");
+        for (let i = 0; i < number; i++) {
+            for (let j = 0; j < number; j++) {
+                document.write(`${j < i ? '*' : j}`);
+            }
+            document.write("<br>");
+        }
+    }
+
+    function stepsThree(number) {
+        document.write("<br>");
+        document.write("---- Step 3 ----");
+        document.write("<br>");
+        [...Array(number)].map((value, index) => {
+            [...Array(number)].map((value2, index2) => {
+                document.write(`${index2 < index ? '*' : index2}`)
+            });
+            document.write("<br>");
+        });
+    }
+
+    function stepsFour(num) {
+        document.write("<br>");
+        document.write("---- Step 4 ----");
+        document.write("<br>");
+        [...Array(num)].reduce((finalValue, newValue, index) => {
+            [...Array(num)].reduce((finalValue2, newValue2, index2) => {
+                document.write(`${index2 <= index ? '*' : index2}`)
+            });
+            document.write("<br>");
+        });
+    }
+
+    stepsOne(10);
+    stepsTwo(10);
+    stepsThree(10);
+    stepsFour(10);
+</script>
+
+</html>

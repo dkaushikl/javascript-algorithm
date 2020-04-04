@@ -48,4 +48,30 @@ function stepsTwo(number) {
     }
 }
 
+function stepsThree(number) {
+    if (!utils.checkNumberEmpty(number)) {
+        return '';
+    }
+
+    [...Array(number)].map((_, index) => {
+        [...Array(number)].map((_, index2) => {
+            console.log(`${index2 < index ? '*' : ' '}`);
+        });
+        console.log('\n');
+    });
+}
+
+function stepsForth(number) {
+    if (!utils.checkNumberEmpty(number)) {
+        return '';
+    }
+
+    [...Array(number)].reduce((finalValue, newValue, index) => {
+        [...Array(number)].reduce((finalValue2, newValue2, index2) => {
+            console.log(`${index2 < index ? '*' : ' '}`);
+        });
+        console.log('\n');
+    });
+}
+
 module.exports = { stepsOne, stepsTwo, stepsThree, stepsForth };
