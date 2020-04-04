@@ -51,4 +51,25 @@ function anagramTwo(mainString, checkedString) {
     return true;
 }
 
-module.exports = { anagramOne, anagramTwo };
+function anagramThree(mainString, checkedString) {
+    if (!utils.checkStringEmpty(mainString) || !utils.checkStringEmpty(checkedString)) {
+        return '';
+    }
+
+    const firstString = utils.clearString(mainString).split('').sort();
+    const secondString = utils.clearString(checkedString);
+
+    let isAnagram = true;
+
+    for (const element of secondString) {
+        const letterIndex = firstString.findIndex((x) => x === element);
+        if (letterIndex === -1) {
+            isAnagram = false;
+            break;
+        }
+    }
+
+    return isAnagram;
+}
+
+module.exports = { anagramOne, anagramTwo, anagramThree };
