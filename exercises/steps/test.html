@@ -90,12 +90,33 @@
         });
     }
 
+    function stepsSeventh(number, index = 0, index2 = '') {
+        if (number === index) {
+            return;
+        }
+
+        if (number === index2.length) {
+            if (index === 0) {
+                document.write("<br>");
+                document.write("---- Step 7 ----");
+                document.write("<br>");
+            }
+
+            document.write(index2);
+            document.write("<br>");
+            return stepsSeventh(number, index + 1)
+        }
+
+        stepsSeventh(number, index, index2 + (index2.length <= index ? '*' : index2.length));
+    }
+
     stepsOne(10);
     stepsTwo(10);
     stepsThree(10);
     stepsFour(10);
     stepsFifth(10);
     stepsSixth(10);
+    stepsSeventh(10);
 </script>
 
 </html>

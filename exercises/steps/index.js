@@ -67,7 +67,7 @@ function stepsForth(number) {
     }
 
     // [...Array(number + 1)] -> if number is 10, it will generate 11 undefined value array
-    // it needs because of array reduce method starting to loop from 1 and given number.  
+    // it needs because of array reduce method starting to loop from 1 and given number.
     [...Array(number + 1)].reduce((finalValue, newValue, index) => {
         index--;
         [...Array(number + 1)].reduce((finalValue2, newValue2, index2) => {
@@ -104,4 +104,18 @@ function stepsSixth(number) {
     });
 }
 
-module.exports = { stepsOne, stepsTwo, stepsThree, stepsForth, stepsFifth, stepsSixth };
+function stepsSeventh(number, index = 0, column = '') {
+    if (number === index) {
+        return;
+    }
+
+    if (column.length === number) {
+        document.write(column);
+        document.write('<br>');
+        stepsSeventh(number, index++);
+    }
+
+    stepsSeventh(number, index, index2 + (index2.length <= index ? '*' : index2.length));
+}
+
+module.exports = { stepsOne, stepsTwo, stepsThree, stepsForth, stepsFifth, stepsSixth, stepsSeventh };
