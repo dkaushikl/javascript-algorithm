@@ -78,11 +78,24 @@
         })
     }
 
+    function stepsSixth(number) {
+        document.write("<br>");
+        document.write("---- Step 6 ----");
+        document.write("<br>");
+        [...Array(number)].flatMap((value, index) => {
+            [...Array(number)].flatMap((value2, index2) => {
+                document.write(`${index2 <= index ? '*' : index2}`)
+            });
+            document.write("<br>");
+        });
+    }
+
     stepsOne(10);
     stepsTwo(10);
     stepsThree(10);
     stepsFour(10);
     stepsFifth(10);
+    stepsSixth(10);
 </script>
 
 </html>

@@ -91,4 +91,17 @@ function stepsFifth(number) {
     });
 }
 
-module.exports = { stepsOne, stepsTwo, stepsThree, stepsForth, stepsFifth };
+function stepsSixth(number) {
+    if (!utils.checkNumberEmpty(number)) {
+        return '';
+    }
+
+    [...Array(number)].flatMap((_, index) => {
+        [...Array(number)].flatMap((_, index2) => {
+            console.log(`${index2 < index ? '*' : ' '}`);
+        });
+        console.log('\n');
+    });
+}
+
+module.exports = { stepsOne, stepsTwo, stepsThree, stepsForth, stepsFifth, stepsSixth };
