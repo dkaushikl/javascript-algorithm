@@ -23,15 +23,15 @@ function stepsOne(number) {
         return '';
     }
 
-    let i = 0;
-    while (i < number) {
-        let j = 0;
-        while (j < number) {
-            console.log(`${j < i ? '*' : ' '}`);
-            j++;
+    let index = 0;
+    while (index < number) {
+        let index2 = 0;
+        while (index2 <= number) {
+            console.log(`${index2 < index ? '*' : ' '}`);
+            index2++;
         }
         console.log('\n');
-        i++;
+        index++;
     }
 }
 
@@ -40,9 +40,9 @@ function stepsTwo(number) {
         return '';
     }
 
-    for (let i = 0; i < number; i++) {
-        for (let j = 0; j < number; j++) {
-            console.log(`${j < i ? '*' : ' '}`);
+    for (let index = 0; index < number; index++) {
+        for (let index2 = 0; index2 < number; index2++) {
+            console.log(`${index2 < index ? '*' : ' '}`);
         }
         console.log('\n');
     }
@@ -66,12 +66,29 @@ function stepsForth(number) {
         return '';
     }
 
-    [...Array(number)].reduce((finalValue, newValue, index) => {
-        [...Array(number)].reduce((finalValue2, newValue2, index2) => {
+    // [...Array(number + 1)] -> if number is 10, it will generate 11 undefined value array
+    // it needs because of array reduce method starting to loop from 1 and given number.  
+    [...Array(number + 1)].reduce((finalValue, newValue, index) => {
+        index--;
+        [...Array(number + 1)].reduce((finalValue2, newValue2, index2) => {
+            index2--;
             console.log(`${index2 < index ? '*' : ' '}`);
         });
         console.log('\n');
     });
 }
 
-module.exports = { stepsOne, stepsTwo, stepsThree, stepsForth };
+function stepsFifth(number) {
+    if (!utils.checkNumberEmpty(number)) {
+        return '';
+    }
+
+    [...Array(number)].forEach((_, index) => {
+        [...Array(number)].forEach((_, index2) => {
+            console.log(`${index2 < index ? '*' : ' '}`);
+        });
+        console.log('\n');
+    });
+}
+
+module.exports = { stepsOne, stepsTwo, stepsThree, stepsForth, stepsFifth };
