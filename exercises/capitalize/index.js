@@ -77,6 +77,7 @@ function capitalizeFifth(string) {
         return '';
     }
 
+    string = utils.convertToString(string).toLowerCase();
     const stringArray = string.split(' ');
     const result = `${string.charAt(0).toUpperCase()}${stringArray[0].slice(1)}`;
     const cutString = stringArray.splice(1).join(' ');
@@ -87,6 +88,8 @@ function capitalizeSixth(string) {
     if (!utils.checkStringEmpty(string)) {
         return '';
     }
+
+    string = utils.convertToString(string).toLowerCase();
 
     let finalResult = string[0].toUpperCase();
 

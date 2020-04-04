@@ -57,7 +57,7 @@ class utills {
     }
 
     static convertToArray(str, separateSign) {
-        return utills.convertToString(str).split(separateSign);
+        return utills.convertToString(str).toLowerCase().split(separateSign);
     }
 }
 
