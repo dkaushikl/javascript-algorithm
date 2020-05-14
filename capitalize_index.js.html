@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>capitalize/index.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#anagramOne">anagramOne</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#capitalizeOne">capitalizeOne</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">capitalize/index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// -- Directions
+
+// Write a function that accept a string. The function should
+// capitalize the first letter of each word in the string then
+// return the capitalized string.
+
+// --- Examples
+//   capitalize('a short sentence') --> 'A Short Sentence'
+//   capitalize('hello') --> 'Hello'
+//   capitalize('a lazy fox') --> 'A Lazy Fox'
+
+
+const utils = require('../utils/index.js');
+
+/**
+ * Make first letter capital in string.
+ * @method
+ * @param {String} string - parameter
+ * @returns {FinalString} final Result
+ */
+
+function capitalizeOne(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    const arrayString = utils.convertToArray(string, ' ');
+    let finalString = ''; let index = 0;
+
+    while (index &lt; arrayString.length) {
+        finalString += `${finalString ? ' ' : ''}${arrayString[index].charAt(0).toUpperCase() + arrayString[index].slice(1)}`;
+        index++;
+    }
+
+    return finalString;
+}
+
+function capitalizeTwo(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    const arrayString = utils.convertToArray(string, ' ');
+    let finalString = '';
+
+    for (const element of arrayString) {
+        finalString += `${finalString ? ' ' : ''}${element.charAt(0).toUpperCase() + element.slice(1)}`;
+    }
+
+    return finalString;
+}
+
+function capitalizeThree(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    const arrayString = utils.convertToArray(string, ' ');
+
+    const result = arrayString.reduce((finalString, newString) => {
+        return `${finalString ? `${finalString} ` : ''}${newString.charAt(0).toUpperCase() + newString.slice(1)}`;
+    }, '');
+
+    return result;
+}
+
+function capitalizeForth(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    const arrayString = utils.convertToArray(string, ' ');
+    let finalString = '';
+
+    for (let index = 0; index &lt; arrayString.length; index++) {
+        finalString += `${finalString ? ' ' : ''}${arrayString[index].charAt(0).toUpperCase() + arrayString[index].slice(1)}`;
+    }
+
+    return finalString;
+}
+
+function capitalizeFifth(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    string = utils.convertToString(string).toLowerCase();
+    const stringArray = string.split(' ');
+    const result = `${string.charAt(0).toUpperCase()}${stringArray[0].slice(1)}`;
+    const cutString = stringArray.splice(1).join(' ');
+    return `${result}${cutString ? ' ' : ''}${capitalizeFifth(cutString)}`;
+}
+
+function capitalizeSixth(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    string = utils.convertToString(string).toLowerCase();
+
+    let finalResult = string[0].toUpperCase();
+
+    for (let index = 1; index &lt; string.length; index++) {
+        if (string[index - 1] === ' ') {
+            finalResult += string[index].toUpperCase();
+        } else {
+            finalResult += string[index];
+        }
+    }
+
+    return finalResult;
+}
+
+function capitalizeSeventh(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    let finalResult = '';
+    utils.convertToString(string).toLowerCase().split(' ').map((value) => {
+        finalResult += `${finalResult ? ' ' : ''}${value.charAt(0).toUpperCase() + value.slice(1)}`;
+    });
+
+    return finalResult;
+}
+
+function capitalizeEighth(string) {
+    if (!utils.checkStringEmpty(string)) {
+        return '';
+    }
+
+    let finalResult = '';
+    utils.convertToString(string).toLowerCase().split(' ').map((value) => {
+        finalResult += `${finalResult ? ' ' : ''}${value.replace(value[0], value[0].toUpperCase())}`;
+    });
+
+    return finalResult;
+}
+
+module.exports = { capitalizeOne, capitalizeTwo, capitalizeThree, capitalizeForth, capitalizeFifth, capitalizeSixth, capitalizeSeventh, capitalizeEighth };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Thu May 14 2020 13:08:36 GMT+0530 (India Standard Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
