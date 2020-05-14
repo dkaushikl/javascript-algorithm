@@ -12,6 +12,13 @@
 
 const utils = require('../utils/index.js');
 
+/**
+ * Make first letter capital in string.
+ * @method
+ * @param {String} string - parameter
+ * @returns {FinalString} final Result
+ */
+
 function capitalizeOne(string) {
     if (!utils.checkStringEmpty(string)) {
         return '';

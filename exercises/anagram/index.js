@@ -12,6 +12,11 @@
 
 const utils = require('../utils/index.js');
 
+/**
+ * @param {String} mainString - First string
+ * @param {String} checkedString - Second string
+ * @return {Boolean} check whether string is anagram or not
+ */
 function anagramOne(mainString, checkedString) {
     if (!utils.checkStringEmpty(mainString) || !utils.checkStringEmpty(checkedString)) {
         return '';
