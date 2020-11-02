@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home - Documentation</title>
+    <title>maxchar/index.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,54 +29,135 @@
 
 <div id="main">
     
+    <h1 class="page-title">maxchar/index.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// -- Directions
 
+// Given a string, return the character that is most
+// commanly used in the string.
 
+// --- Examples
+//   One('abcccdd') === c
+//   One('kaushik') === k
 
+const Utills = require('../utills/index.js');
 
+/** MaxChar Class */
+class MaxChar {
+  /**
+       * 	MaxChar Program
+       *
+       * @public
+       * @method
+       * @param {String} arg
+       * @return {Char}
+       */
+  static One(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
+    }
 
+    const resultArray = [];
 
+    arg.split('').forEach((arrayKey) => {
+      const keyIndex = resultArray.findIndex((x) => x.key === arrayKey);
 
+      if (keyIndex >= 0) {
+        resultArray[keyIndex].value = resultArray[keyIndex].value + 1;
+        return;
+      }
+      const obj = {
+        key: arrayKey,
+        value: 1,
+      };
+      resultArray.push(obj);
+      return;
+    });
 
+    const finalResult = resultArray.reduce((result, newValue) => {
+      return newValue.value > result.value ? newValue : result;
+    });
 
-    
+    return finalResult.key;
+  }
 
+  /**
+     * 	MaxChar Program
+     *
+     * @public
+     * @method
+     * @param {String} arg
+     * @return {Char}
+     */
+  static Two(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
+    }
 
-    <section class="readme">
-        <article><h2>About</h2>
-<p>This repository contains JavaScript implementations of famous computer science algorithms.</p>
-<p>API reference with usage examples available
-<a href="https://dkaushikl.github.io/algorithm-practice/" target="_blank">here</a>.</p>
-<h2>Development</h2>
-<p><strong>To install all dev dependencies</strong></p>
-<p>Call:</p>
-<pre class="prettyprint source lang-bash"><code>npm install
+    const resultArray = Utills.ConvertToString(arg).toLowerCase().split('').reduce((finalResult, newChar) => {
+      const keyIndex = finalResult.findIndex((x) => x.key === newChar);
+      if (keyIndex >= 0) {
+        finalResult[keyIndex].value = finalResult[keyIndex].value + 1;
+      } else {
+        finalResult.push({
+          key: newChar,
+          value: 1,
+        });
+      }
+      return finalResult;
+    }, []).reduce((prev, current) => prev.value > current.value ? prev : current);
+
+    return resultArray.key;
+  }
+
+  /**
+     * 	MaxChar Program
+     *
+     * @public
+     * @method
+     * @param {String} arg
+     * @return {Char}
+     */
+  static Three(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
+    }
+
+    const charMap = {};
+    let max = 0;
+    let maxChar = '';
+
+    for (const char of arg.toLowerCase()) {
+      if (charMap[char]) {
+        charMap[char] += 1;
+      } else {
+        charMap[char] = 1;
+      }
+    }
+
+    for (const char in charMap) {
+      if (charMap[char] > max) {
+        max = charMap[char];
+        maxChar = char;
+      }
+    }
+
+    return maxChar;
+  }
+}
+
+module.exports = MaxChar;
 </code></pre>
-<p><strong>To setup repository with documentation</strong></p>
-<pre class="prettyprint source lang-bash"><code>npm run doc
-</code></pre>
-<p>This will build the documentation and open it in your browser.</p>
-<p><strong>To update .html files with documentation</strong></p>
-<p>Just run <code>npm run doc</code> again.</p>
-<p><strong>To run tests</strong></p>
-<p>Call:</p>
-<pre class="prettyprint source lang-bash"><code>npm run test
-</code></pre>
-<p>This will execute all <code>test.js</code> files.</p>
-<p><strong>To deploy documentation site</strong></p>
-<pre class="prettyprint source lang-bash"><code>npm run deploy
-</code></pre>
-<p>This requires you to have commit access to your Git remote.</p>
-<h2>License</h2>
-<p>The code in this repository is distributed under the terms of the MIT license.</p></article>
+        </article>
     </section>
-
-
 
 
 

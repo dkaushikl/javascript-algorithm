@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>utils/index.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Anagram.html">Anagram</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Anagram.html#.one">one</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Anagram.html#.three">three</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Anagram.html#.two">two</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Capitalize.html">Capitalize</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Capitalize.html#.Eighth">Eighth</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Capitalize.html#.Fifth">Fifth</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Capitalize.html#.Forth">Forth</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Capitalize.html#.One">One</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Capitalize.html#.Seventh">Seventh</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Capitalize.html#.Sixth">Sixth</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Capitalize.html#.Three">Three</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Capitalize.html#.Two">Two</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Utills.html">Utills</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Utills.html#.CheckArrayEmpty">CheckArrayEmpty</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Utills.html#.CheckNumberEmpty">CheckNumberEmpty</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Utills.html#.CheckStringEmpty">CheckStringEmpty</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Utills.html#.ClearString">ClearString</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Utills.html#.ConvertNagativeInteger">ConvertNagativeInteger</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Utills.html#.ConvertToArray">ConvertToArray</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Utills.html#.ConvertToNumber">ConvertToNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Utills.html#.ConvertToString">ConvertToString</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">utils/index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** Capitalize Class */
+/** Utility Class */
+class Utills {
+  /**
+     * Check whether string is empty
+     *
+     * @public
+     * @method
+     * @param {String} arg
+     * @return {Boolean}
+     */
+  static CheckStringEmpty(arg) {
+    return arg === null || arg === undefined || arg.trim().length === 0 ? false : true;
+  };
+
+  /**
+     * Check whether number is empty
+     *
+     * @public
+     * @method
+     * @param {String} arg
+     * @return {Boolean}
+     */
+  static CheckNumberEmpty(num) {
+    if (typeof(num) === 'number') {
+      return true;
+    }
+
+    if (!num) {
+      return false;
+    }
+
+    if (typeof(num) !== 'string' || num.trim().length &lt;= 0) {
+      return false;
+    }
+
+    const reg = /^.+$/g;
+    return reg.test(num);
+  };
+
+  /**
+     * Conver into string
+     *
+     * @public
+     * @method
+     * @param {Any} arg
+     * @return {String}
+     */
+  static ConvertToString(arg) {
+    if (typeof arg === 'number') {
+      return `${arg}`;
+    }
+
+    if (!Utills.CheckNumberEmpty(arg)) {
+      return '';
+    }
+
+    return `${arg}`;
+  };
+
+  /**
+     * Return negative number
+     *
+     * @public
+     * @method
+     * @param {Number} arg
+     * @return {Number}
+     */
+  static ConvertNagativeInteger(arg) {
+    if (!Utills.CheckNumberEmpty(arg)) {
+      return '';
+    }
+
+    return -Math.abs(arg);
+  };
+
+  /**
+     * Convert string into number
+     *
+     * @public
+     * @method
+     * @param {String} arg
+     * @return {Number}
+     */
+  static ConvertToNumber(arg) {
+    if (!Utills.CheckNumberEmpty(arg)) {
+      return '';
+    }
+
+    return parseFloat(arg);
+  };
+
+  /**
+     * Convert into number
+     *
+     * @public
+     * @method
+     * @param {String} arg
+     * @return {Number}
+     */
+  static CheckArrayEmpty(arg) {
+    return Array.isArray(arg) &amp;&amp; arg.length > 0;
+  };
+
+  /**
+     * Make string clear by removing unwanted parenthesis, elipsis and whitespace
+     *
+     * @public
+     * @method
+     * @param {String} arg - String needs to be clear
+     * @return {Number}
+     */
+  static ClearString(arg) {
+    return Utills.ConvertToString(arg).toLowerCase().replace(/[\W_]/g, '');
+  };
+
+  /**
+     * Convert into array from string
+     *
+     * @public
+     * @method
+     * @param {String} arg1 - String needs to be convert into array
+     * @param {String} arg2 - Split by this string
+     * @return {Number}
+     */
+  static ConvertToArray(arg1, arg2) {
+    return Utills.ConvertToString(arg1).toLowerCase().split(arg2);
+  };
+}
+
+module.exports = Utills;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Nov 02 2020 15:42:09 GMT+0530 (India Standard Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

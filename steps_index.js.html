@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home - Documentation</title>
+    <title>steps/index.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -29,54 +29,143 @@
 
 <div id="main">
     
+    <h1 class="page-title">steps/index.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// -- Directions
 
+// Write a function that accept a positive number N.
+// The function should console log a step shape
+// with N levels using the # character. Make sure the
+// step has spaces on the right hand side!
 
+// --- Examples
+//   steps(2) -->
+//   '# '
+//   '##'
 
+// --- Examples
+//   steps(3) -->
+//   '#  '
+//   '## '
+//   '###'
 
+const Utills = require('../utills/index.js');
 
+/** Steps Class */
+class Steps {
+  static One(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
+    }
 
+    let index = 0;
+    while (index &lt; number) {
+      let index2 = 0;
+      while (index2 &lt;= number) {
+        console.log(`${index2 &lt; index ? '*' : ' '}`);
+        index2 += 1;
+      }
+      console.log('\n');
+      index += 1;
+    }
+  }
 
+  static Two(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
+    }
 
+    for (let index = 0; index &lt; number; index += 1) {
+      for (let index2 = 0; index2 &lt; number; index2 += 1) {
+        console.log(`${index2 &lt; index ? '*' : ' '}`);
+      }
+      console.log('\n');
+    }
+  }
 
-    
+  static Three(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
+    }
 
+    [...Array(number)].map((_, index) => {
+      [...Array(number)].map((_, index2) => {
+        console.log(`${index2 &lt; index ? '*' : ' '}`);
+      });
+      console.log('\n');
+    });
+  }
 
-    <section class="readme">
-        <article><h2>About</h2>
-<p>This repository contains JavaScript implementations of famous computer science algorithms.</p>
-<p>API reference with usage examples available
-<a href="https://dkaushikl.github.io/algorithm-practice/" target="_blank">here</a>.</p>
-<h2>Development</h2>
-<p><strong>To install all dev dependencies</strong></p>
-<p>Call:</p>
-<pre class="prettyprint source lang-bash"><code>npm install
+  static Forth(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
+    }
+
+    // [...Array(number + 1)] -> if number is 10, it will generate 11 undefined value array
+    // it needs because of array reduce method starting to loop from 1 and given number.
+    [...Array(number + 1)].reduce((finalValue, newValue, index) => {
+      index -= 1;
+      [...Array(number + 1)].reduce((finalValue2, newValue2, index2) => {
+        index2 -= 1;
+        console.log(`${index2 &lt; index ? '*' : ' '}`);
+      });
+      console.log('\n');
+    });
+  }
+
+  static Fifth(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
+    }
+
+    [...Array(number)].forEach((_, index) => {
+      [...Array(number)].forEach((_, index2) => {
+        console.log(`${index2 &lt; index ? '*' : ' '}`);
+      });
+      console.log('\n');
+    });
+  }
+
+  static Sixth(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
+    }
+
+    [...Array(number)].flatMap((_, index) => {
+      [...Array(number)].flatMap((_, index2) => {
+        console.log(`${index2 &lt; index ? '*' : ' '}`);
+      });
+      console.log('\n');
+    });
+  }
+
+  // static Seventh(number, index = 0, column = '') {
+  //   if (number === index) {
+  //     return;
+  //   }
+
+  //   if (column.length === number) {
+  //     document.write(column);
+  //     document.write('&lt;br>');
+  //     this.Seventh(number, index += 1);
+  //   }
+
+  //   this.Seventh(number, index, index2 + (index2.length &lt;= index ? '*' : index2.length));
+  // }
+}
+
+module.exports = Steps;
 </code></pre>
-<p><strong>To setup repository with documentation</strong></p>
-<pre class="prettyprint source lang-bash"><code>npm run doc
-</code></pre>
-<p>This will build the documentation and open it in your browser.</p>
-<p><strong>To update .html files with documentation</strong></p>
-<p>Just run <code>npm run doc</code> again.</p>
-<p><strong>To run tests</strong></p>
-<p>Call:</p>
-<pre class="prettyprint source lang-bash"><code>npm run test
-</code></pre>
-<p>This will execute all <code>test.js</code> files.</p>
-<p><strong>To deploy documentation site</strong></p>
-<pre class="prettyprint source lang-bash"><code>npm run deploy
-</code></pre>
-<p>This requires you to have commit access to your Git remote.</p>
-<h2>License</h2>
-<p>The code in this repository is distributed under the terms of the MIT license.</p></article>
+        </article>
     </section>
-
-
 
 
 
