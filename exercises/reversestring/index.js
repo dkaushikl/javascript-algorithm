@@ -9,94 +9,139 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 // Differance between For of and For in.
-// Javascipt recursion function
+// Javascipt recursion static
 // array reduce method
 
-const utils = require('../utils/index');
+const Utills = require('../Utills/index');
 
-function reverseMethodOne(str) {
-    if (!utils.checkStringEmpty(str)) {
-        return '';
+/** Reverse String Class */
+class ReverseString {
+  /**
+         * return reverse string
+         *
+         * @public
+         * @method
+         * @param {String} arg
+         * @return {String}
+         */
+  static One(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
-    return str
-        .split('')
-        .reverse()
-        .join('');
-}
+    return arg
+      .split('')
+      .reverse()
+      .join('');
+  }
 
-function reverseMethodSecond(str) {
-    if (!utils.checkStringEmpty(str)) {
-        return '';
+  /**
+       * return reverse string
+       *
+       * @public
+       * @method
+       * @param {String} arg
+       * @return {String}
+       */
+  static Second(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
     let finalString = '';
-    const stringCount = str.length - 1;
+    const stringCount = arg.length - 1;
 
-    for (let i = stringCount; i >= 0; i--) {
-        finalString += str.charAt(i);
+    for (let i = stringCount; i >= 0; i -= 1) {
+      finalString += arg.charAt(i);
     }
 
     return finalString;
-}
+  }
 
-function reverseMethodThird(str) {
-    if (!utils.checkStringEmpty(str)) {
-        return '';
+  /**
+       * return reverse string
+       *
+       * @public
+       * @method
+       * @param {String} arg
+       * @return {String}
+       */
+  static Third(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
     let finalString = '';
-    let stringCount = str.length - 1;
+    let stringCount = arg.length - 1;
 
     while (stringCount >= 0) {
-        finalString += str.charAt(stringCount);
-        stringCount--;
+      finalString += arg.charAt(stringCount);
+      stringCount -= 1;
     }
 
     return finalString;
-}
+  }
 
-function reverseMethodForth(str) {
-    if (!utils.checkStringEmpty(str)) {
-        return '';
+  /**
+       * return reverse string
+       *
+       * @public
+       * @method
+       * @param {String} arg
+       * @return {String}
+       */
+  static Forth(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
     let finalString = '';
 
-    for (const newCharacter of str) {
-        finalString = newCharacter + finalString;
+    for (const newCharacter of arg) {
+      finalString = newCharacter + finalString;
     }
 
     return finalString;
-}
+  }
 
-function reverseMethodFifth(str) {
-    if (!utils.checkStringEmpty(str)) {
-        return '';
+  /**
+       * return reverse string
+       *
+       * @public
+       * @method
+       * @param {String} arg
+       * @return {String}
+       */
+  static Fifth(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
     // array.reduce((result, newvalue) => { newvalue + result }, initialValue)
-    return str.split('').reduce((finalString, newCharacter) => {
-        return newCharacter + finalString;
+    return arg.split('').reduce((finalString, newCharacter) => {
+      return newCharacter + finalString;
     }, '');
-}
+  }
 
-function reverseMethodSixth(str) {
-    if (!utils.checkStringEmpty(str)) {
-        return '';
+  /**
+       * return reverse string
+       *
+       * @public
+       * @method
+       * @param {String} arg
+       * @return {String}
+       */
+  static Sixth(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
-    return reverseMethodSixth(str.substr(1)) + str.charAt(0);
+    return this.Sixth(arg.substr(1)) + arg.charAt(0);
+  }
 }
 
-module.exports = {
-    reverseMethodOne,
-    reverseMethodSecond,
-    reverseMethodThird,
-    reverseMethodForth,
-    reverseMethodFifth,
-    reverseMethodSixth,
-};
+module.exports = ReverseString;
+
 
 // https://www.geeksforgeeks.org/reverse-a-string-in-javascript/
 

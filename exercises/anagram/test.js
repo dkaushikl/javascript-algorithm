@@ -1,25 +1,29 @@
-const { anagramOne, anagramTwo, anagramThree } = require('./index.js');
+const Anagram = require('./index.js');
 
-test('anagram using method 1', () => {
-    expect(anagramOne('Rail Safety', 'fairy tales')).toEqual(true);
-    expect(anagramOne('Rail! Safety!', 'fairy tales')).toEqual(true);
-    expect(anagramOne(`Hi there`, `Bye there`)).toEqual(false);
-    expect(anagramOne(`Hi there`, `ye there`)).toEqual(false);
-    expect(anagramOne(`MotherInLaw`, `HitlerWoman `)).toEqual(true);
-});
+describe('Anagram', function () {
+  'use strict';
 
-test('anagram using method 2', () => {
-    expect(anagramTwo('Rail Safety', 'fairy tales')).toEqual(true);
-    expect(anagramTwo('Rail! Safety!', 'fairy tales')).toEqual(true);
-    expect(anagramTwo(`Hi there`, `Bye there`)).toEqual(false);
-    expect(anagramTwo(`Hi there`, `ye there`)).toEqual(false);
-    expect(anagramTwo(`MotherInLaw`, `HitlerWoman `)).toEqual(true);
-});
+  it('anagram first method', function () {
+    expect(Anagram.One('Rail Safety', 'fairy tales')).toEqual(true);
+    expect(Anagram.One('Rail! Safety!', 'fairy tales')).toEqual(true);
+    expect(Anagram.One('Hi there', 'Bye there')).toEqual(false);
+    expect(Anagram.One('Hi there', 'ye there')).toEqual(false);
+    expect(Anagram.One('MotherInLaw', 'HitlerWoman ')).toEqual(true);
+  });
 
-test('anagram using method 3', () => {
-    expect(anagramThree('Rail Safety', 'fairy tales')).toEqual(true);
-    expect(anagramThree('Rail! Safety!', 'fairy tales')).toEqual(true);
-    expect(anagramThree(`Hi there`, `Bye there`)).toEqual(false);
-    expect(anagramThree(`Hi there`, `ye there`)).toEqual(false);
-    expect(anagramThree(`MotherInLaw`, `HitlerWoman `)).toEqual(true);
+  it('anagram second method', function () {
+    expect(Anagram.Two('Rail Safety', 'fairy tales')).toEqual(true);
+    expect(Anagram.Two('Rail! Safety!', 'fairy tales')).toEqual(true);
+    expect(Anagram.Two('Hi there', 'Bye there')).toEqual(false);
+    expect(Anagram.Two('Hi there', 'ye there')).toEqual(false);
+    expect(Anagram.Two('MotherInLaw', 'HitlerWoman ')).toEqual(true);
+  });
+
+  it('anagram third method', function () {
+    expect(Anagram.Three('Rail Safety', 'fairy tales')).toEqual(true);
+    expect(Anagram.Three('Rail! Safety!', 'fairy tales')).toEqual(true);
+    expect(Anagram.Three('Hi there', 'Bye there')).toEqual(false);
+    expect(Anagram.Three('Hi there', 'ye there')).toEqual(false);
+    expect(Anagram.Three('MotherInLaw', 'HitlerWoman ')).toEqual(true);
+  });
 });

@@ -16,106 +16,109 @@
 //   '## '
 //   '###'
 
-const utils = require('../utils/index.js');
+const Utills = require('../utills/index.js');
 
-function stepsOne(number) {
-    if (!utils.checkNumberEmpty(number)) {
-        return '';
+/** Steps Class */
+class Steps {
+  static One(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
     }
 
     let index = 0;
     while (index < number) {
-        let index2 = 0;
-        while (index2 <= number) {
-            console.log(`${index2 < index ? '*' : ' '}`);
-            index2++;
-        }
-        console.log('\n');
-        index++;
+      let index2 = 0;
+      while (index2 <= number) {
+        console.log(`${index2 < index ? '*' : ' '}`);
+        index2 += 1;
+      }
+      console.log('\n');
+      index += 1;
     }
-}
+  }
 
-function stepsTwo(number) {
-    if (!utils.checkNumberEmpty(number)) {
-        return '';
+  static Two(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
     }
 
-    for (let index = 0; index < number; index++) {
-        for (let index2 = 0; index2 < number; index2++) {
-            console.log(`${index2 < index ? '*' : ' '}`);
-        }
-        console.log('\n');
+    for (let index = 0; index < number; index += 1) {
+      for (let index2 = 0; index2 < number; index2 += 1) {
+        console.log(`${index2 < index ? '*' : ' '}`);
+      }
+      console.log('\n');
     }
-}
+  }
 
-function stepsThree(number) {
-    if (!utils.checkNumberEmpty(number)) {
-        return '';
+  static Three(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
     }
 
     [...Array(number)].map((_, index) => {
-        [...Array(number)].map((_, index2) => {
-            console.log(`${index2 < index ? '*' : ' '}`);
-        });
-        console.log('\n');
+      [...Array(number)].map((_, index2) => {
+        console.log(`${index2 < index ? '*' : ' '}`);
+      });
+      console.log('\n');
     });
-}
+  }
 
-function stepsForth(number) {
-    if (!utils.checkNumberEmpty(number)) {
-        return '';
+  static Forth(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
     }
 
     // [...Array(number + 1)] -> if number is 10, it will generate 11 undefined value array
     // it needs because of array reduce method starting to loop from 1 and given number.
     [...Array(number + 1)].reduce((finalValue, newValue, index) => {
-        index--;
-        [...Array(number + 1)].reduce((finalValue2, newValue2, index2) => {
-            index2--;
-            console.log(`${index2 < index ? '*' : ' '}`);
-        });
-        console.log('\n');
+      index -= 1;
+      [...Array(number + 1)].reduce((finalValue2, newValue2, index2) => {
+        index2 -= 1;
+        console.log(`${index2 < index ? '*' : ' '}`);
+      });
+      console.log('\n');
     });
-}
+  }
 
-function stepsFifth(number) {
-    if (!utils.checkNumberEmpty(number)) {
-        return '';
+  static Fifth(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
     }
 
     [...Array(number)].forEach((_, index) => {
-        [...Array(number)].forEach((_, index2) => {
-            console.log(`${index2 < index ? '*' : ' '}`);
-        });
-        console.log('\n');
+      [...Array(number)].forEach((_, index2) => {
+        console.log(`${index2 < index ? '*' : ' '}`);
+      });
+      console.log('\n');
     });
-}
+  }
 
-function stepsSixth(number) {
-    if (!utils.checkNumberEmpty(number)) {
-        return '';
+  static Sixth(number) {
+    if (!Utills.CheckNumberEmpty(number)) {
+      return '';
     }
 
     [...Array(number)].flatMap((_, index) => {
-        [...Array(number)].flatMap((_, index2) => {
-            console.log(`${index2 < index ? '*' : ' '}`);
-        });
-        console.log('\n');
+      [...Array(number)].flatMap((_, index2) => {
+        console.log(`${index2 < index ? '*' : ' '}`);
+      });
+      console.log('\n');
     });
+  }
+
+  // static Seventh(number, index = 0, column = '') {
+  //   if (number === index) {
+  //     return;
+  //   }
+
+  //   if (column.length === number) {
+  //     document.write(column);
+  //     document.write('<br>');
+  //     this.Seventh(number, index += 1);
+  //   }
+
+  //   this.Seventh(number, index, index2 + (index2.length <= index ? '*' : index2.length));
+  // }
 }
 
-function stepsSeventh(number, index = 0, column = '') {
-    if (number === index) {
-        return;
-    }
-
-    if (column.length === number) {
-        document.write(column);
-        document.write('<br>');
-        stepsSeventh(number, index++);
-    }
-
-    stepsSeventh(number, index, index2 + (index2.length <= index ? '*' : index2.length));
-}
-
-module.exports = { stepsOne, stepsTwo, stepsThree, stepsForth, stepsFifth, stepsSixth, stepsSeventh };
+module.exports = Steps;

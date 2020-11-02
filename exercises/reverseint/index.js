@@ -10,62 +10,97 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-const utils = require('../utils/index');
+const Utills = require('../Utills/index');
 
-function reverseIntMethodOne(number) {
-    if (!utils.checkNumberEmpty(number)) {
-        return '';
+/** ReverseInt Class */
+class ReverseInt {
+  /**
+       * return reverse interger
+       *
+       * @public
+       * @method
+       * @param {Number} arg
+       * @return {Number}
+       */
+  static One(arg) {
+    if (!Utills.CheckNumberEmpty(arg)) {
+      return '';
     }
 
-    const callRecursive = reverseIntMethodOne(utils.convertToString(number).substr(1));
-    const result = `${callRecursive}` + `${utils.convertToString(number).charAt(0)}`;
+    const callRecursive = this.One(Utills.ConvertToString(arg).substr(1));
+    const result = `${callRecursive}` + `${Utills.ConvertToString(arg).charAt(0)}`;
 
-    if (Number.isInteger(number)) {
-        return number <= 0 ? -Math.abs(parseFloat(result)) : parseFloat(result);
+    if (Number.isInteger(arg)) {
+      return arg <= 0 ? -Math.abs(parseFloat(result)) : parseFloat(result);
     } else {
-        return number <= 0 ? -Math.abs(result) : result;
+      return arg <= 0 ? -Math.abs(result) : result;
     }
-}
+  }
 
-function reverseIntMethodTwo(number) {
-    if (!utils.checkNumberEmpty(number)) {
-        return '';
+  /**
+      * return reverse interger
+      *
+      * @public
+      * @method
+      * @param {Number} arg
+      * @return {Number}
+      */
+  static Two(arg) {
+    if (!Utills.CheckNumberEmpty(arg)) {
+      return '';
     }
 
-    const numberArray = utils.convertToString(number).split('');
+    const numberArray = Utills.ConvertToString(arg).split('');
 
     const result = parseFloat(numberArray.reduce((finalString, newChar) => {
-        return newChar + finalString;
+      return newChar + finalString;
     }));
 
-    return number <= 0 ? utils.convertNagativeInteger(result) : result;
-}
+    return arg <= 0 ? Utills.ConvertNagativeInteger(result) : result;
+  }
 
-function reverseIntMethodThree(number) {
-    if (!utils.checkNumberEmpty(number)) {
-        return '';
+  /**
+      * return reverse interger
+      *
+      * @public
+      * @method
+      * @param {Number} arg
+      * @return {Number}
+      */
+  static Three(arg) {
+    if (!Utills.CheckNumberEmpty(arg)) {
+      return '';
     }
 
-    const result = parseFloat(utils.convertToString(number).split('').reverse().join(''));
-    return number <= 0 ? -Math.abs(result) : result;
-}
+    const result = parseFloat(Utills.ConvertToString(arg).split('').reverse().join(''));
+    return arg <= 0 ? -Math.abs(result) : result;
+  }
 
-function reverseIntMethodForth(number) {
-    if (!utils.checkNumberEmpty(number)) {
-        return '';
+  /**
+      * return reverse interger
+      *
+      * @public
+      * @method
+      * @param {Number} arg
+      * @return {Number}
+      */
+  static Forth(arg) {
+    if (!Utills.CheckNumberEmpty(arg)) {
+      return '';
     }
 
-    const stringNumber = `${number}`;
+    const stringNumber = `${arg}`;
     const arrayNumber = stringNumber.split('');
 
     let result = '';
     for (const objValue of arrayNumber) {
-        result = objValue + result;
+      result = objValue + result;
     }
 
-    return number <= 0 ? -Math.abs(parseFloat(result)) : parseFloat(result);
+    return arg <= 0 ? -Math.abs(parseFloat(result)) : parseFloat(result);
+  }
 }
 
-module.exports = { reverseIntMethodOne, reverseIntMethodTwo, reverseIntMethodThree, reverseIntMethodForth };
+module.exports = ReverseInt;
 
 // https://www.freecodecamp.org/news/js-basics-how-to-reverse-a-number-9aefc20afa8d/

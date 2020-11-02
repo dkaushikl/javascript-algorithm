@@ -10,71 +10,98 @@
 //   anagram('Rail! Safety!', 'fairy tales') --> true
 //   anagram(`Hi there`, `Bye there`) --> false
 
-const utils = require('../utils/index.js');
+const Utills = require('../utills/index.js');
 
-/**
- * @param {String} mainString - First string
- * @param {String} checkedString - Second string
- * @return {Boolean} check whether string is anagram or not
- */
-function anagramOne(mainString, checkedString) {
-    if (!utils.checkStringEmpty(mainString) || !utils.checkStringEmpty(checkedString)) {
-        return '';
+/** Anagram Class */
+class Anagram {
+  /**
+     * Check whether string is anagram
+     *
+     * @public
+     * @method
+     * @param {String} arg1 - First argument
+     * @param {String} arg2 - Second argument
+     * @return {Boolean}
+     */
+
+  static One(arg1, arg2) {
+    if (!Utills.CheckStringEmpty(arg1) || !Utills.CheckStringEmpty(arg2)) {
+      return '';
     }
 
     // Sort is used to sorting the array alphabet wise.
-    const firstString = utils.clearString(mainString).split('').sort().join('');
+    const firstString = Utills.ClearString(arg1).split('').sort().join('');
 
-    const secondString = utils.clearString(checkedString).split('').sort().join('');
+    const secondString = Utills.ClearString(arg2).split('').sort().join('');
 
-    return firstString == secondString;
-}
+    return firstString === secondString;
+  };
 
-function anagramTwo(mainString, checkedString) {
-    if (!utils.checkStringEmpty(mainString) || !utils.checkStringEmpty(checkedString)) {
-        return '';
+  /**
+     * Check whether string is anagram
+     *
+     * @public
+     * @method
+     * @param {String} arg1 - First argument
+     * @param {String} arg2 - Second argument
+     * @return {Boolean}
+     */
+
+  static Two(arg1, arg2) {
+    if (!Utills.CheckStringEmpty(arg1) || !Utills.CheckStringEmpty(arg2)) {
+      return '';
     }
 
     // Sort is used to sorting the array alphabet wise.
-    const firstString = utils.clearString(mainString);
-    const secondString = utils.clearString(checkedString);
+    const firstString = Utills.ClearString(arg1);
+    const secondString = Utills.ClearString(arg2);
 
     if (firstString.length !== secondString.length) {
-        return false;
+      return false;
     }
 
     const result = {};
     for (const char of firstString) {
-        result[char] = result[char] ? result[char] += 1 : result[char] = 1;
+      result[char] = result[char] ? result[char] += 1 : result[char] = 1;
     }
 
     for (const char of secondString) {
-        if (!result[char]) {
-            return false;
-        }
+      if (!result[char]) {
+        return false;
+      }
     }
     return true;
-}
+  };
 
-function anagramThree(mainString, checkedString) {
-    if (!utils.checkStringEmpty(mainString) || !utils.checkStringEmpty(checkedString)) {
-        return '';
+  /**
+     * Check whether string is anagram
+     *
+     * @public
+     * @method
+     * @param {String} arg1 - First argument
+     * @param {String} arg2 - Second argument
+     * @return {Boolean}
+     */
+  static Three(arg1, arg2) {
+    if (!Utills.CheckStringEmpty(arg1) || !Utills.CheckStringEmpty(arg2)) {
+      return '';
     }
 
-    const firstString = utils.clearString(mainString).split('').sort();
-    const secondString = utils.clearString(checkedString);
+    const firstString = Utills.ClearString(arg1).split('').sort();
+    const secondString = Utills.ClearString(arg2);
 
-    let isAnagram = true;
+    let result = true;
 
     for (const element of secondString) {
-        const letterIndex = firstString.findIndex((x) => x === element);
-        if (letterIndex === -1) {
-            isAnagram = false;
-            break;
-        }
+      const letterIndex = firstString.findIndex((x) => x === element);
+      if (letterIndex === -1) {
+        result = false;
+        break;
+      }
     }
 
-    return isAnagram;
+    return result;
+  };
 }
 
-module.exports = { anagramOne, anagramTwo, anagramThree };
+module.exports = Anagram;

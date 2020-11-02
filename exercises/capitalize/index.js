@@ -10,131 +10,193 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 
 
-const utils = require('../utils/index.js');
+const Utills = require('../utills/index.js');
 
-/**
- * Make first letter capital in string.
- * @method
- * @param {String} string - parameter
- * @returns {FinalString} final Result
- */
+/** Capitalize Class */
+class Capitalize {
 
-function capitalizeOne(string) {
-    if (!utils.checkStringEmpty(string)) {
-        return '';
+  /**
+     * Make first letter capital from string and return result.
+     *
+     * @public
+     * @method
+     * @param {String} arg - First argument
+     * @return {Boolean}
+     */
+
+  static One(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
-    const arrayString = utils.convertToArray(string, ' ');
-    let finalString = ''; let index = 0;
+    const arrayString = Utills.ConvertToArray(arg, ' ');
+    let result = ''; let index = 0;
 
     while (index < arrayString.length) {
-        finalString += `${finalString ? ' ' : ''}${arrayString[index].charAt(0).toUpperCase() + arrayString[index].slice(1)}`;
-        index++;
+      result += `${result ? ' ' : ''}${arrayString[index].charAt(0).toUpperCase() + arrayString[index].slice(1)}`;
+      index += 1
     }
 
-    return finalString;
-}
+    return result;
+  };
 
-function capitalizeTwo(string) {
-    if (!utils.checkStringEmpty(string)) {
-        return '';
+  /**
+    * Make first letter capital from string and return result.
+    *
+    * @public
+    * @method
+    * @param {String} arg - First argument
+    * @return {Boolean}
+    */
+  static Two(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
-    const arrayString = utils.convertToArray(string, ' ');
-    let finalString = '';
+    const arrayString = Utills.ConvertToArray(arg, ' ');
+    let result = '';
 
     for (const element of arrayString) {
-        finalString += `${finalString ? ' ' : ''}${element.charAt(0).toUpperCase() + element.slice(1)}`;
+      result += `${result ? ' ' : ''}${element.charAt(0).toUpperCase() + element.slice(1)}`;
     }
 
-    return finalString;
-}
+    return result;
+  };
 
-function capitalizeThree(string) {
-    if (!utils.checkStringEmpty(string)) {
-        return '';
+  /**
+    * Make first letter capital from string and return result.
+    *
+    * @public
+    * @method
+    * @param {String} arg - First argument
+    * @return {Boolean}
+    */
+  static Three(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
-    const arrayString = utils.convertToArray(string, ' ');
+    const arrayString = Utills.ConvertToArray(arg, ' ');
 
-    const result = arrayString.reduce((finalString, newString) => {
-        return `${finalString ? `${finalString} ` : ''}${newString.charAt(0).toUpperCase() + newString.slice(1)}`;
+    const result = arrayString.reduce((result, newString) => {
+      return `${result ? `${result} ` : ''}${newString.charAt(0).toUpperCase() + newString.slice(1)}`;
     }, '');
 
     return result;
-}
+  };
 
-function capitalizeForth(string) {
-    if (!utils.checkStringEmpty(string)) {
-        return '';
+  /**
+    * Make first letter capital from string and return result.
+    *
+    * @public
+    * @method
+    * @param {String} arg - First argument
+    * @return {Boolean}
+    */
+  static Forth(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
-    const arrayString = utils.convertToArray(string, ' ');
-    let finalString = '';
+    const arrayString = Utills.ConvertToArray(arg, ' ');
+    let result = '';
 
-    for (let index = 0; index < arrayString.length; index++) {
-        finalString += `${finalString ? ' ' : ''}${arrayString[index].charAt(0).toUpperCase() + arrayString[index].slice(1)}`;
+    for (let index = 0; index < arrayString.length; index += 1) {
+      result += `${result ? ' ' : ''}${arrayString[index].charAt(0).toUpperCase() + arrayString[index].slice(1)}`;
     }
 
-    return finalString;
-}
+    return result;
+  };
 
-function capitalizeFifth(string) {
-    if (!utils.checkStringEmpty(string)) {
-        return '';
+  /**
+    * Make first letter capital from string and return result.
+    *
+    * @public
+    * @method
+    * @param {String} arg - First argument
+    * @return {Boolean}
+    */
+  static Fifth(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
-    string = utils.convertToString(string).toLowerCase();
-    const stringArray = string.split(' ');
-    const result = `${string.charAt(0).toUpperCase()}${stringArray[0].slice(1)}`;
+    arg = Utills.ConvertToString(arg).toLowerCase();
+    const stringArray = arg.split(' ');
+    const result = `${arg.charAt(0).toUpperCase()}${stringArray[0].slice(1)}`;
     const cutString = stringArray.splice(1).join(' ');
-    return `${result}${cutString ? ' ' : ''}${capitalizeFifth(cutString)}`;
-}
+    return `${result}${cutString ? ' ' : ''}${this.Fifth(cutString)}`;
+  };
 
-function capitalizeSixth(string) {
-    if (!utils.checkStringEmpty(string)) {
-        return '';
+  /**
+    * Make first letter capital from string and return result.
+    *
+    * @public
+    * @method
+    * @param {String} arg - First argument
+    * @return {Boolean}
+    */
+  static Sixth(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
-    string = utils.convertToString(string).toLowerCase();
+    arg = Utills.ConvertToString(arg).toLowerCase();
 
-    let finalResult = string[0].toUpperCase();
+    let finalResult = arg[0].toUpperCase();
 
-    for (let index = 1; index < string.length; index++) {
-        if (string[index - 1] === ' ') {
-            finalResult += string[index].toUpperCase();
-        } else {
-            finalResult += string[index];
-        }
+    for (let index = 1; index < arg.length; index += 1) {
+      if (arg[index - 1] === ' ') {
+        finalResult += arg[index].toUpperCase();
+      } else {
+        finalResult += arg[index];
+      }
     }
 
     return finalResult;
-}
+  };
 
-function capitalizeSeventh(string) {
-    if (!utils.checkStringEmpty(string)) {
-        return '';
+  /**
+    * Make first letter capital from string and return result.
+    *
+    * @public
+    * @method
+    * @param {String} arg - First argument
+    * @return {Boolean}
+    */
+  static Seventh(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
     let finalResult = '';
-    utils.convertToString(string).toLowerCase().split(' ').map((value) => {
-        finalResult += `${finalResult ? ' ' : ''}${value.charAt(0).toUpperCase() + value.slice(1)}`;
+    Utills.ConvertToString(arg).toLowerCase().split(' ').map((value) => {
+      finalResult += `${finalResult ? ' ' : ''}${value.charAt(0).toUpperCase() + value.slice(1)}`;
     });
 
     return finalResult;
-}
+  };
 
-function capitalizeEighth(string) {
-    if (!utils.checkStringEmpty(string)) {
-        return '';
+  /**
+    * Make first letter capital from string and return result.
+    *
+    * @public
+    * @method
+    * @param {String} arg - First argument
+    * @return {Boolean}
+    */
+  static Eighth(arg) {
+    if (!Utills.CheckStringEmpty(arg)) {
+      return '';
     }
 
     let finalResult = '';
-    utils.convertToString(string).toLowerCase().split(' ').map((value) => {
-        finalResult += `${finalResult ? ' ' : ''}${value.replace(value[0], value[0].toUpperCase())}`;
+    Utills.ConvertToString(arg).toLowerCase().split(' ').map((value) => {
+      finalResult += `${finalResult ? ' ' : ''}${value.replace(value[0], value[0].toUpperCase())}`;
     });
 
     return finalResult;
+  };
 }
 
-module.exports = { capitalizeOne, capitalizeTwo, capitalizeThree, capitalizeForth, capitalizeFifth, capitalizeSixth, capitalizeSeventh, capitalizeEighth };
+module.exports = Capitalize;

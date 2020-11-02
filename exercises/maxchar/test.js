@@ -1,35 +1,38 @@
-const { maxCharMethodOne, maxCharMethodTwo, maxCharMethodThree } = require('./index.js');
+const MaxChar = require('./index.js');
 
-test('maximum character using method 1', () => {
-    expect(maxCharMethodOne('')).toEqual('');
-    expect(maxCharMethodOne('null')).toEqual('l');
-    expect(maxCharMethodOne(null)).toEqual('');
-    expect(maxCharMethodOne(undefined)).toEqual('');
-    expect(maxCharMethodOne('kaushik')).toEqual('k');
-    expect(maxCharMethodOne('helllllo')).toEqual('l');
-    expect(maxCharMethodOne('55555kaushik')).toEqual('5');
-    expect(maxCharMethodOne('@@@123')).toEqual('@');
+describe('Maximum Character', function () {
+  'use strict';
+
+  it('maximum character using method 1', () => {
+    expect(MaxChar.One('')).toEqual('');
+    expect(MaxChar.One('null')).toEqual('l');
+    expect(MaxChar.One(null)).toEqual('');
+    expect(MaxChar.One(undefined)).toEqual('');
+    expect(MaxChar.One('kaushik')).toEqual('k');
+    expect(MaxChar.One('helllllo')).toEqual('l');
+    expect(MaxChar.One('55555kaushik')).toEqual('5');
+    expect(MaxChar.One('@@@123')).toEqual('@');
+  });
+
+  it('maximum character using method 2', () => {
+    expect(MaxChar.Two('')).toEqual('');
+    expect(MaxChar.Two('null')).toEqual('l');
+    expect(MaxChar.Two(null)).toEqual('');
+    expect(MaxChar.Two(undefined)).toEqual('');
+    expect(MaxChar.Two('kaushik')).toEqual('k');
+    expect(MaxChar.Two('helllllo')).toEqual('l');
+    expect(MaxChar.Two('55555kaushik')).toEqual('5');
+    expect(MaxChar.Two('@@@123')).toEqual('@');
+  });
+
+  it('maximum character using method 3', () => {
+    expect(MaxChar.Three('')).toEqual('');
+    expect(MaxChar.Three('null')).toEqual('l');
+    expect(MaxChar.Three(null)).toEqual('');
+    expect(MaxChar.Three(undefined)).toEqual('');
+    expect(MaxChar.Three('kaushik')).toEqual('k');
+    expect(MaxChar.Three('helllllo')).toEqual('l');
+    expect(MaxChar.Three('55555kaushik')).toEqual('5');
+    expect(MaxChar.Three('@@@123')).toEqual('@');
+  });
 });
-
-test('maximum character using method 2', () => {
-    expect(maxCharMethodTwo('')).toEqual('');
-    expect(maxCharMethodTwo('null')).toEqual('l');
-    expect(maxCharMethodTwo(null)).toEqual('');
-    expect(maxCharMethodTwo(undefined)).toEqual('');
-    expect(maxCharMethodTwo('kaushik')).toEqual('k');
-    expect(maxCharMethodTwo('helllllo')).toEqual('l');
-    expect(maxCharMethodTwo('55555kaushik')).toEqual('5');
-    expect(maxCharMethodTwo('@@@123')).toEqual('@');
-});
-
-test('maximum character using method 3', () => {
-    expect(maxCharMethodThree('')).toEqual('');
-    expect(maxCharMethodThree('null')).toEqual('l');
-    expect(maxCharMethodThree(null)).toEqual('');
-    expect(maxCharMethodThree(undefined)).toEqual('');
-    expect(maxCharMethodThree('kaushik')).toEqual('k');
-    expect(maxCharMethodThree('helllllo')).toEqual('l');
-    expect(maxCharMethodThree('55555kaushik')).toEqual('5');
-    expect(maxCharMethodThree('@@@123')).toEqual('@');
-});
-

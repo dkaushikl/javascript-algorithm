@@ -1,60 +1,64 @@
-const { reverseMethodOne, reverseMethodSecond, reverseMethodThird, reverseMethodForth, reverseMethodFifth, reverseMethodSixth } = require('./index.js');
+const ReverseString = require('./index.js');
 
-test('reverse string using method 1', () => {
-    expect(reverseMethodOne('apple')).toEqual('elppa');
-    expect(reverseMethodOne('hello')).toEqual('olleh');
-    expect(reverseMethodOne('Greetings!')).toEqual('!sgniteerG');
-    expect(reverseMethodOne('')).toEqual('');
-    expect(reverseMethodOne('null')).toEqual('llun');
-    expect(reverseMethodOne(null)).toEqual('');
-    expect(reverseMethodOne(undefined)).toEqual('');
-});
+describe('Reverse String program', function () {
+  'use strict';
 
-test('reverse string using method 2', () => {
-    expect(reverseMethodSecond('apple')).toEqual('elppa');
-    expect(reverseMethodSecond('hello')).toEqual('olleh');
-    expect(reverseMethodSecond('Greetings!')).toEqual('!sgniteerG');
-    expect(reverseMethodSecond('')).toEqual('');
-    expect(reverseMethodSecond('null')).toEqual('llun');
-    expect(reverseMethodSecond(null)).toEqual('');
-    expect(reverseMethodSecond(undefined)).toEqual('');
-});
+  it('reverse string using method 1', () => {
+    expect(ReverseString.One('apple')).toEqual('elppa');
+    expect(ReverseString.One('hello')).toEqual('olleh');
+    expect(ReverseString.One('Greetings!')).toEqual('!sgniteerG');
+    expect(ReverseString.One('')).toEqual('');
+    expect(ReverseString.One('null')).toEqual('llun');
+    expect(ReverseString.One(null)).toEqual('');
+    expect(ReverseString.One(undefined)).toEqual('');
+  });
 
-test('reverse string using method 3', () => {
-    expect(reverseMethodThird('apple')).toEqual('elppa');
-    expect(reverseMethodThird('hello')).toEqual('olleh');
-    expect(reverseMethodThird('Greetings!')).toEqual('!sgniteerG');
-    expect(reverseMethodThird('')).toEqual('');
-    expect(reverseMethodThird('null')).toEqual('llun');
-    expect(reverseMethodThird(null)).toEqual('');
-    expect(reverseMethodThird(undefined)).toEqual('');
-});
+  it('reverse string using method 2', () => {
+    expect(ReverseString.Second('apple')).toEqual('elppa');
+    expect(ReverseString.Second('hello')).toEqual('olleh');
+    expect(ReverseString.Second('Greetings!')).toEqual('!sgniteerG');
+    expect(ReverseString.Second('')).toEqual('');
+    expect(ReverseString.Second('null')).toEqual('llun');
+    expect(ReverseString.Second(null)).toEqual('');
+    expect(ReverseString.Second(undefined)).toEqual('');
+  });
 
-test('reverse string using method 4', () => {
-    expect(reverseMethodForth('apple')).toEqual('elppa');
-    expect(reverseMethodForth('hello')).toEqual('olleh');
-    expect(reverseMethodForth('Greetings!')).toEqual('!sgniteerG');
-    expect(reverseMethodForth('')).toEqual('');
-    expect(reverseMethodForth('null')).toEqual('llun');
-    expect(reverseMethodForth(null)).toEqual('');
-    expect(reverseMethodForth(undefined)).toEqual('');
-});
+  it('reverse string using method 3', () => {
+    expect(ReverseString.Third('apple')).toEqual('elppa');
+    expect(ReverseString.Third('hello')).toEqual('olleh');
+    expect(ReverseString.Third('Greetings!')).toEqual('!sgniteerG');
+    expect(ReverseString.Third('')).toEqual('');
+    expect(ReverseString.Third('null')).toEqual('llun');
+    expect(ReverseString.Third(null)).toEqual('');
+    expect(ReverseString.Third(undefined)).toEqual('');
+  });
 
-test('reverse string using method 5', () => {
-    expect(reverseMethodFifth('apple')).toEqual('elppa');
-    expect(reverseMethodFifth('hello')).toEqual('olleh');
-    expect(reverseMethodFifth('Greetings!')).toEqual('!sgniteerG');
-    expect(reverseMethodFifth('')).toEqual('');
-    expect(reverseMethodFifth('null')).toEqual('llun');
-    expect(reverseMethodFifth(null)).toEqual('');
-    expect(reverseMethodFifth(undefined)).toEqual('');
-});
+  it('reverse string using method 4', () => {
+    expect(ReverseString.Forth('apple')).toEqual('elppa');
+    expect(ReverseString.Forth('hello')).toEqual('olleh');
+    expect(ReverseString.Forth('Greetings!')).toEqual('!sgniteerG');
+    expect(ReverseString.Forth('')).toEqual('');
+    expect(ReverseString.Forth('null')).toEqual('llun');
+    expect(ReverseString.Forth(null)).toEqual('');
+    expect(ReverseString.Forth(undefined)).toEqual('');
+  });
 
-test('reverse string using method 6', () => {
-    expect(reverseMethodSixth('hello')).toEqual('olleh');
-    expect(reverseMethodSixth('Greetings!')).toEqual('!sgniteerG');
-    expect(reverseMethodSixth('')).toEqual('');
-    expect(reverseMethodSixth('null')).toEqual('llun');
-    expect(reverseMethodSixth(null)).toEqual('');
-    expect(reverseMethodSixth(undefined)).toEqual('');
+  it('reverse string using method 5', () => {
+    expect(ReverseString.Fifth('apple')).toEqual('elppa');
+    expect(ReverseString.Fifth('hello')).toEqual('olleh');
+    expect(ReverseString.Fifth('Greetings!')).toEqual('!sgniteerG');
+    expect(ReverseString.Fifth('')).toEqual('');
+    expect(ReverseString.Fifth('null')).toEqual('llun');
+    expect(ReverseString.Fifth(null)).toEqual('');
+    expect(ReverseString.Fifth(undefined)).toEqual('');
+  });
+
+  it('reverse string using method 6', () => {
+    expect(ReverseString.Sixth('hello')).toEqual('olleh');
+    expect(ReverseString.Sixth('Greetings!')).toEqual('!sgniteerG');
+    expect(ReverseString.Sixth('')).toEqual('');
+    expect(ReverseString.Sixth('null')).toEqual('llun');
+    expect(ReverseString.Sixth(null)).toEqual('');
+    expect(ReverseString.Sixth(undefined)).toEqual('');
+  });
 });
