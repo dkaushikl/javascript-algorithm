@@ -1,5 +1,5 @@
 {
-  "name": "algorithm-practice",
+  "name": "javascript-algorithm",
   "version": "1.0.0",
   "description": "implement algorithm practice",
   "main": "index.js",
@@ -11,17 +11,23 @@
     "doc:build": "jsdoc -c doc-config.json",
     "doc:view": "live-server dist --port=9124"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dkaushikl/algorithm-practice.git"
   },
   "keywords": [
-    "javacript"
+    "javacript",
+    "algorithm"
   ],
-  "author": "dkaushikl",
-  "license": "ISC",
+  "author": "Kaushik Dhameliya <dhameliyakaushik13@gmail.com> (https://dkaushikl.github.io)",
+  "license": "MIT",
+  "private": false,
   "bugs": {
-    "url": "https://github.com/dkaushikl/algorithm-practice/issues"
+    "url": "https://github.com/dkaushikl/algorithm-practice/issues",
+    "email": "dhameliyakaushik13@gmail.com"
   },
   "homepage": "https://github.com/dkaushikl/algorithm-practice#readme",
   "devDependencies": {
