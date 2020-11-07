@@ -1,3 +1,2 @@
-/exercises/package-lock.json
-/exercises/node_modules
-/exercises/dist
+node_modules
+/dist
