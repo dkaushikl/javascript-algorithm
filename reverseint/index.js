@@ -10,7 +10,7 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-const Utills = require('../Utills/index');
+const Utills = require('../utills/index.js');
 
 /** ReverseInt Class */
 class ReverseInt {

@@ -5,6 +5,8 @@ This repository contains JavaScript implementations of famous computer science a
 API reference with usage examples available
 <a href="https://dkaushikl.github.io/algorithm-practice/" target="_blank">here</a>.
 
+[![CircleCI](https://circleci.com/gh/dkaushikl/javascript-algorithm.svg?style=svg)](https://circleci.com/gh/dkaushikl/javascript-algorithm)
+
 ## Development
 
 **To install all dev dependencies**

@@ -75,30 +75,6 @@ jobs:
       - run:
           command: npm run doc:build
 
-  test:
-    docker:
-      - image: circleci/node:latest
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run:
-          command: npm ci
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - run:
-          command: npm run test
-
   publish:
     docker:
       - image: circleci/node:latest
@@ -121,7 +97,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-          command: npm run build:doc
+          command: npm run doc:build
 
       - run:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
@@ -139,13 +115,10 @@ workflows:
           requires:
             - pretty
             - lint
-      - test:
-          requires:
-            - build-doc
       - hold:
           type: approval
           requires:
-            - test
+            - build-doc
           filters:
             branches:
               only: master

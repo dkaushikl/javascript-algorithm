@@ -12,7 +12,7 @@
 // Javascipt recursion static
 // array reduce method
 
-const Utills = require('../Utills/index');
+const Utills = require('../utills/index.js');
 
 /** Reverse String Class */
 class ReverseString {
