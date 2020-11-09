@@ -50,20 +50,18 @@
 //   capitalize('hello') --> 'Hello'
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 
-
 const Utills = require('../utills/index.js');
 
 /** Capitalize Class */
 class Capitalize {
-
   /**
-     * Make first letter capital from string and return result.
-     *
-     * @public
-     * @method
-     * @param {String} arg - First argument
-     * @return {Boolean}
-     */
+   * Make first letter capital from string and return result.
+   *
+   * @public
+   * @method
+   * @param {String} arg - First argument
+   * @return {Boolean}
+   */
 
   static One(arg) {
     if (!Utills.CheckStringEmpty(arg)) {
@@ -71,24 +69,25 @@ class Capitalize {
     }
 
     const arrayString = Utills.ConvertToArray(arg, ' ');
-    let result = ''; let index = 0;
+    let result = '';
+    let index = 0;
 
     while (index &lt; arrayString.length) {
       result += `${result ? ' ' : ''}${arrayString[index].charAt(0).toUpperCase() + arrayString[index].slice(1)}`;
-      index += 1
+      index += 1;
     }
 
     return result;
-  };
+  }
 
   /**
-    * Make first letter capital from string and return result.
-    *
-    * @public
-    * @method
-    * @param {String} arg - First argument
-    * @return {Boolean}
-    */
+   * Make first letter capital from string and return result.
+   *
+   * @public
+   * @method
+   * @param {String} arg - First argument
+   * @return {Boolean}
+   */
   static Two(arg) {
     if (!Utills.CheckStringEmpty(arg)) {
       return '';
@@ -102,16 +101,16 @@ class Capitalize {
     }
 
     return result;
-  };
+  }
 
   /**
-    * Make first letter capital from string and return result.
-    *
-    * @public
-    * @method
-    * @param {String} arg - First argument
-    * @return {Boolean}
-    */
+   * Make first letter capital from string and return result.
+   *
+   * @public
+   * @method
+   * @param {String} arg - First argument
+   * @return {Boolean}
+   */
   static Three(arg) {
     if (!Utills.CheckStringEmpty(arg)) {
       return '';
@@ -124,16 +123,16 @@ class Capitalize {
     }, '');
 
     return result;
-  };
+  }
 
   /**
-    * Make first letter capital from string and return result.
-    *
-    * @public
-    * @method
-    * @param {String} arg - First argument
-    * @return {Boolean}
-    */
+   * Make first letter capital from string and return result.
+   *
+   * @public
+   * @method
+   * @param {String} arg - First argument
+   * @return {Boolean}
+   */
   static Forth(arg) {
     if (!Utills.CheckStringEmpty(arg)) {
       return '';
@@ -147,16 +146,16 @@ class Capitalize {
     }
 
     return result;
-  };
+  }
 
   /**
-    * Make first letter capital from string and return result.
-    *
-    * @public
-    * @method
-    * @param {String} arg - First argument
-    * @return {Boolean}
-    */
+   * Make first letter capital from string and return result.
+   *
+   * @public
+   * @method
+   * @param {String} arg - First argument
+   * @return {Boolean}
+   */
   static Fifth(arg) {
     if (!Utills.CheckStringEmpty(arg)) {
       return '';
@@ -167,16 +166,16 @@ class Capitalize {
     const result = `${arg.charAt(0).toUpperCase()}${stringArray[0].slice(1)}`;
     const cutString = stringArray.splice(1).join(' ');
     return `${result}${cutString ? ' ' : ''}${this.Fifth(cutString)}`;
-  };
+  }
 
   /**
-    * Make first letter capital from string and return result.
-    *
-    * @public
-    * @method
-    * @param {String} arg - First argument
-    * @return {Boolean}
-    */
+   * Make first letter capital from string and return result.
+   *
+   * @public
+   * @method
+   * @param {String} arg - First argument
+   * @return {Boolean}
+   */
   static Sixth(arg) {
     if (!Utills.CheckStringEmpty(arg)) {
       return '';
@@ -195,49 +194,55 @@ class Capitalize {
     }
 
     return finalResult;
-  };
+  }
 
   /**
-    * Make first letter capital from string and return result.
-    *
-    * @public
-    * @method
-    * @param {String} arg - First argument
-    * @return {Boolean}
-    */
+   * Make first letter capital from string and return result.
+   *
+   * @public
+   * @method
+   * @param {String} arg - First argument
+   * @return {Boolean}
+   */
   static Seventh(arg) {
     if (!Utills.CheckStringEmpty(arg)) {
       return '';
     }
 
     let finalResult = '';
-    Utills.ConvertToString(arg).toLowerCase().split(' ').map((value) => {
-      finalResult += `${finalResult ? ' ' : ''}${value.charAt(0).toUpperCase() + value.slice(1)}`;
-    });
+    Utills.ConvertToString(arg)
+      .toLowerCase()
+      .split(' ')
+      .map(value => {
+        finalResult += `${finalResult ? ' ' : ''}${value.charAt(0).toUpperCase() + value.slice(1)}`;
+      });
 
     return finalResult;
-  };
+  }
 
   /**
-    * Make first letter capital from string and return result.
-    *
-    * @public
-    * @method
-    * @param {String} arg - First argument
-    * @return {Boolean}
-    */
+   * Make first letter capital from string and return result.
+   *
+   * @public
+   * @method
+   * @param {String} arg - First argument
+   * @return {Boolean}
+   */
   static Eighth(arg) {
     if (!Utills.CheckStringEmpty(arg)) {
       return '';
     }
 
     let finalResult = '';
-    Utills.ConvertToString(arg).toLowerCase().split(' ').map((value) => {
-      finalResult += `${finalResult ? ' ' : ''}${value.replace(value[0], value[0].toUpperCase())}`;
-    });
+    Utills.ConvertToString(arg)
+      .toLowerCase()
+      .split(' ')
+      .map(value => {
+        finalResult += `${finalResult ? ' ' : ''}${value.replace(value[0], value[0].toUpperCase())}`;
+      });
 
     return finalResult;
-  };
+  }
 }
 
 module.exports = Capitalize;
@@ -253,7 +258,7 @@ module.exports = Capitalize;
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Nov 02 2020 18:06:50 GMT+0530 (India Standard Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.6</a> on Mon Nov 09 2020 15:00:25 GMT+0530 (India Standard Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
