@@ -10,27 +10,33 @@ class BinarySearch {
     let start = 0;
     let end = arr.length - 1;
 
+    let result = -1;
     while (arr[start] !== k && arr[end] !== k) {
       let middle = Math.floor((start + end) / 2);
 
       if (arr[middle] === k) {
-        return middle;
+        result = middle;
+        break;
       }
 
       if (arr[middle] < k) {
         start = middle + 1;
         if (arr[start] === k) {
-          return start;
+          result = start;
+          break;
         }
       }
 
       if (arr[middle] > k) {
         end = middle - 1;
         if (arr[end] === k) {
-          return end;
+          result = end;
+          break;
         }
       }
     }
+
+    return result;
   }
 
   static recursive(arr, k, start = 0, end = arr.length - 1) {
@@ -58,7 +64,7 @@ class BinarySearch {
       }
     }
 
-    return BinarySearch.Recursive(arr, k, start, end);
+    return BinarySearch.recursive(arr, k, start, end);
   }
 
   static findSquareRootOfLargeNumber(n) {
@@ -151,8 +157,6 @@ class BinarySearch {
       let sum = (start + end) / 2;
       let mid = Math.floor(sum);
 
-      console.log('start, end, mid', start, end, mid);
-
       if (mid * mid === n) {
         ans = mid;
       }
@@ -218,7 +222,6 @@ class BinarySearch {
     }
 
     let half = BinarySearch.myPow(x, Math.floor(n / 2));
-    console.log(half);
     return n % 2 === 0 ? half * half : half * half * x;
   }
 
@@ -233,9 +236,6 @@ class BinarySearch {
         start += 1;
       } else if (total > target) {
         end -= 1;
-      } else {
-        console.log('start, end', start, end);
-        break;
       }
     }
     return [start + 1, end + 2];
@@ -300,7 +300,6 @@ class BinarySearch {
 
     let endMatrix = matrix[matrix.length - 1];
     if (endMatrix[endMatrix.length - 1] < target) {
-      console.log(result);
       return;
     }
 

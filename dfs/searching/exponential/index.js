@@ -16,7 +16,6 @@ class Exponential {
       // Math.floor(l + (((r - l) / arr[r] - arr[l]) * target - arr[l]))
       // Math.floor(0 + ((14 / 37) * 8))
       pos = Math.floor(left + thirdCondition * forthCondition);
-      console.log('left, right, pos', left, right, pos);
       if (arr[pos] === target) {
         return pos;
       }

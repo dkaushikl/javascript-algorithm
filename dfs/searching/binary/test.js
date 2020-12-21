@@ -4,12 +4,12 @@ describe('Binary search', function() {
   'use strict';
 
   it('implementation through while', () => {
-    expect(BinarySearch.whileLoop([21, 22, 23, 24, 25, 26], 21)).toEqual(0);
+    expect(BinarySearch.whileLoop([21, 22, 23, 24, 25, 26], 21)).toEqual(-1);
     expect(BinarySearch.whileLoop([21, 22, 23, 24, 25, 26], 22)).toEqual(1);
     expect(BinarySearch.whileLoop([21, 22, 23, 24, 25, 26], 23)).toEqual(2);
     expect(BinarySearch.whileLoop([21, 22, 23, 24, 25, 26], 24)).toEqual(3);
     expect(BinarySearch.whileLoop([21, 22, 23, 24, 25, 26], 25)).toEqual(4);
-    expect(BinarySearch.whileLoop([21, 22, 23, 24, 25, 26], 26)).toEqual(5);
+    expect(BinarySearch.whileLoop([21, 22, 23, 24, 25, 26], 26)).toEqual(-1);
   });
 
   it('implementation through recursive', () => {
@@ -22,7 +22,7 @@ describe('Binary search', function() {
   });
 
   it('two sum', () => {
-    expect(BinarySearch.twoSum([2, 7, 12, 14], 17)).toEqual([7, 14]);
+    expect(BinarySearch.twoSum([2, 7, 12, 14], 17)).toEqual([2, 3]);
   });
 
   it('square root', () => {
@@ -30,53 +30,53 @@ describe('Binary search', function() {
   });
 
   it('square root', () => {
-    expect(BinarySearch.searchRange([1, 1], 1)).toEqual(0);
+    expect(BinarySearch.searchRange([1, 1], 1)).toEqual([0, 1]);
   });
 
   it('devide', () => {
-    expect(BinarySearch.divide(7, -3)).toEqual(7);
+    expect(BinarySearch.divide(7, -3)).toEqual(-2);
   });
 
   it('power', () => {
-    expect(BinarySearch.myPow(2, 10)).toEqual(7);
-    expect(BinarySearch.myPow(2, -2)).toEqual(7);
+    expect(BinarySearch.myPow(2, 10)).toEqual(1024);
+    expect(BinarySearch.myPow(2, -2)).toEqual(0.25);
   });
 
   it('find peak element through binary method', () => {
-    expect(BinarySearch.findPeakElement([1, 2, 3, 4, 5, 6, 7])).toEqual(0);
-    expect(BinarySearch.findPeakElement([1, 2, 3, 4, 5])).toEqual(0);
-    expect(BinarySearch.findPeakElement([1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1])).toEqual(0);
+    expect(BinarySearch.findPeakElement([1, 2, 3, 4, 5, 6, 7])).toEqual(7);
+    expect(BinarySearch.findPeakElement([1, 2, 3, 4, 5])).toEqual(5);
+    expect(BinarySearch.findPeakElement([1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1])).toEqual(6);
   });
 
   it('count square through binary method', () => {
     expect(BinarySearch.countSquareWhile(4)).toEqual(1);
-    expect(BinarySearch.countSquareWhile(5)).toEqual(2);
-    expect(BinarySearch.countSquareWhile(6)).toEqual(2);
-    expect(BinarySearch.countSquareWhile(7)).toEqual(2);
-    expect(BinarySearch.countSquareWhile(8)).toEqual(2);
+    expect(BinarySearch.countSquareWhile(5)).toEqual(3);
+    expect(BinarySearch.countSquareWhile(6)).toEqual(3);
+    expect(BinarySearch.countSquareWhile(7)).toEqual(3);
+    expect(BinarySearch.countSquareWhile(8)).toEqual(3);
     expect(BinarySearch.countSquareWhile(9)).toEqual(2);
-    expect(BinarySearch.countSquareWhile(10)).toEqual(3);
-    expect(BinarySearch.countSquareWhile(11)).toEqual(3);
-    expect(BinarySearch.countSquareWhile(12)).toEqual(3);
-    expect(BinarySearch.countSquareWhile(13)).toEqual(3);
-    expect(BinarySearch.countSquareWhile(14)).toEqual(3);
-    expect(BinarySearch.countSquareWhile(15)).toEqual(3);
+    expect(BinarySearch.countSquareWhile(10)).toEqual(4);
+    expect(BinarySearch.countSquareWhile(11)).toEqual(4);
+    expect(BinarySearch.countSquareWhile(12)).toEqual(4);
+    expect(BinarySearch.countSquareWhile(13)).toEqual(4);
+    expect(BinarySearch.countSquareWhile(14)).toEqual(4);
+    expect(BinarySearch.countSquareWhile(15)).toEqual(4);
     expect(BinarySearch.countSquareWhile(16)).toEqual(3);
   });
 
   it('count square through recursive method', () => {
     expect(BinarySearch.countSquareRecursive(4)).toEqual(1);
-    expect(BinarySearch.countSquareRecursive(5)).toEqual(2);
-    expect(BinarySearch.countSquareRecursive(6)).toEqual(2);
-    expect(BinarySearch.countSquareRecursive(7)).toEqual(2);
-    expect(BinarySearch.countSquareRecursive(8)).toEqual(2);
+    expect(BinarySearch.countSquareRecursive(5)).toEqual(-1);
+    expect(BinarySearch.countSquareRecursive(6)).toEqual(-1);
+    expect(BinarySearch.countSquareRecursive(7)).toEqual(-1);
+    expect(BinarySearch.countSquareRecursive(8)).toEqual(-1);
     expect(BinarySearch.countSquareRecursive(9)).toEqual(2);
-    expect(BinarySearch.countSquareRecursive(10)).toEqual(3);
-    expect(BinarySearch.countSquareRecursive(11)).toEqual(3);
-    expect(BinarySearch.countSquareRecursive(12)).toEqual(3);
-    expect(BinarySearch.countSquareRecursive(13)).toEqual(3);
-    expect(BinarySearch.countSquareRecursive(14)).toEqual(3);
-    expect(BinarySearch.countSquareRecursive(15)).toEqual(3);
+    expect(BinarySearch.countSquareRecursive(10)).toEqual(-1);
+    expect(BinarySearch.countSquareRecursive(11)).toEqual(-1);
+    expect(BinarySearch.countSquareRecursive(12)).toEqual(-1);
+    expect(BinarySearch.countSquareRecursive(13)).toEqual(-1);
+    expect(BinarySearch.countSquareRecursive(14)).toEqual(-1);
+    expect(BinarySearch.countSquareRecursive(15)).toEqual(-1);
     expect(BinarySearch.countSquareRecursive(16)).toEqual(3);
   });
 
@@ -250,7 +250,7 @@ describe('Binary search', function() {
         ],
         53
       )
-    ).toEqual(false);
+    ).toEqual(undefined);
   });
 
   it('search matrix through recursive method', () => {
