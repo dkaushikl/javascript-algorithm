@@ -1,5 +1,3 @@
-const prompt = require('prompt');
-
 function isPrime(n) {
   let result = true;
   if (n % 1 !== 0) {
@@ -32,15 +30,13 @@ function isPrime(n) {
 
 function sumOfAllPrime(n) {
   let allPrimes = 0;
-  for (let index = 1; index <= n; index++) {
+  for (let index = 1; index <= n; index += 1) {
     if (isPrime(index)) {
       allPrimes += index;
     }
-    // allPrimes.push(index);
   }
-  console.log(allPrimes);
+
+  return allPrimes;
 }
 
-prompt.get(['Primenumber'], function(err, result) {
-  sumOfAllPrime(result.Primenumber);
-});
+sumOfAllPrime(100);

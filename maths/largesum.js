@@ -106,6 +106,7 @@ function largeSum() {
   for (let index = 0; index < test.length; index = index + 1) {
     sum += parseInt(test[index]);
   }
+  // eslint-disable-no-undef
   console.log(
     BigInt(sum)
       .toString()

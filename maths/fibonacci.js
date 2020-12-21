@@ -1,6 +1,6 @@
 function fibonacci(n) {
   let result = [];
-  for (let index = 0; index < n; index++) {
+  for (let index = 0; index < n; index += 1) {
     result.push(index === 0 || index === 1 ? index : result[index - 2] + result[index - 1]);
   }
   console.log(result);
@@ -15,5 +15,5 @@ function fibonacciRecursive(n, i = 0, r = []) {
   }
 }
 
-// fibonacci(15);
-// fibonacciRecursive(15);
+fibonacci(15);
+fibonacciRecursive(15);

@@ -1,5 +1,6 @@
 {
   "env": {
+    "es2020": true,
     "browser": true,
     "jquery": true,
     "node": true,
@@ -31,7 +32,7 @@
     "new-cap": 0,
     "quotes": [2, "single"],
     "no-unused-vars": 2,
-    "strict": [2, "function"],
+    "strict": [0, "function"],
     "no-extend-native": 2,
     "wrap-iife": [2, "any"],
     "no-empty": 2,

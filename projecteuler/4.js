@@ -4,8 +4,8 @@ const Utills = require('../utills/index.js');
 ('use strict');
 function largestPalindrome(n) {
   var number = -1;
-  for (var i = n; i > 100; i--) {
-    for (var j = n; j > 100; j--) {
+  for (var i = n; i > 100; i -= 1) {
+    for (var j = n; j > 100; j -= 1) {
       if (isPalindrome(j * i)) {
         number = number > j * i ? number : j * i;
       }

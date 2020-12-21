@@ -1,10 +1,10 @@
-function solution(nums) {
+function largeSum(nums) {
   var pos = nums[0].length;
   var ret = '';
   var num = 0;
 
-  while (pos--) {
-    for (var i = nums.length; i--; ) {
+  while ((pos -= 1)) {
+    for (var i = nums.length; (i -= 1); ) {
       num += Number(nums[i].charAt(pos));
     }
     ret = (num % 10) + ret;

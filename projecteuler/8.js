@@ -32,7 +32,7 @@ function largestProduct(n) {
 function getMultipliesResult(i, s, n) {
   let testingString = '';
 
-  for (let index = n; index >= 1; index--) {
+  for (let index = n; index >= 1; index -= 1) {
     if (index === 1) {
       testingString += `s.substr(i + ${index}, 1)`;
     } else {
