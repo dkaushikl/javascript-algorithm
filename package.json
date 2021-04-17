@@ -3,15 +3,19 @@
   "version": "1.0.11",
   "description": "implement algorithm practice",
   "main": "index.js",
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.19.1"
+  },
   "scripts": {
-    "lint:js": "eslint \"./**/*.js\"",
-    "lint": "npm run lint:js -- --fix",
+    "build": "tsc",
     "test": "jest",
-    "deploy": "npm run doc:build && gh-pages -d dist -b gh-pages",
+    "lint": "tslint --fix -c tslint.json 'src/**/*{.ts}'",
+    "deploy": "gh-pages -d dist -b gh-pages",
     "doc": "npm run doc:build && npm run doc:view",
-    "doc:build": "jsdoc -c doc-config.json",
+    "doc:build": "npm run build && jsdoc -c doc-config.json",
     "doc:view": "live-server dist --port=9124",
-    "pretty": "prettier --write \"./**/*.{js,json}\"",
+    "pretty": "prettier --write \"./**/*.{ts,json}\"",
     "check-pretty": "prettier --check \"./**/*.{js,json}\"",
     "npm-deploy": "npm deploy"
   },
@@ -51,17 +55,25 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^8.2.0",
     "@jeremyckahn/minami": "^1.3.1",
+    "@types/jest": "^26.0.22",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
     "commitlint": "^8.2.0",
-    "eslint": "^6.8.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-plugin-prettier": "^3.1.4",
     "gh-pages": "^1.1.0",
     "husky": "^4.3.0",
     "jest": "^26.6.3",
     "jsdoc": "^3.6.4",
     "lint-staged": "^10.5.1",
     "live-server": "^1.2.0",
-    "prettier": "^1.18.2",
-    "pretty-quick": "^1.11.1"
+    "prettier": "^1.19.1",
+    "pretty-quick": "^1.11.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-consistent-codestyle": "^1.16.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "ts-jest": "^26.5.5",
+    "tslint-plugin-prettier": "^2.3.0"
   }
 }

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "ES2017",
+    "module": "commonjs",
+    "declaration": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "alwaysStrict": true,
+    "sourceMap": false,
+    "outDir": "out",
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  },
+  "files": ["src/index.ts"],
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "src/data-structure",
+    "src/leetcode",
+    "src/dfs",
+    "src/ctci",
+    "src/hackerRank",
+    "src/js-concept",
+    "src/maths",
+    "src/projecteuler",
+    "src/algorithm/steps"
+  ]
+}
