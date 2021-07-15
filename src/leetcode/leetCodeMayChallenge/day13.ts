@@ -34,7 +34,11 @@ var removeKdigits = function(num, k) {
     result = [];
 
   for (var i = 0; i < n; i++) {
-    while (k > 0 && result.length > 0 && result[result.length - 1] > numsArray[i]) {
+    while (
+      k > 0 &&
+      result.length > 0 &&
+      result[result.length - 1] > numsArray[i]
+    ) {
       result.pop();
       k--;
     }

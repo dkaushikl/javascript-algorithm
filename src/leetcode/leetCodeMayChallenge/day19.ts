@@ -34,7 +34,10 @@ var StockSpanner = () => {
  */
 StockSpanner.prototype.next = function(price) {
   let span = 1;
-  while (this.stocks.length > 0 && this.stocks[this.stocks.length - 1][0] <= price) {
+  while (
+    this.stocks.length > 0 &&
+    this.stocks[this.stocks.length - 1][0] <= price
+  ) {
     span += this.stocks.pop()[1];
   }
   this.stocks.push([price, span]);

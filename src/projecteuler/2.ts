@@ -7,7 +7,9 @@ function Fibonacci1(n) {
     if (result.length === 0) {
       value = 1;
     } else {
-      value = (result[i - 1] ? result[i - 1] : 0) + (result[i - 2] ? result[i - 2] : 0);
+      value =
+        (result[i - 1] ? result[i - 1] : 0) +
+        (result[i - 2] ? result[i - 2] : 0);
     }
 
     if (value >= 4000000) {

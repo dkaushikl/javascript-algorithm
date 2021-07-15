@@ -5,37 +5,28 @@
 // Input: Tac t Coa
 // Output: Tru e (permutations : "tac o cat" , "atc o eta" , etc. )
 
-function replaceChar(origString, replaceChar, index) {
-  let firstPart = origString.substr(0, index);
-  let lastPart = origString.substr(index + 1);
+const palinPerm = s => {
+  s = s.replace(' ', '').toLowerCase();
 
-  let newString = firstPart + replaceChar + lastPart;
-  return newString;
-}
+  if (s.length % 2 === 0) return false;
 
-function allPermutation(s) {
-  let arr = [];
-  for (let i = 1; i <= s.length; i++) {
-    for (let j = 1; j <= s.length; j++) {
-      if (i === j) continue;
-      const newString = replaceChar(s, s[i - 1], j - 1);
-      const finalString = replaceChar(newString, s[j - 1], i - 1);
-      const reverseString = finalString
-        .split('')
-        .reverse()
-        .join('');
+  const map = new Map();
 
-      console.log(finalString, reverseString);
+  for (const item of s) {
+    map.set(item, (map.get(item) || 0) + 1);
+  }
 
-      if (finalString === reverseString) arr.push(finalString);
+  let mullican = false;
+
+  for (const item of map) {
+    if (item[1] % 2 !== 0) {
+      if (mullican) return false;
+
+      mullican = true;
     }
   }
 
-  return arr;
-}
+  return true;
+};
 
-function palinPerm(s) {
-  console.log(allPermutation(s.replace(' ', '').toLowerCase()));
-}
-
-console.log(palinPerm('Tact Coa'));
+console.log(palinPerm('Tactcac'));

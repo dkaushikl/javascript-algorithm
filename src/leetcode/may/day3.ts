@@ -84,7 +84,9 @@ var canConstruct = function(ransomNote, magazine) {
     return true;
   }
 
-  return Object.keys(ransomData).filter(a => ransomData[a] > 0).length > 0 ? false : true;
+  return Object.keys(ransomData).filter(a => ransomData[a] > 0).length > 0
+    ? false
+    : true;
 };
 
 canConstruct('AaabBacDDdDSC', 'AaabBacDDdDSC');

@@ -306,7 +306,10 @@ class BinarySearch {
     while (start <= end) {
       let mid = Math.floor((start + end) / 2);
 
-      if (matrix[mid][0] <= target && target <= matrix[mid][matrix[mid].length - 1]) {
+      if (
+        matrix[mid][0] <= target &&
+        target <= matrix[mid][matrix[mid].length - 1]
+      ) {
         let arr = matrix[mid];
         let start2 = 0;
         let end2 = arr.length - 1;

@@ -3,55 +3,22 @@
 // "compressed" string would not become smaller than the original string, your method should return
 // the original string. You can assume the string has only uppercase and lowercase letters (a - z)
 
-function strComp(s) {
-  let result = '';
-  let oldValue = '',
-    count = 0;
+const compress = (s: string | any[]) => {
+  let compressed = '';
+  let previous = s[0];
+  let count = 0;
 
-  for (let i = 0; i < s.length; i++) {
-    if (i + 1 === s.length) {
-      count++;
-      result += oldValue + count;
-      break;
-    }
-
-    if (oldValue === s[i]) {
-      count++;
-    } else {
-      if (oldValue != '' && i !== 0) {
-        result += count === 1 ? oldValue : oldValue + count;
-      }
-
+  for (const item of s)
+    if (previous !== item) {
+      compressed += count === 1 ? previous : previous + count;
+      previous = item;
       count = 1;
-      oldValue = s[i];
-    }
-  }
+    } else count++;
 
-  return result;
-}
+  return (compressed += previous + count);
+};
 
-function strComp1(string) {
-  var compressed = '';
-  var currChar = '';
-  var currCount = '';
-  var maxCount = 1;
-  for (var i = 0; i < string.length; i++) {
-    if (currChar !== string[i]) {
-      compressed = compressed + currChar + currCount;
-      maxCount = Math.max(maxCount, currCount);
-      currChar = string[i];
-      currCount = 1;
-    } else {
-      currCount++;
-    }
-  }
-  compressed = compressed + currChar + currCount;
-  maxCount = Math.max(maxCount, currCount);
-
-  return maxCount === 1 ? string : compressed;
-}
-
-console.log(strComp1('aabcccccaaa'));
-// console.log(strComp1("aabbccc"));
-// console.log(strComp1("abbbbbbbbbbbb"));
-// console.log(strComp1("aaabbaa"));
+console.log(compress('aabcccccaaa'));
+console.log(compress('aabbccc'));
+console.log(compress('abbbbbbbbbbbb'));
+console.log(compress('aaabbaa'));

@@ -40,7 +40,7 @@ function isCompleted(completed) {
 isCompleted(true)
   .then(
     success => console.log(success),
-    error => console.log(error),
+    error => console.log(error)
   )
   .finally(() => console.log('it`s finally method'));
 

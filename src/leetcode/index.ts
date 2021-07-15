@@ -101,9 +101,11 @@ function findMedian(arr1, arr2) {
     }
   }
 
-  for (let index1 = i; index1 < arr1.length; index1++) result.push(arr1[index1]);
+  for (let index1 = i; index1 < arr1.length; index1++)
+    result.push(arr1[index1]);
 
-  for (let index2 = j; index2 < arr2.length; index2++) result.push(arr2[index2]);
+  for (let index2 = j; index2 < arr2.length; index2++)
+    result.push(arr2[index2]);
 
   return result.length % 2 === 0
     ? (result[result.length / 2 - 1] + result[result.length / 2]) / 2
@@ -154,7 +156,7 @@ var m = [
   [1, 2, 3, 4],
   [5, 6, 7, 8],
   [9, 10, 11, 12],
-  [13, 14, 15, 16],
+  [13, 14, 15, 16]
 ];
 
 // function spinalMatrix(arr) {
@@ -171,7 +173,9 @@ var m = [
 // spinalMatrix(m);
 
 function checkRow(arr, sign) {
-  for (let i = 0; i < arr.length; i++) if (arr[i][0] === sign && arr[i][1] === sign && arr[i][2] === sign) return true;
+  for (let i = 0; i < arr.length; i++)
+    if (arr[i][0] === sign && arr[i][1] === sign && arr[i][2] === sign)
+      return true;
 
   return false;
 }
@@ -196,9 +200,9 @@ ticTacTOE(
   [
     ['O', 'O', 'O'],
     ['X', 'O', '-'],
-    ['X', 'X', 'O'],
+    ['X', 'X', 'O']
   ],
-  'O',
+  'O'
 );
 
 // commonElement([[1, 2, 3], [1, 2, 3, 4], [1, 2]]);
@@ -234,7 +238,7 @@ function findPeakFromTwoD(arr, rowLength, colLength) {
 const arr = [
   [10, 20, 16],
   [21, 30, 14],
-  [7, 16, 32],
+  [7, 16, 32]
 ];
 
 console.log(findPeakFromTwoD(arr, arr.length, arr[0].length));

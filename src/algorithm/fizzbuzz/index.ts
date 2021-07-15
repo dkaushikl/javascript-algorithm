@@ -94,7 +94,9 @@ export class FizzBuzz {
     for (let index = 1; index <= arg; index += 1) {
       const f = index % 3 === 0;
       const b = index % 5 === 0;
-      finalResult = `${finalResult ? `${finalResult},` : ''}${f ? (b ? 'fizzbuzz' : 'fizz') : b ? 'buzz' : index}`;
+      finalResult = `${finalResult ? `${finalResult},` : ''}${
+        f ? (b ? 'fizzbuzz' : 'fizz') : b ? 'buzz' : index
+      }`;
     }
 
     return finalResult;
@@ -115,7 +117,8 @@ export class FizzBuzz {
 
     let finalResult = '';
     for (let index = 1; index <= arg; index += 1) {
-      finalResult += `${finalResult ? ',' : ''}${(index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz') || index}`;
+      finalResult += `${finalResult ? ',' : ''}${(index % 3 ? '' : 'fizz') +
+        (index % 5 ? '' : 'buzz') || index}`;
     }
     return finalResult;
   }
@@ -148,7 +151,8 @@ export class FizzBuzz {
       .fill(arg)
       .map((_, index) => {
         index += 1;
-        finalResult += `${finalResult ? ',' : ''}${(index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz') || index}`;
+        finalResult += `${finalResult ? ',' : ''}${(index % 3 ? '' : 'fizz') +
+          (index % 5 ? '' : 'buzz') || index}`;
         return;
       });
     return finalResult;
@@ -174,7 +178,8 @@ export class FizzBuzz {
     // Array.apply(null, Array(arg))
     [...Array(arg)].map((_, index) => {
       index += 1;
-      finalResult += `${finalResult ? ',' : ''}${(index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz') || index}`;
+      finalResult += `${finalResult ? ',' : ''}${(index % 3 ? '' : 'fizz') +
+        (index % 5 ? '' : 'buzz') || index}`;
       return;
     });
     return finalResult;
@@ -200,7 +205,8 @@ export class FizzBuzz {
 
     Object.keys(new Int8Array(arg)).map((_, index) => {
       index += 1;
-      finalResult += `${finalResult ? ',' : ''}${(index % 3 ? '' : 'fizz') + (index % 5 ? '' : 'buzz') || index}`;
+      finalResult += `${finalResult ? ',' : ''}${(index % 3 ? '' : 'fizz') +
+        (index % 5 ? '' : 'buzz') || index}`;
       return;
     });
     return finalResult;

@@ -4,7 +4,7 @@ const {
   reverseMethodThird,
   reverseMethodForth,
   reverseMethodFifth,
-  reverseMethodSixth,
+  reverseMethodSixth
 } = require('./index.js');
 
 test('reverse string using method 1', () => {

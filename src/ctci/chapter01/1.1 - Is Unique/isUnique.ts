@@ -24,7 +24,7 @@ function allUniqueChars2(s) {
 }
 
 function allUniqueChars3(s) {
-  const charArr = [...Array(255)].map((_, i) => {
+  const charArr: any = [...Array(255)].map((_, i) => {
     i: false;
   });
 

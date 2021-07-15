@@ -33,7 +33,7 @@ export class MaxChar {
       }
       const obj = {
         key: arrayKey,
-        value: 1,
+        value: 1
       };
       resultArray.push(obj);
       return;
@@ -67,7 +67,7 @@ export class MaxChar {
         } else {
           finalResult.push({
             key: newChar,
-            value: 1,
+            value: 1
           });
         }
         return finalResult;

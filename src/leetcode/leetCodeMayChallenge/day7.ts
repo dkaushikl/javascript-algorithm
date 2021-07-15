@@ -44,7 +44,9 @@ var isCousins = function(root, x, y) {
 
   inOrder(root, null, 0, levelMap, parentMap);
 
-  return levelMap[x] === levelMap[y] && parentMap[x] !== parentMap[y] ? true : false;
+  return levelMap[x] === levelMap[y] && parentMap[x] !== parentMap[y]
+    ? true
+    : false;
 };
 
 var inOrder = function(root, parent, depth, levelMap, parentMap) {
@@ -54,6 +56,8 @@ var inOrder = function(root, parent, depth, levelMap, parentMap) {
 
   levelMap[root.val] = depth;
   parentMap[root.val] = parent === null ? null : parent.val;
-  if (root.left !== null) inOrder(root.left, root, depth + 1, levelMap, parentMap);
-  if (root.right !== null) inOrder(root.right, root, depth + 1, levelMap, parentMap);
+  if (root.left !== null)
+    inOrder(root.left, root, depth + 1, levelMap, parentMap);
+  if (root.right !== null)
+    inOrder(root.right, root, depth + 1, levelMap, parentMap);
 };

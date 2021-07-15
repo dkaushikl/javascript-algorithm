@@ -95,7 +95,7 @@ module.exports = {
   reverseMethodThird,
   reverseMethodForth,
   reverseMethodFifth,
-  reverseMethodSixth,
+  reverseMethodSixth
 };
 
 // https://www.geeksforgeeks.org/reverse-a-string-in-javascript/

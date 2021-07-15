@@ -27,7 +27,7 @@ function countMatches(items, ruleKey, ruleValue) {
 const items = [
   ['phone', 'blue', 'pixel'],
   ['computer', 'silver', 'lenovo'],
-  ['phone', 'gold', 'iphone'],
+  ['phone', 'gold', 'iphone']
 ];
 countMatches(items, 'color', 'silver');
 countMatches(items, 'type', 'phone');

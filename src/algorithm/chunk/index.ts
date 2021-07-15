@@ -45,7 +45,8 @@ export class Chunk {
    */
 
   static One(arr: number[], size: number): Array<any> | '' {
-    if (!Utills.CheckArrayEmpty(arr) || !Utills.CheckNumberEmpty(size)) return '';
+    if (!Utills.CheckArrayEmpty(arr) || !Utills.CheckNumberEmpty(size))
+      return '';
 
     const finalResult: any = [];
     let chunked: number[] = [];
@@ -80,7 +81,8 @@ export class Chunk {
    * @return {Array}
    */
   static Two(arr: number[], size: number): Array<any> | '' {
-    if (!Utills.CheckArrayEmpty(arr) || !Utills.CheckNumberEmpty(size)) return '';
+    if (!Utills.CheckArrayEmpty(arr) || !Utills.CheckNumberEmpty(size))
+      return '';
 
     const finalResult: Array<any> = [];
 
@@ -104,7 +106,8 @@ export class Chunk {
    * @return {Array}
    */
   static Three(arr, size): Array<any> | '' {
-    if (!Utills.CheckArrayEmpty(arr) || !Utills.CheckNumberEmpty(size)) return '';
+    if (!Utills.CheckArrayEmpty(arr) || !Utills.CheckNumberEmpty(size))
+      return '';
 
     const finalResult: Array<any> = [];
     let index = 0;
@@ -130,7 +133,8 @@ export class Chunk {
    * @return {Array}
    */
   static Forth(arr, size): Array<any> | '' {
-    if (!Utills.CheckArrayEmpty(arr) || !Utills.CheckNumberEmpty(size)) return '';
+    if (!Utills.CheckArrayEmpty(arr) || !Utills.CheckNumberEmpty(size))
+      return '';
 
     const finalResult: Array<any> = [];
 
@@ -150,12 +154,14 @@ export class Chunk {
    * @return {Array}
    */
   static Fifth(arr, size): Array<any> | '' {
-    if (!Utills.CheckArrayEmpty(arr) || !Utills.CheckNumberEmpty(size)) return '';
+    if (!Utills.CheckArrayEmpty(arr) || !Utills.CheckNumberEmpty(size))
+      return '';
 
     const finalResult: Array<any> = [];
     const numOfChild: number = Math.ceil(arr.length / size);
 
-    for (let index = 0; index < numOfChild; index += 1) finalResult.push(arr.splice(0, size));
+    for (let index = 0; index < numOfChild; index += 1)
+      finalResult.push(arr.splice(0, size));
 
     return finalResult;
   }

@@ -29,7 +29,9 @@ var solution = function(isBadVersion) {
     let endIndex = n;
 
     while (startIndex <= endIndex) {
-      console.log(`startIndex and endIndex ->>>>>>>>>>, ${startIndex}  , ${endIndex}`);
+      console.log(
+        `startIndex and endIndex ->>>>>>>>>>, ${startIndex}  , ${endIndex}`
+      );
       let midIndex = Math.floor((startIndex + endIndex) / 2);
       if (isBadVersion(midIndex)) {
         if (!isBadVersion(midIndex - 1)) {

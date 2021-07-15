@@ -19,7 +19,10 @@ function interpret(command) {
     if (command[i] + command[i + 1] === '()') {
       result += 'o';
       i += 1;
-    } else if (command[i] + command[i + 1] + command[i + 2] + command[i + 3] === '(al)') {
+    } else if (
+      command[i] + command[i + 1] + command[i + 2] + command[i + 3] ===
+      '(al)'
+    ) {
       result += 'al';
       i += 3;
     } else {

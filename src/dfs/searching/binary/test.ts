@@ -43,7 +43,9 @@ describe('Binary search', () => {
   it('find peak element through binary method', () => {
     expect(BinarySearch.findPeakElement([1, 2, 3, 4, 5, 6, 7])).toEqual(7);
     expect(BinarySearch.findPeakElement([1, 2, 3, 4, 5])).toEqual(5);
-    expect(BinarySearch.findPeakElement([1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1])).toEqual(6);
+    expect(
+      BinarySearch.findPeakElement([1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1])
+    ).toEqual(6);
   });
 
   it('count square through binary method', () => {
@@ -84,170 +86,170 @@ describe('Binary search', () => {
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        1,
-      ),
+        1
+      )
     ).toEqual(true);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        2,
-      ),
+        2
+      )
     ).toEqual(false);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        3,
-      ),
+        3
+      )
     ).toEqual(true);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        4,
-      ),
+        4
+      )
     ).toEqual(false);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        5,
-      ),
+        5
+      )
     ).toEqual(true);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        10,
-      ),
+        10
+      )
     ).toEqual(true);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        11,
-      ),
+        11
+      )
     ).toEqual(true);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        14,
-      ),
+        14
+      )
     ).toEqual(false);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        17,
-      ),
+        17
+      )
     ).toEqual(false);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        20,
-      ),
+        20
+      )
     ).toEqual(true);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        21,
-      ),
+        21
+      )
     ).toEqual(false);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        22,
-      ),
+        22
+      )
     ).toEqual(false);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        23,
-      ),
+        23
+      )
     ).toEqual(true);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        24,
-      ),
+        24
+      )
     ).toEqual(false);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        31,
-      ),
+        31
+      )
     ).toEqual(false);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        37,
-      ),
+        37
+      )
     ).toEqual(false);
     expect(
       BinarySearch.searchMatrixBinary(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        53,
-      ),
+        53
+      )
     ).toEqual(undefined);
   });
 
@@ -257,50 +259,50 @@ describe('Binary search', () => {
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        1,
-      ),
+        1
+      )
     ).toEqual(true);
     expect(
       BinarySearch.searchMatrixRecursive(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        2,
-      ),
+        2
+      )
     ).toEqual(false);
     expect(
       BinarySearch.searchMatrixRecursive(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        3,
-      ),
+        3
+      )
     ).toEqual(true);
     expect(
       BinarySearch.searchMatrixRecursive(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        4,
-      ),
+        4
+      )
     ).toEqual(false);
     expect(
       BinarySearch.searchMatrixRecursive(
         [
           [1, 3, 5, 7],
           [10, 11, 16, 20],
-          [23, 30, 34, 50],
+          [23, 30, 34, 50]
         ],
-        5,
-      ),
+        5
+      )
     ).toEqual(true);
   });
 });

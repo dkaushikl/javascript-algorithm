@@ -9,7 +9,7 @@ async function getUser(userId) {
   await setTimeout(() => {
     Promise.resolve({
       userId: userId,
-      username: 'john',
+      username: 'john'
     });
   }, 3000);
 }

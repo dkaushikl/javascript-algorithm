@@ -32,7 +32,9 @@ export class Capitalize {
     let index = 0;
 
     while (index < arrayString.length) {
-      result += `${result ? ' ' : ''}${arrayString[index].charAt(0).toUpperCase() + arrayString[index].slice(1)}`;
+      result += `${result ? ' ' : ''}${arrayString[index]
+        .charAt(0)
+        .toUpperCase() + arrayString[index].slice(1)}`;
       index += 1;
     }
 
@@ -56,7 +58,8 @@ export class Capitalize {
     let result = '';
 
     for (const element of arrayString) {
-      result += `${result ? ' ' : ''}${element.charAt(0).toUpperCase() + element.slice(1)}`;
+      result += `${result ? ' ' : ''}${element.charAt(0).toUpperCase() +
+        element.slice(1)}`;
     }
 
     return result;
@@ -78,7 +81,8 @@ export class Capitalize {
     const arrayString = Utills.ConvertToArray(arg, ' ');
 
     const result = arrayString.reduce((result, newString) => {
-      return `${result ? `${result} ` : ''}${newString.charAt(0).toUpperCase() + newString.slice(1)}`;
+      return `${result ? `${result} ` : ''}${newString.charAt(0).toUpperCase() +
+        newString.slice(1)}`;
     }, '');
 
     return result;
@@ -101,7 +105,9 @@ export class Capitalize {
     let result = '';
 
     for (let index = 0; index < arrayString.length; index += 1) {
-      result += `${result ? ' ' : ''}${arrayString[index].charAt(0).toUpperCase() + arrayString[index].slice(1)}`;
+      result += `${result ? ' ' : ''}${arrayString[index]
+        .charAt(0)
+        .toUpperCase() + arrayString[index].slice(1)}`;
     }
 
     return result;
@@ -173,7 +179,9 @@ export class Capitalize {
       .toLowerCase()
       .split(' ')
       .map(value => {
-        finalResult += `${finalResult ? ' ' : ''}${value.charAt(0).toUpperCase() + value.slice(1)}`;
+        finalResult += `${finalResult ? ' ' : ''}${value
+          .charAt(0)
+          .toUpperCase() + value.slice(1)}`;
       });
 
     return finalResult;
@@ -197,7 +205,10 @@ export class Capitalize {
       .toLowerCase()
       .split(' ')
       .map(value => {
-        finalResult += `${finalResult ? ' ' : ''}${value.replace(value[0], value[0].toUpperCase())}`;
+        finalResult += `${finalResult ? ' ' : ''}${value.replace(
+          value[0],
+          value[0].toUpperCase()
+        )}`;
       });
 
     return finalResult;

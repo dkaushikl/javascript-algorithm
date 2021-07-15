@@ -31,7 +31,7 @@ var firstUniqChar = function(s) {
     if (!obj[s[c]])
       obj[s[c]] = {
         count: 1,
-        index: c,
+        index: c
       };
     else obj[s[c]].count = obj[s[c]].count + 1;
   }

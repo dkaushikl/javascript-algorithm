@@ -16,7 +16,8 @@
 function defangIPaddress(address) {
   let result = '';
 
-  for (let i = 0; i < address.length; i++) result += address[i] === '.' ? '[.]' : address[i];
+  for (let i = 0; i < address.length; i++)
+    result += address[i] === '.' ? '[.]' : address[i];
 
   return result;
 }

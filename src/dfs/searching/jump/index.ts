@@ -1,5 +1,10 @@
 class JumpSearch {
-  static findElement(arr, target, left = 0, jump = Math.floor(Math.sqrt(arr.length))) {
+  static findElement(
+    arr,
+    target,
+    left = 0,
+    jump = Math.floor(Math.sqrt(arr.length))
+  ) {
     if (arr[left] === target) {
       return left;
     }

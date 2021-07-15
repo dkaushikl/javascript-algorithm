@@ -8,62 +8,53 @@
 // pale, bale - > true
 // pale, bake - > false
 
-function oneAway(string1, string2) {
-  // insert a char for str1 -> remove a char for str2
-  function checkOneMissing(first, second) {
-    if (first.length !== second.length - 1) {
-      return false;
+const oneMissing = (s1: string, s2: string) => {
+  if (s1.length - 1 !== s2.length) return false;
+
+  let mullican = false;
+  let fp = 0;
+  let sp = 0;
+
+  while (fp < s1.length) {
+    if (s1[fp] !== s2[sp]) {
+      if (mullican) return false;
+      mullican = true;
+      fp++;
     } else {
-      var mulligan = false;
-      var fP = 0; // first Pointer
-      var sP = 0; // second Pointer
-      while (fP < first.length) {
-        if (first[fP] !== second[sP]) {
-          if (mulligan) {
-            return false;
-          } else {
-            mulligan = true;
-            sP++; // second length is longer
-          }
-        } else {
-          fP++;
-          sP++;
-        }
-      }
-      return true;
+      fp++;
+      sp++;
     }
   }
 
-  function checkOneDiff(first, second) {
-    if (first.length !== second.length) {
-      return false;
+  return true;
+};
+
+const oneReplace = (s1: string, s2: string) => {
+  if (s1.length !== s2.length) return false;
+
+  let mullican = false;
+  let fp = 0;
+  let sp = 0;
+
+  while (fp < s1.length) {
+    if (s1[fp] !== s2[sp]) {
+      if (mullican) return false;
+      mullican = true;
+      fp++;
+      sp++;
     } else {
-      var mulligan = false;
-      var fP = 0; // first Pointer
-      var sP = 0; // second Pointer
-      while (fP < first.length) {
-        if (first[fP] !== second[sP]) {
-          if (mulligan) {
-            return false; // more than one mismatch
-          } else {
-            mulligan = true; // use up mulligan
-          }
-        }
-        fP++;
-        sP++;
-      }
-      return true;
+      fp++;
+      sp++;
     }
   }
-  // insert a char for str1 -> remove a char for str2
-  // check one diff
 
-  // console log checks
-  // console.log(string1, string2, 'checkMiss', checkOneMissing(string1, string2));
-  // console.log(string2, string1, 'checkMiss', checkOneMissing(string2, string1));
-  // console.log(string1, string2, 'checkDiff', checkOneDiff(string1, string2));
+  return true;
+};
 
-  return checkOneMissing(string1, string2) || checkOneMissing(string2, string1) || checkOneDiff(string1, string2);
-}
+const oneAway = (s1: string, s2: string) => {
+  return oneMissing(s1, s2) || oneReplace(s1, s2);
+};
 
-oneAway('pale', 'ppase');
+// console.log(oneAway('pale', 'pal'));
+console.log(oneAway('pale', 'bale'));
+console.log(oneAway('pale', 'bake'));

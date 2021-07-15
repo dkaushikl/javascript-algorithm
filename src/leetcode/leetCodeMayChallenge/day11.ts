@@ -36,14 +36,22 @@ var floodFill = function(image, sr, sc, newColor) {
   const fillColor = function(row, col) {
     image[row][col] = newColor;
 
-    image[row - 1] != undefined && image[row - 1][col] == oldColor && fillColor(row - 1, col);
-    image[row + 1] != undefined && image[row + 1][col] == oldColor && fillColor(row + 1, col);
+    image[row - 1] != undefined &&
+      image[row - 1][col] == oldColor &&
+      fillColor(row - 1, col);
+    image[row + 1] != undefined &&
+      image[row + 1][col] == oldColor &&
+      fillColor(row + 1, col);
     image[row][col - 1] == oldColor && fillColor(row, col - 1);
     image[row][col + 1] == oldColor && fillColor(row, col + 1);
   };
 
-  image[sr - 1] != undefined && image[sr - 1][sc] == oldColor && fillColor(sr - 1, sc);
-  image[sr + 1] !== undefined && image[sr + 1][sc] == oldColor && fillColor(sr + 1, sc);
+  image[sr - 1] != undefined &&
+    image[sr - 1][sc] == oldColor &&
+    fillColor(sr - 1, sc);
+  image[sr + 1] !== undefined &&
+    image[sr + 1][sc] == oldColor &&
+    fillColor(sr + 1, sc);
   image[sr][sc - 1] == oldColor && fillColor(sr, sc - 1);
   image[sr][sc + 1] == oldColor && fillColor(sr, sc + 1);
 

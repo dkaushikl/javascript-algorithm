@@ -56,7 +56,9 @@ describe('Utills', () => {
   });
 
   it('make string clean', () => {
-    expect(Utills.ClearString('!!##33123][[/.Kaushik!!##":3][[/.')).toEqual('33123kaushik3');
+    expect(Utills.ClearString('!!##33123][[/.Kaushik!!##":3][[/.')).toEqual(
+      '33123kaushik3'
+    );
   });
 
   it('convert string to array', () => {
