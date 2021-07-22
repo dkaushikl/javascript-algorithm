@@ -9,7 +9,6 @@ module.exports = {
   bracketSpacing: true,
   jsxBracketSameLine: false,
   arrowParens: 'avoid',
-  parser: 'babel',
   requirePragma: false,
   insertPragma: false,
   proseWrap: 'preserve',
