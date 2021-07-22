@@ -10,5 +10,3 @@ https://github.com/jwasham/coding-interview-university/commit/7531c4ff422ef4921b
 https://github.com/sadanandpai/javascript-code-challenges/blob/main/challenges/async.md#home
 
 https://github.com/sudheerj/reactjs-interview-questions#what-is-the-benefit-of-component-stack-trace-from-error-boundary
-
-https://github.com/yangshun/tech-interview-handbook
