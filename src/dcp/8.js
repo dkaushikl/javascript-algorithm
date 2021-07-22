@@ -25,14 +25,14 @@
 // N is the number of nodes in the tree
 
 function countUnivalSubtreesF(root) {
-    const res = [0];
-    countUnivalSubtreesFHelper(root, res);
-    return res[0];
-  }
-  
+  const res = [0];
+  countUnivalSubtreesFHelper(root, res);
+  return res[0];
+}
+
 function countUnivalSubtrees(root) {
-    return countUnivalSubtreesF(root);
-  }
+  return countUnivalSubtreesF(root);
+}
 
 function countUnivalSubtreesS(root) {
   if (root === null) return 0;
@@ -43,16 +43,16 @@ function countUnivalSubtreesS(root) {
   return leftCount + rightCount;
 }
 
-const node = new TreeNode(
-  '2',
-  new TreeNode('2', new TreeNode('5'), new TreeNode('2')),
-  new TreeNode('2', new TreeNode('2'))
-);
+// const node = new TreeNode(
+//   '2',
+//   new TreeNode('2', new TreeNode('5'), new TreeNode('2')),
+//   new TreeNode('2', new TreeNode('2'))
+// );
 
-const node = new TreeNode(0);
-node.left = new TreeNode(1);
-node.right = new TreeNode(0);
-node.right.left = new TreeNode(1);
-node.right.right = new TreeNode(0);
-node.right.left.left = new TreeNode(1);
-node.right.left.right = new TreeNode(1);
+// const node = new TreeNode(0);
+// node.left = new TreeNode(1);
+// node.right = new TreeNode(0);
+// node.right.left = new TreeNode(1);
+// node.right.right = new TreeNode(0);
+// node.right.left.left = new TreeNode(1);
+// node.right.left.right = new TreeNode(1);

@@ -9,7 +9,7 @@ module.exports = {
   bracketSpacing: true,
   jsxBracketSameLine: false,
   arrowParens: 'avoid',
-  parser: 'babylon',
+  parser: 'babel',
   requirePragma: false,
   insertPragma: false,
   proseWrap: 'preserve',

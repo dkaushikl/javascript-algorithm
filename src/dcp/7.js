@@ -17,7 +17,7 @@
 // O(1) Space complexity
 // N is the length of the message
 
-function solution(s) {
+const solution = s => {
   const dp = Array(s.length + 1).fill(0);
   dp[0] = 1;
   for (let i = 1; i <= s.length; i++) {
@@ -28,7 +28,7 @@ function solution(s) {
   }
   console.log(dp);
   return dp[s.length];
-}
+};
 
 solution('226');
 // 2 2 6        22 6         2 26
@@ -45,7 +45,7 @@ Fibber.prototype.fib = function(n) {
   return this.memo[n];
 };
 
-class TreeNode {
+export class TreeNode {
   constructor(val, left = null, right = null) {
     this.val = val;
     this.left = left;
