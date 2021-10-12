@@ -1,11 +1,12 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "lib": ["es5", "es6", "dom", "dom.iterable"],
     "allowJs": true,
     "target": "ES2017",
     "module": "commonjs",
     "declaration": true,
-    "strict": true,
+    "strict": false,
     "noImplicitAny": false,
     "alwaysStrict": false,
     "sourceMap": true,

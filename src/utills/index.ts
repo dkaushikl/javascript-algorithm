@@ -22,10 +22,6 @@ export class Utills {
    * @return {Boolean}
    */
   public static CheckNumberEmpty(num: string | number): boolean {
-    if (typeof num === 'number') {
-      return true;
-    }
-
     if (!num) {
       return false;
     }
