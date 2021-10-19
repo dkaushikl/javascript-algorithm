@@ -46,8 +46,6 @@ const findLongestConseqSubseqHashing = (arr: number[], N: number) => {
 
 // Using priority queue   -will solve later since do not know about priority queue.
 
-const findLongestConseqSubseqHashing = (arr: number[], N: number) => {};
-
 let sequances = [1, 9, 3, 10, 4, 20, 2];
 
 console.log(findLongestConseqSubseq(sequances, sequances.length));

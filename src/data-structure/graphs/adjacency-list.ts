@@ -1,35 +1,33 @@
-import { StringMappingType } from 'typescript';
-
 class Graph {
   adjacencyList = [];
   noOfVertex = 0;
 
-  addVertex = (vertex: string) => {
+  addVertex = (vertex: number) => {
     if (!this.adjacencyList[vertex]) {
       this.adjacencyList[vertex] = [];
       this.noOfVertex++;
     }
   };
 
-  addEdge = (vertex1: string, vertex2: string) => {
+  addEdge = (vertex1: number, vertex2: number) => {
     this.adjacencyList[vertex1].push(vertex2);
     this.adjacencyList[vertex2].push(vertex1);
   };
 
-  removeEdge = (vertex1: string, vertex2: string) => {
+  removeEdge = (vertex1: number, vertex2: number) => {
     this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
-      (v: string) => v !== vertex2
+      (v: number) => v !== vertex2
     );
     this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
-      (v: string) => v !== vertex1
+      (v: number) => v !== vertex1
     );
   };
 
-  removeVertex = (vertex1: string) => {
+  removeVertex = (vertex1: number) => {
     if (this.adjacencyList[vertex1]) {
       for (const item of this.adjacencyList[vertex1]) {
         this.adjacencyList[item] = this.adjacencyList[item].filter(
-          (v: string) => v !== vertex1
+          (v: number) => v !== vertex1
         );
         this.adjacencyList[vertex1].shift();
       }
@@ -53,19 +51,19 @@ class Graph {
     return sum;
   };
 
-  breadthFirst = (start: string) => {
+  breadthFirst = (start: number) => {
     const queue = [start];
     const result = [];
     const visited = {};
 
-    let currentVertex: string;
+    let currentVertex: number;
     visited[start] = true;
 
     while (queue.length) {
       currentVertex = queue.shift();
       result.push(currentVertex);
 
-      this.adjacencyList[currentVertex].forEach((neighbor: string) => {
+      this.adjacencyList[currentVertex].forEach((neighbor: number) => {
         if (!visited[neighbor]) {
           visited[neighbor] = true;
           queue.push(neighbor);
@@ -76,19 +74,19 @@ class Graph {
     return result;
   };
 
-  depthFirst = (start: string) => {
+  depthFirst = (start: number) => {
     const stack = [start];
     const result = [];
     const visited = {};
 
-    let currentVertex: string | number;
+    let currentVertex: number | number;
     visited[start] = true;
 
     while (stack.length) {
       currentVertex = stack.pop();
       result.push(currentVertex);
 
-      this.adjacencyList[currentVertex].forEach((neighbor: string) => {
+      this.adjacencyList[currentVertex].forEach((neighbor: number) => {
         if (!visited[neighbor]) {
           visited[neighbor] = true;
           stack.push(neighbor);
@@ -99,17 +97,17 @@ class Graph {
     return result;
   };
 
-  depthFirstRecursive = (start: string) => {
+  depthFirstRecursive = (start: number) => {
     const result = [];
     const visited = {};
 
-    const dfs = (vertex: string) => {
+    const dfs = (vertex: number) => {
       if (!vertex) return null;
 
       visited[vertex] = true;
       result.push(vertex);
 
-      this.adjacencyList[vertex].forEach((neighbor: string) => {
+      this.adjacencyList[vertex].forEach((neighbor: number) => {
         if (!visited[neighbor]) {
           return dfs(neighbor);
         }
@@ -122,27 +120,25 @@ class Graph {
 }
 
 const graph = new Graph();
-graph.addVertex('A');
-graph.addVertex('B');
-graph.addVertex('C');
-graph.addVertex('D');
-graph.addVertex('E');
-graph.addVertex('F');
+graph.addVertex(0);
+graph.addVertex(1);
+graph.addVertex(2);
+graph.addVertex(3);
+graph.addVertex(4);
 
-graph.addEdge('A', 'B');
-graph.addEdge('A', 'C');
-graph.addEdge('B', 'D');
-graph.addEdge('C', 'E');
-graph.addEdge('D', 'E');
-graph.addEdge('D', 'F');
-graph.addEdge('E', 'F');
+graph.addEdge(0, 1);
+graph.addEdge(2, 1);
+graph.addEdge(2, 3);
+graph.addEdge(3, 4);
+graph.addEdge(4, 0);
+graph.addEdge(4, 2);
 
-graph.totalVertex();
-
+console.log(graph.totalVertex());
 console.log(graph.printGraph());
-console.log(graph.breadthFirst('A'));
-console.log(graph.depthFirst('A'));
-console.log(graph.depthFirstRecursive('A'));
+console.log(graph.adjacencyList);
+console.log(graph.breadthFirst(0));
+console.log(graph.depthFirst(0));
+console.log(graph.depthFirstRecursive(0));
 
 console.log(graph);
 
