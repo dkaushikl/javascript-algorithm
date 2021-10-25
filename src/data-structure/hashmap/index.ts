@@ -25,5 +25,3 @@ export class HashMap implements IHashMap {
     return this.data[key];
   };
 }
-
-

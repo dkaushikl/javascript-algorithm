@@ -1,4 +1,4 @@
-const test = arr => {
+const produceItself = arr => {
   let result = [];
 
   for (let i = 0; i < arr.length; i++) {
@@ -13,7 +13,7 @@ const test = arr => {
   return result;
 };
 
-const test2 = arr => {
+const produceItself2 = arr => {
   let result = new Array(arr.length);
 
   result[0] = 1;
@@ -26,4 +26,4 @@ const test2 = arr => {
 };
 
 const params = [3, 4, 5, 6, 2];
-console.log(test2(params));
+console.log(produceItself2(params));
