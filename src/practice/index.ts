@@ -1,12 +1,10 @@
 const rotateMatrix = matrix => {
-   console.log(matrix);
+  console.log(matrix);
 };
 
-const printSpiralForm = matrix => {
+const printSpiralForm = matrix => {};
 
-}
-
-const createMatrix = (n) => {
+const createMatrix = n => {
   const matrix = new Array(n);
 
   let count = 1;

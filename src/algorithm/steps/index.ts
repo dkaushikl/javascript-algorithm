@@ -16,7 +16,7 @@
 //   '## '
 //   '###'
 
-import Utills from '../../utills';
+import { Utills } from '../../utills';
 
 /** Steps Class */
 class Steps {

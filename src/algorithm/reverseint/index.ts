@@ -28,7 +28,8 @@ export class ReverseInt {
     }
 
     const callRecursive = this.One(+Utills.ConvertToString(arg).substr(1));
-    const result = `${callRecursive}` + `${Utills.ConvertToString(arg).charAt(0)}`;
+    const result =
+      `${callRecursive}` + `${Utills.ConvertToString(arg).charAt(0)}`;
 
     if (Number.isInteger(arg)) {
       return arg <= 0 ? -Math.abs(parseFloat(result)) : parseFloat(result);
@@ -55,7 +56,7 @@ export class ReverseInt {
     const result = parseFloat(
       numberArray.reduce((finalString, newChar) => {
         return newChar + finalString;
-      }),
+      })
     );
 
     return arg <= 0 ? Utills.ConvertNagativeInteger(result) : result;
@@ -78,7 +79,7 @@ export class ReverseInt {
       Utills.ConvertToString(arg)
         .split('')
         .reverse()
-        .join(''),
+        .join('')
     );
     return arg <= 0 ? -Math.abs(result) : result;
   }

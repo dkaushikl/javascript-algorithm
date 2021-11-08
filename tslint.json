@@ -1,5 +1,10 @@
 {
-  "extends": ["tslint:recommended", "tslint-consistent-codestyle", "tslint-config-prettier", "tslint-plugin-prettier"],
+  "extends": [
+    "tslint:recommended",
+    "tslint-consistent-codestyle",
+    "tslint-config-prettier",
+    "tslint-plugin-prettier"
+  ],
   "rules": {
     "quotemark": [true, "single"],
     "no-console": false

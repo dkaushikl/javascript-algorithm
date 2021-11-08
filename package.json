@@ -16,7 +16,7 @@
     "doc:build": "npm run build && jsdoc -c doc-config.json",
     "doc:view": "live-server dist --port=9124",
     "pretty": "prettier --write \"./**/*.{ts,json}\"",
-    "check-pretty": "prettier --check \"./**/*.{js,json}\"",
+    "check-pretty": "prettier --check \"./**/*.{js,ts,json}\"",
     "npm-deploy": "npm deploy"
   },
   "husky": {

@@ -1,11 +1,16 @@
 interface ISearch {
-  linearSearch(arr: string[], param: string): any;
-  binarySearch(arr: number[], param: number): any;
-  linearSearchRecursive(arr: string[], param: string): any;
-  binarySearchRecursive(arr: number[], param: number, start: number, end: number): any;
-  jumpSearch(arr: number[], param: number): any;
-  jumpSearchRecursive(arr: number[], param: number, jumpNumber: number): any;
-  interpolationSearch(arr: number[], param: number);
+  linearSearch(arr: string[], param: string): number | string;
+  binarySearch(arr: number[], param: number): number | string;
+  linearSearchRecursive(arr: string[], param: string): number;
+  binarySearchRecursive(
+    arr: number[],
+    param: number,
+    start: number,
+    end: number
+  ): number;
+  jumpSearch(arr: number[], param: number): number;
+  jumpSearchRecursive(arr: number[], param: number, jumpNumber: number): number;
+  interpolationSearch(arr: number[], param: number): number;
 }
 
 class Search implements ISearch {
@@ -75,7 +80,8 @@ class Search implements ISearch {
 
       if (!rangeDiff) return arr[left] === param ? left : -1;
 
-      const middleIndex = left + Math.floor((valueDiff * indexDiff) / rangeDiff);
+      const middleIndex =
+        left + Math.floor((valueDiff * indexDiff) / rangeDiff);
 
       if (arr[middleIndex] === param) {
         return middleIndex;
@@ -91,7 +97,11 @@ class Search implements ISearch {
     return -1;
   }
 
-  linearSearchRecursive = (arr: string[], param: string, arrLength: number = arr.length - 1) => {
+  linearSearchRecursive = (
+    arr: string[],
+    param: string,
+    arrLength: number = arr.length - 1
+  ) => {
     if (arr.length <= 0) return -1;
 
     const lastParams = arr.pop();
@@ -100,12 +110,19 @@ class Search implements ISearch {
     return this.linearSearchRecursive(arr, param, arr.length - 1);
   };
 
-  binarySearchRecursive = (arr: number[], param: number, start: number = 0, end: number = arr.length - 1) => {
+  binarySearchRecursive = (
+    arr: number[],
+    param: number,
+    start: number = 0,
+    end: number = arr.length - 1
+  ) => {
     const middle = Math.floor((start + end) / 2);
     if (arr[middle] === param) return middle;
     if (start >= end) return -1;
-    if (arr[middle] > param) return this.binarySearchRecursive(arr, param, start, middle - 1);
-    if (arr[middle] < param) return this.binarySearchRecursive(arr, param, middle + 1, end);
+    if (arr[middle] > param)
+      return this.binarySearchRecursive(arr, param, start, middle - 1);
+    if (arr[middle] < param)
+      return this.binarySearchRecursive(arr, param, middle + 1, end);
   };
 
   jumpSearchRecursive(
@@ -113,7 +130,7 @@ class Search implements ISearch {
     param: number,
     start: number = 0,
     end: number = arr.length - 1,
-    jumpNumber: number = Math.floor(Math.sqrt(arr.length)),
+    jumpNumber: number = Math.floor(Math.sqrt(arr.length))
   ) {
     if (arr.length <= 0) return -1;
 
@@ -138,10 +155,25 @@ const search = new Search();
 console.log(search.linearSearch(['a', 'b', 'c', 'd'], 'd'));
 console.log(search.binarySearch([1, 2, 3, 4, 5], 2));
 console.log(search.binarySearch([1, 2, 3, 4, 5], 6));
-console.log(search.jumpSearch([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610], 55));
-console.log(search.interpolationSearch([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610], 55));
+console.log(
+  search.jumpSearch(
+    [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610],
+    55
+  )
+);
+console.log(
+  search.interpolationSearch(
+    [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610],
+    55
+  )
+);
 console.log(search.linearSearchRecursive(['a', 'b', 'c', 'd'], 'd', 3));
 console.log(search.linearSearchRecursive(['1', '2', '3', '4'], '4', 3));
 console.log(search.binarySearchRecursive([1, 2, 3, 4, 5], 2));
 console.log(search.binarySearchRecursive([1, 2, 3, 4, 5], 6));
-console.log(search.jumpSearchRecursive([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610], 55));
+console.log(
+  search.jumpSearchRecursive(
+    [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610],
+    55
+  )
+);
