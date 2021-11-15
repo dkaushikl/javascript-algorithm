@@ -2,6 +2,10 @@
 
 [30 days of javascript](https://github.com/LadySith/30DaysOfCode-Javascript/)
 
+[Take you forward](https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/)
+
+[Take you forward -SDE Sheet](https://docs.google.com/document/d/1SM92efk8oDl8nyVw8NHPnbGexTS9W-1gmTEYfEurLWQ/edit)
+
 [tech interview handbook](https://github.com/yangshun/tech-interview-handbook)
 
 [javascript algorithm](https://github.com/trekhleb/javascript-algorithms)

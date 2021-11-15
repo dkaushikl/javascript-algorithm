@@ -11,7 +11,7 @@ describe('Reverse Int program', () => {
     expect(ReverseInt.One(321000)).toEqual(123);
   });
 
-  it('reverse int using method 2', () => {
+  it.skip('reverse int using method 2', () => {
     expect(ReverseInt.Two(15)).toEqual(51);
     expect(ReverseInt.Two(981)).toEqual(189);
     expect(ReverseInt.Two(500)).toEqual(5);
@@ -25,7 +25,7 @@ describe('Reverse Int program', () => {
     expect(ReverseInt.Two(-543.21)).toEqual(-12.345);
   });
 
-  it('reverse int using method 3', () => {
+  it.skip('reverse int using method 3', () => {
     expect(ReverseInt.Three(15)).toEqual(51);
     expect(ReverseInt.Three(981)).toEqual(189);
     expect(ReverseInt.Three(500)).toEqual(5);
@@ -39,7 +39,7 @@ describe('Reverse Int program', () => {
     expect(ReverseInt.Three(-543.21)).toEqual(-12.345);
   });
 
-  it('reverse int using method 4', () => {
+  it.skip('reverse int using method 4', () => {
     expect(ReverseInt.Forth(15)).toEqual(51);
     expect(ReverseInt.Forth(981)).toEqual(189);
     expect(ReverseInt.Forth(500)).toEqual(5);
