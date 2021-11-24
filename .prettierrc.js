@@ -3,15 +3,5 @@ module.exports = {
   tabWidth: 2,
   useTabs: false,
   semi: true,
-  singleQuote: true,
-  jsxSingleQuote: true,
-  trailingComma: 'none',
-  bracketSpacing: true,
-  jsxBracketSameLine: false,
-  arrowParens: 'avoid',
-  requirePragma: false,
-  insertPragma: false,
-  proseWrap: 'preserve',
-  htmlWhitespaceSensitivity: 'css',
-  endOfLine: 'lf'
+  singleQuote: true
 };
