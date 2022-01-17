@@ -1,10 +1,10 @@
-var flipAndInvertImage = function(image) {
+const flipAndInvertImage = function(image) {
   let i = 0;
   while (i < image.length) {
     let j = 0;
     let k = image[i].length - 1;
     while (j < k) {
-      let temp = image[i][j];
+      const temp = image[i][j];
       image[i][j] = image[i][k];
       image[i][k] = temp;
       j++;

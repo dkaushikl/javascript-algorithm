@@ -1,4 +1,4 @@
-const validMountainArray = arr => {
+const validMountainArray = (arr) => {
   if (arr.length < 3) return false;
 
   let isGoingUp = true;

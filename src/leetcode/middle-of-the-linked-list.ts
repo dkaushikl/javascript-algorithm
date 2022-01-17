@@ -1,8 +1,8 @@
-const middleNode = head => {
+const middleNode = (head) => {
   if (!head) return head;
   if (head.next === null) return head;
 
-  let map = {};
+  const map = {};
   let len = 1;
   let current = head;
 
@@ -14,7 +14,7 @@ const middleNode = head => {
   return map[Math.floor(len / 2)];
 };
 
-const middleNode1 = head => {
+const middleNode1 = (head) => {
   if (!head) return head;
   let slow = head,
     fast = head;

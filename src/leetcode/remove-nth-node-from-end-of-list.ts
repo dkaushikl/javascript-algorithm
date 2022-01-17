@@ -1,7 +1,7 @@
 const removeNthFromEnd = (head, n) => {
   if (!head) return null;
 
-  let map = {};
+  const map = {};
   let i = 0;
   let current = head;
 

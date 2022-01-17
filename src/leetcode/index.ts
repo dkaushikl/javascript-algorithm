@@ -1,5 +1,5 @@
 function test(arr, m) {
-  let finalArr = [];
+  const finalArr = [];
 
   let i = 0;
   let j = i;
@@ -17,41 +17,39 @@ function test(arr, m) {
 
   let result = -1;
 
-  finalArr.forEach(val => {
-    let sum = val.reduce((a, b) => b + a, 0);
-    let modulo = sum % m;
+  finalArr.forEach((val) => {
+    const sum = val.reduce((a, b) => b + a, 0);
+    const modulo = sum % m;
     if (modulo > result) result = modulo;
   });
 
   console.log(result);
 }
 function rotateMatrix(a) {
-  var reversed = a.reverse();
+  const reversed = a.reverse();
   console.log(reversed);
 
-  return reversed[0].map((col, i) => {
-    return reversed.map(row => row[i]);
-  });
+  return reversed[0].map((col, i) => reversed.map((row) => row[i]));
 }
 
 function findFirstSubstringOccurrence(s, x) {
-  var slen = s.length;
-  var xlen = x.length;
+  const slen = s.length;
+  const xlen = x.length;
 
-  var target = 0;
+  let target = 0;
   for (var i = 0; i < xlen; i++) {
     target += x.charCodeAt(i);
   }
 
-  var sum = 0;
+  let sum = 0;
   for (var i = 0; i < xlen; i++) {
     sum += s.charCodeAt(i);
   }
 
   if (sum == target && x == s.substr(0, xlen)) return 0;
 
-  var last = s.charCodeAt(0);
-  var len = slen - xlen;
+  let last = s.charCodeAt(0);
+  const len = slen - xlen;
   for (var i = 1; i <= len; i++) {
     sum -= last;
     sum += s.charCodeAt(i + xlen - 1);
@@ -84,7 +82,7 @@ function almostIncreasingSequence(sequence) {
 }
 
 function findMedian(arr1, arr2) {
-  let result = [];
+  const result = [];
 
   let i = 0;
   let j = 0;
@@ -152,7 +150,7 @@ function findMedian(arr1, arr2) {
 
 // console.log(generateMatrix(3, 4))
 
-var m = [
+const m = [
   [1, 2, 3, 4],
   [5, 6, 7, 8],
   [9, 10, 11, 12],

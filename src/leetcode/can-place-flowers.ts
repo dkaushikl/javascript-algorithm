@@ -1,4 +1,4 @@
-var canPlaceFlowers = function(flowerbed, n) {
+const canPlaceFlowers = function(flowerbed, n) {
   if (n === 0 && flowerbed.length > 0) return true;
   if (n === 0 && flowerbed.length < 0) return false;
   if (flowerbed.length === 1 && flowerbed[0] === 0) return true;

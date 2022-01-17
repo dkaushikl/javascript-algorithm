@@ -1,4 +1,4 @@
-var numIslands = function(grid) {
+const numIslands = function(grid) {
   let totalLand = 0;
 
   const traverse = (i, j) => {
@@ -35,5 +35,5 @@ var numIslands = function(grid) {
   return totalLand;
 };
 
-let grid = [['0']];
+const grid = [['0']];
 console.log(numIslands(grid));

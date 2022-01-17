@@ -1,4 +1,4 @@
-var hasPathSum = function(root, targetSum) {
+const hasPathSum = function(root, targetSum) {
   if (!root) return false;
 
   let isAvailable = false;

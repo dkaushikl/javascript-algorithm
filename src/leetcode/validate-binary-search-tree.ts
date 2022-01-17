@@ -1,4 +1,4 @@
-let isValidBST = root => {
+const isValidBST = (root) => {
   const traverse = (root, min = null, max = null) => {
     if (!root) return true;
 

@@ -1,7 +1,7 @@
-const isValidSudoku = matrix => {
+const isValidSudoku = (matrix) => {
   const checkRow = () => {
     for (let i = 0; i < matrix.length; i++) {
-      let map = {};
+      const map = {};
       for (let j = 0; j < matrix[i].length; j++) {
         if (matrix[i][j] !== '.') {
           if (map[matrix[i][j]]) {
@@ -17,7 +17,7 @@ const isValidSudoku = matrix => {
 
   const checkColumn = () => {
     for (let i = 0; i < matrix.length; i++) {
-      let map = {};
+      const map = {};
       for (let j = 0; j < matrix[i].length; j++) {
         if (matrix[j][i] !== '.') {
           if (map[matrix[j][i]]) {
@@ -45,7 +45,7 @@ const isValidSudoku = matrix => {
           matrix[i + 2][j + 1],
           matrix[i + 2][j + 2]
         ];
-        let map3 = {};
+        const map3 = {};
 
         for (let k = 0; k < arr.length; k++) {
           if (map3[arr[k]] && arr[k] != '.') return false;

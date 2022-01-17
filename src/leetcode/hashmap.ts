@@ -12,15 +12,13 @@ const jewelAndStone = (jewels = 'aA', stones = 'aAAbbbb') => {
 console.log(jewelAndStone());
 
 const topKFrequent = (nums = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3], k = 2) => {
-  let map = {};
+  const map = {};
 
   for (let i = 0; i < nums.length; i++) {
     map[nums[i]] = map[nums[i]] ? map[nums[i]] + 1 : 1;
   }
 
-  const sortArr = Object.entries(map).sort((a, b) => {
-    return +b[1] - +a[1];
-  });
+  const sortArr = Object.entries(map).sort((a, b) => +b[1] - +a[1]);
 
   const result = [];
   for (let i = 0; i < k; i++) result.push(sortArr[i][0]);
@@ -31,7 +29,7 @@ const topKFrequent = (nums = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3], k = 2) => {
 console.log(topKFrequent());
 
 const singleNumber = (nums = [4, 1, 2, 1, 2]) => {
-  let map = {};
+  const map = {};
 
   for (let i = 0; i < nums.length; i++)
     map[nums[i]] = map[nums[i]] ? map[nums[i]] + 1 : 1;

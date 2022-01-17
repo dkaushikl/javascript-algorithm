@@ -1,4 +1,4 @@
-const singleNumber = nums => {
+const singleNumber = (nums) => {
   let res = 0;
   for (let i = 0; i < nums.length; i++) {
     // XOR sign - compare two operands and check whethere both are same otherwise calculate value and return result and at alst it will return compared value

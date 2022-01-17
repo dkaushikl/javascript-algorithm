@@ -1,4 +1,4 @@
-const isPalindrome = s => {
+const isPalindrome = (s) => {
   s = s.toLowerCase().replace(/[\W_]/g, '');
 
   let i = 0;

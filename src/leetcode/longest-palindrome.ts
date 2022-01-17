@@ -1,5 +1,5 @@
-var longestPalindrome = function(s) {
-  let map = {};
+const longestPalindrome = function(s) {
+  const map = {};
 
   for (let i = 0; i < s.length; i++) {
     const char = s[i];

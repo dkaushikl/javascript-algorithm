@@ -1,12 +1,12 @@
-const sortedSquares = nums => {
+const sortedSquares = (nums) => {
   nums = nums
-    .map(x => Math.abs(x))
+    .map((x) => Math.abs(x))
     .sort((a, b) => a - b)
-    .map(x => x * x);
+    .map((x) => x * x);
   return nums;
 };
 
-const sortedSquares1 = nums => {
+const sortedSquares1 = (nums) => {
   let i = 0;
   let j = i + 1;
   let minIndex = 0;

@@ -1,4 +1,4 @@
-let wordPattern = (pattern, s) => {
+const wordPattern = (pattern, s) => {
   const arr = s.split(' ');
   if (pattern.length !== arr.length) return false;
 

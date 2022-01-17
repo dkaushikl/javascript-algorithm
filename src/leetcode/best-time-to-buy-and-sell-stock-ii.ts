@@ -1,4 +1,4 @@
-const maxProfit = prices => {
+const maxProfit = (prices) => {
   let profit = 0;
   let holdIndex = 0;
 

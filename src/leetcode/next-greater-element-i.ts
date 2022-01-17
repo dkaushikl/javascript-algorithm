@@ -2,7 +2,7 @@ const nextGraterElement = (nums1: number[], nums2: number[]) => {
   const map = {};
   const stack = [];
 
-  nums2.forEach(n => {
+  nums2.forEach((n) => {
     while (stack.length > 0 && stack[stack.length - 1] < n) {
       map[stack.pop()] = n;
     }

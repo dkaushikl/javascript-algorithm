@@ -11,7 +11,7 @@ const solution = (nums: number) => {
   while (start <= end) {
     if (start === end && isBadVersion(start)) return start;
 
-    let mid = Math.floor((start + end) / 2);
+    const mid = Math.floor((start + end) / 2);
 
     if (isBadVersion(mid)) end = mid;
     else start = mid + 1;

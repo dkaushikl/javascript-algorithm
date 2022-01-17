@@ -18,11 +18,10 @@ const moveZero = (nums: string | any[]) => {
   return nums;
 };
 
-const moveZero1 = (nums: any[]) => {
-  return nums.sort((a: number, b: number) => {
+const moveZero1 = (nums: any[]) =>
+  nums.sort((a: number, b: number) => {
     if (b === 0 && a !== 0) return -1;
   });
-};
 
 // console.log(moveZero1([0, 1, 0, 3, 12]));
 console.log(moveZero1([1, 0, 0, 3]));

@@ -1,6 +1,6 @@
-var searchBST = function(root, val) {
+const searchBST = function(root, val) {
   let trees = null;
-  const traverse = head => {
+  const traverse = (head) => {
     if (!head) return;
 
     if (head.val === val) {
@@ -15,7 +15,7 @@ var searchBST = function(root, val) {
   return trees;
 };
 
-let trees = {
+const trees = {
   val: 4,
   left: {
     val: 2,

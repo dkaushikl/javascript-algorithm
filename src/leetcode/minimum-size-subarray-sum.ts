@@ -1,4 +1,4 @@
-let minSubArrayLen = (target, nums) => {
+const minSubArrayLen = (target, nums) => {
   const n = nums.length;
   let ans = Number.MAX_SAFE_INTEGER;
 

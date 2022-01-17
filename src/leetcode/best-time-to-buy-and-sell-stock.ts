@@ -1,4 +1,4 @@
-const maxProfit = prices => {
+const maxProfit = (prices) => {
   let minPrice = prices[0];
   let maxPrice = 0;
 

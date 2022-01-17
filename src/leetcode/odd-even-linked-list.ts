@@ -1,5 +1,5 @@
-var oddEvenList = function(head) {
-  let map = {};
+const oddEvenList = function(head) {
+  const map = {};
   let i = 0;
   let current = head;
   while (current) {
@@ -16,7 +16,7 @@ var oddEvenList = function(head) {
   return -1;
 };
 
-var linkedList = {
+const linkedList = {
   val: 3,
   next: {
     val: 2,

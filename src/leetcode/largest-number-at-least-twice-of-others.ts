@@ -1,16 +1,16 @@
-var dominantIndex = function(nums) {
+const dominantIndex = function(nums) {
   if (nums.length < 0) return -1;
   if (nums.length === 1 && nums[0] <= 0) return -1;
   if (nums.length === 1 && nums[0] > 0) return 0;
 
-  let map = {};
+  const map = {};
   let firstMax = nums.length > 1 ? Math.max(nums[0], nums[1]) : nums[0];
   let secondMax = nums.length > 1 ? Math.min(nums[0], nums[1]) : nums[0];
 
   for (let i = 0; i < nums.length; i++) {
     map[nums[i]] = i;
     if (firstMax < nums[i]) {
-      let temp = firstMax;
+      const temp = firstMax;
       firstMax = nums[i];
       secondMax = temp;
     }

@@ -1,4 +1,4 @@
-const deleteDuplicates = head => {
+const deleteDuplicates = (head) => {
   if (!head) return null;
   if (!head.next) return head;
 

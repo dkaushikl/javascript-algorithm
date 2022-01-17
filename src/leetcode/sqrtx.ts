@@ -1,4 +1,4 @@
-let mySqrt = x => {
+const mySqrt = (x) => {
   let left = 1;
   let right = Math.floor(x / 2) + 1;
   let mid;

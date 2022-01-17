@@ -1,5 +1,5 @@
-var runningSum = function(nums) {
-  let left = [];
+const runningSum = function(nums) {
+  const left = [];
   for (let i = 0; i < nums.length; i++) {
     if (i === 0) left.push(nums[i]);
     else left.push(left[left.length - 1] + nums[i]);

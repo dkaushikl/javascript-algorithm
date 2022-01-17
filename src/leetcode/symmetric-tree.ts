@@ -1,4 +1,4 @@
-var isSymmetric = function(root) {
+const isSymmetric = function(root) {
   if (!root) return true;
 
   let isSym = true;

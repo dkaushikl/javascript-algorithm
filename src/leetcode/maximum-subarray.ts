@@ -1,4 +1,4 @@
-const maxSubArray = nums => {
+const maxSubArray = (nums) => {
   let currentSum = 0;
   let maxSum = nums[0];
 

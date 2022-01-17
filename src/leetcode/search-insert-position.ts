@@ -14,7 +14,7 @@ const searchInsert = (nums, target) => {
   while (start < end) {
     console.log(`start, end`, start, end);
 
-    let mid = Math.floor((start + end) / 2);
+    const mid = Math.floor((start + end) / 2);
     if (nums[mid] === target) return mid;
     if (target > nums[mid] && target < nums[mid + 1]) return mid + 1;
 

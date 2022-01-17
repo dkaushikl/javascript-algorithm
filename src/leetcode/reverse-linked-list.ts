@@ -1,4 +1,4 @@
-const reverseList = head => {
+const reverseList = (head) => {
   if (!head) return null;
 
   let result = null;
@@ -25,7 +25,7 @@ const reverseListRecursive = (head, result = null) => {
   return reverseListRecursive(head.next, result);
 };
 
-const reverseList2 = head => {
+const reverseList2 = (head) => {
   const traverse = (current, prev) => {
     if (!current) return prev;
     const next = current.next;

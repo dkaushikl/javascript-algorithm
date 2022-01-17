@@ -1,4 +1,4 @@
-const hasCycle = head => {
+const hasCycle = (head) => {
   let slow = head;
   let fast = head;
 

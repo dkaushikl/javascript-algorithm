@@ -1,4 +1,4 @@
-const firstUniqChar = s => {
+const firstUniqChar = (s) => {
   const map = {};
   for (const item of s) map[item] = map[item] ? map[item] + 1 : 1;
 

@@ -37,7 +37,7 @@ function removeVowelFromString2(s) {
   s = s.toLowerCase();
 
   let result = '';
-  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
 
   for (let i = 0; i < s.length; i++) if (!vowels.includes(s[i])) result += s[i];
 
@@ -50,7 +50,7 @@ function removeVowelFromString3(s) {
   s = s.toLowerCase();
 
   let result = '';
-  let vowels = { a: 1, e: 1, i: 1, o: 1, u: 1 };
+  const vowels = { a: 1, e: 1, i: 1, o: 1, u: 1 };
 
   for (let i = 0; i < s.length; i++) if (!vowels[s[i]]) result += s[i];
 

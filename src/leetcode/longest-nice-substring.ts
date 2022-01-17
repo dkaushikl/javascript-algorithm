@@ -1,10 +1,10 @@
-const longestNiceSubstring = s => {
+const longestNiceSubstring = (s) => {
   s = s.split('');
   const N = s.length;
   let max = '';
 
   for (let i = 0; i < N - 1; i++) {
-    let substr = [s[i]];
+    const substr = [s[i]];
 
     for (let j = i + 1; j < N; j++) {
       substr.push(s[j]);

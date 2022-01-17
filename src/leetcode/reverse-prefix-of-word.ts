@@ -1,7 +1,7 @@
-var reversePrefix = function(word, ch) {
-  let i = word.indexOf(ch);
+const reversePrefix = function(word, ch) {
+  const i = word.indexOf(ch);
   let split = word.substr(0, i + 1);
-  let split2 = word.substr(i + 1, word.length);
+  const split2 = word.substr(i + 1, word.length);
   split = split
     .split('')
     .reverse()

@@ -1,4 +1,4 @@
-var addTwoNumbers = function(l1, l2) {
+const addTwoNumbers = function(l1, l2) {
   let current1 = l1;
   let current2 = l2;
   let carry = 0;
@@ -43,7 +43,7 @@ var addTwoNumbers = function(l1, l2) {
   return head;
 };
 
-var linkedList1 = {
+const linkedList1 = {
   val: 9,
   next: {
     val: 9,
@@ -66,7 +66,7 @@ var linkedList1 = {
   }
 };
 
-var linkedList2 = {
+const linkedList2 = {
   val: 9,
   next: {
     val: 9,

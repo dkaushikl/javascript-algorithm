@@ -1,4 +1,4 @@
-let isHappy = (n, counter = 0, map = {}) => {
+const isHappy = (n, counter = 0, map = {}) => {
   counter++;
   if (map[n]) return isHappy(map[n], counter, map);
 

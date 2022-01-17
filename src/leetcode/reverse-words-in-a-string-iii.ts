@@ -1,5 +1,5 @@
-const reverseWords = s => {
-  let arr = s.split(' ');
+const reverseWords = (s) => {
+  const arr = s.split(' ');
   let arrLength = 0;
 
   while (arrLength < arr.length) {

@@ -1,4 +1,4 @@
-const minOperations = logs => {
+const minOperations = (logs) => {
   const stack = [];
 
   for (const item of logs) {

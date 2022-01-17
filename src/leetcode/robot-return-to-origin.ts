@@ -1,12 +1,12 @@
-var judgeCircle = function(moves) {
-  let map = {};
+const judgeCircle = function(moves) {
+  const map = {};
 
   for (let i = 0; i < moves.length; i++) {
     const char = moves[i];
     map[char] = map[char] ? map[char] + 1 : 1;
   }
 
-  let chars = {
+  const chars = {
     L: 'R',
     R: 'L',
     U: 'D',

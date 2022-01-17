@@ -3,7 +3,7 @@ const matrixReshape = (matrix, r, c) => {
     return matrix;
 
   // Convert your arr into 1d array. you can do it either using flat method or self for loop
-  let temp = [];
+  const temp = [];
   let index = 0;
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
@@ -12,7 +12,7 @@ const matrixReshape = (matrix, r, c) => {
   }
 
   // generate sample array based on given row and column
-  let arr = new Array(r).fill(0);
+  const arr = new Array(r).fill(0);
   for (let i = 0; i < arr.length; i++) {
     arr[i] = new Array(c).fill(0);
   }

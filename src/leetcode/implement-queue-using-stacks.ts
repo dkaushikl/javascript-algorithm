@@ -7,7 +7,7 @@ class MyQueue {
     this.stack2 = [];
   }
 
-  push = x => {
+  push = (x) => {
     this.stack1.push(x);
   };
 
@@ -15,7 +15,7 @@ class MyQueue {
     while (this.stack1.length !== 0) {
       this.stack2.push(this.stack1.pop());
     }
-    var pop = this.stack2.pop();
+    const pop = this.stack2.pop();
     while (this.stack2.length !== 0) {
       this.stack1.push(this.stack2.pop());
     }
@@ -27,7 +27,7 @@ class MyQueue {
       this.stack2.push(this.stack1.pop());
     }
 
-    var pop = this.stack2.pop();
+    const pop = this.stack2.pop();
 
     this.stack2.push(pop);
 
@@ -38,13 +38,11 @@ class MyQueue {
     return pop;
   };
 
-  empty = () => {
-    return this.stack1.length === 0 ? true : false;
-  };
+  empty = () => (this.stack1.length === 0 ? true : false);
 }
 
 // Your MyQueue object will be instantiated and called as such:
-var obj = new MyQueue();
+const obj = new MyQueue();
 console.log(obj.push(1));
 console.log(obj.push(2));
 console.log(obj.push(3));

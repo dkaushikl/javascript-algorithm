@@ -16,10 +16,10 @@
 // Time Complexity = o(n)
 // Space Complexity = o(n)
 function countMatches(items, ruleKey, ruleValue) {
-  let checkValue = ruleKey === 'type' ? 0 : ruleKey === 'color' ? 1 : 2;
+  const checkValue = ruleKey === 'type' ? 0 : ruleKey === 'color' ? 1 : 2;
   let count = 0;
 
-  for (let i of items) if (i[checkValue] === ruleValue) count += 1;
+  for (const i of items) if (i[checkValue] === ruleValue) count += 1;
 
   console.log(count);
 }

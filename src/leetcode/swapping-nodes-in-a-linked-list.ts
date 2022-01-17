@@ -1,11 +1,11 @@
-let swapPairs = head => {
+const swapPairs = (head) => {
   const temp = {
     val: 0,
     next: null
   };
   temp.next = head;
   console.log(JSON.stringify(temp));
-  const recursive = node => {
+  const recursive = (node) => {
     if (!node === null) return;
     const first = node.next;
     let second = null;
@@ -25,7 +25,7 @@ let swapPairs = head => {
   return temp.next;
 };
 
-let swapLinkedList = {
+const swapLinkedList = {
   val: 1,
   next: {
     val: 2,

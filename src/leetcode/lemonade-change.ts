@@ -1,21 +1,21 @@
-var lemonadeChange = function(bills) {
-  let map = {};
+const lemonadeChange = function(bills) {
+  const map = {};
 
   for (const item of bills) {
     if (item === 10 || item === 20) {
-      let givenAmount = item - 5;
+      const givenAmount = item - 5;
       if (givenAmount > 5) {
-        let devidedAmount = Math.floor(givenAmount / 10);
+        const devidedAmount = Math.floor(givenAmount / 10);
         if (map[10] >= devidedAmount) {
           map[10] = map[10] - devidedAmount;
-          let mod = givenAmount % 10;
+          const mod = givenAmount % 10;
           if (mod === 5 && map[mod] > 0) {
             map[mod]--;
           } else {
             return false;
           }
         } else {
-          let devide = givenAmount / 5;
+          const devide = givenAmount / 5;
           if (map[5] >= devide) {
             map[5] = map[5] - devide;
           } else {

@@ -3,7 +3,7 @@ const canConstruct = (ransomNote, magazine) => {
 
   if (magazine.length < ransomNote.length) return false;
 
-  let map = {};
+  const map = {};
   for (let i = 0; i < ransomNote.length; i++) {
     if (map[ransomNote[i]]) {
       map[ransomNote[i]] = map[ransomNote[i]] + 1;

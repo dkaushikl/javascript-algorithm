@@ -1,4 +1,4 @@
-var findMaxAverage = function(nums, k) {
+const findMaxAverage = function(nums, k) {
   let maxAvg = 0;
   let count = 0;
   for (let i = 0; i < nums.length - k + 1; i++) {
@@ -12,7 +12,7 @@ var findMaxAverage = function(nums, k) {
   return maxAvg;
 };
 
-var findMaxAverage1 = function(nums, k) {
+const findMaxAverage1 = function(nums, k) {
   let i = 0;
   let maxAvg = -Infinity;
   let arrSum = 0;

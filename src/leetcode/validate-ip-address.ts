@@ -1,11 +1,11 @@
-var validIPAddress = function(queryIP) {
-  const isValidIPV4 = arr => {
+const validIPAddress = function(queryIP) {
+  const isValidIPV4 = (arr) => {
     let i = 0;
     let j = arr.length - 1;
     const regex = /^[0-9.]+$/;
     while (i < j) {
-      let numStr1 = `${arr[i]}`;
-      let numStr2 = `${arr[j]}`;
+      const numStr1 = `${arr[i]}`;
+      const numStr2 = `${arr[j]}`;
 
       if (!numStr1.match(regex) || !numStr2.match(regex)) return false;
       if (numStr1.length > 3 || numStr2.length > 3) return false;
@@ -19,13 +19,13 @@ var validIPAddress = function(queryIP) {
     return true;
   };
 
-  const isValidIPV6 = arr => {
+  const isValidIPV6 = (arr) => {
     let i = 0;
     let j = arr.length - 1;
     const regex = /^[0-9A-Fa-f.]+$/;
     while (i < j) {
-      let numStr1 = `${arr[i]}`;
-      let numStr2 = `${arr[j]}`;
+      const numStr1 = `${arr[i]}`;
+      const numStr2 = `${arr[j]}`;
 
       if (!numStr1.match(regex) || !numStr2.match(regex)) return false;
       if (numStr1.length > 4 || numStr2.length > 4) return false;

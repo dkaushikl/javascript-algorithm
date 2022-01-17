@@ -1,4 +1,4 @@
-const removeDuplicates = nums => {
+const removeDuplicates = (nums) => {
   if (nums.length === 0) return 0;
   if (nums.length === 1) return 1;
 
@@ -16,22 +16,22 @@ const removeDuplicates = nums => {
 
 console.log(removeDuplicates([1, 1, 2]));
 
-let findPermutations = string => {
+const findPermutations = (string) => {
   if (!string || typeof string !== 'string') {
     return 'Please enter a string';
   } else if (string.length < 2) {
     return string;
   }
 
-  let permutationsArray = [];
+  const permutationsArray = [];
 
   for (let i = 0; i < string.length; i++) {
-    let char = string[i];
+    const char = string[i];
 
-    let remainingChars =
+    const remainingChars =
       string.slice(0, i) + string.slice(i + 1, string.length);
 
-    for (let permutation of findPermutations(remainingChars)) {
+    for (const permutation of findPermutations(remainingChars)) {
       permutationsArray.push(char + permutation);
     }
   }

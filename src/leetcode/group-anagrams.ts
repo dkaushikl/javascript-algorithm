@@ -1,4 +1,4 @@
-let groupAnagrams = strs => {
+const groupAnagrams = (strs) => {
   const result = [];
   const map = {};
   let i = 0;
@@ -17,7 +17,7 @@ let groupAnagrams = strs => {
     i++;
   }
 
-  result.map(x => {
+  result.map((x) => {
     x.sort();
     return x;
   });

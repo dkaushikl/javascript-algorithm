@@ -10,7 +10,7 @@
 // Output :- 31
 
 function calculateTime(keyboard, word) {
-  let objKeyboard = {};
+  const objKeyboard = {};
 
   for (let i = 0; i < keyboard.length; i++) objKeyboard[keyboard[i]] = i;
 

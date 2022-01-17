@@ -1,4 +1,4 @@
-const reverse = x => {
+const reverse = (x) => {
   const xx = Math.abs(x)
     .toString()
     .split('')

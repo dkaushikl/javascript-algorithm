@@ -1,4 +1,4 @@
-var removeElements = function(head, val) {
+const removeElements = function(head, val) {
   if (!head) return head;
 
   let current = head;

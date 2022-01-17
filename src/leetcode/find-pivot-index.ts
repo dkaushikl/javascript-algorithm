@@ -1,4 +1,4 @@
-let pivotIndex = function(nums) {
+const pivotIndex = function(nums) {
   const sum = nums.reduce((a, b) => a + b, 0);
   let leftSum = 0;
   const rightSum = sum;

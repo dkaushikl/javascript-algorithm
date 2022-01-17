@@ -9,7 +9,7 @@ const search = (nums, target) => {
 
   while (start <= end) {
     console.log(`start, end`, start, end);
-    let mid = Math.floor((start + end) / 2);
+    const mid = Math.floor((start + end) / 2);
     console.log(mid);
 
     if (target === nums[mid]) return mid;

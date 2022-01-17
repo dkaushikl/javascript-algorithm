@@ -1,8 +1,8 @@
-var countWords = function(words1, words2) {
-  let map = {};
+const countWords = function(words1, words2) {
+  const map = {};
   let deletedMap = {};
   let firstLength = 0;
-  for (let word of words1) {
+  for (const word of words1) {
     if (map[word]) {
       delete map[word];
       deletedMap[word] = 1;
@@ -15,10 +15,10 @@ var countWords = function(words1, words2) {
     }
   }
 
-  let map2 = {};
+  const map2 = {};
   let secondLength = 0;
   deletedMap = {};
-  for (let word of words2) {
+  for (const word of words2) {
     if (map2[word]) {
       delete map2[word];
       deletedMap[word] = 1;

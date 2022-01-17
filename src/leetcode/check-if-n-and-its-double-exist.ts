@@ -1,5 +1,5 @@
-const checkIfExist = arr => {
-  let m = {};
+const checkIfExist = (arr) => {
+  const m = {};
 
   for (let i = 0; i < arr.length; i++) {
     if (m[arr[i]]) {

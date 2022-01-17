@@ -1,4 +1,4 @@
-const lengthOfLongestSubstring = s => {
+const lengthOfLongestSubstring = (s) => {
   let maxLen = 0;
   let currentStr = '';
 

@@ -1,9 +1,9 @@
-var lengthOfLastWord = function(s) {
+const lengthOfLastWord = function(s) {
   let total = 0;
   let sum = 0;
 
   for (let i = 0; i < s.length; i++) {
-    let charCode = s[i].charCodeAt();
+    const charCode = s[i].charCodeAt();
     if (
       (charCode >= 97 && charCode < 123) ||
       (charCode >= 65 && charCode < 91) ||

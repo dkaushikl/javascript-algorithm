@@ -1,4 +1,4 @@
-let productExceptSelf = function(nums) {
+const productExceptSelf = function(nums) {
   const left = [];
   for (let i = 0; i < nums.length; i++) {
     if (i === 0) left.push(1);
