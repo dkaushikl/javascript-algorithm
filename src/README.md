@@ -1,5 +1,9 @@
 # Some important links
 
+[Javascript algorithm](https://github.com/TheAlgorithms/Javascript)
+
+[Leetcode patterns to solve algorithm](https://seanprashad.com/leetcode-patterns/)
+
 [30 days of javascript](https://github.com/LadySith/30DaysOfCode-Javascript/)
 
 [Take you forward](https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/)
