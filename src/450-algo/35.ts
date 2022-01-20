@@ -1,5 +1,5 @@
 const findMinDiff = (arr: number[], n: number, m: number) => {
-  arr = [...new Set(arr)].sort((a, b) => a - b);
+  arr = Array.from(new Set(arr)).sort((a, b) => a - b);
   console.log(arr);
   let i = 0;
   let j = i + (m - 1);

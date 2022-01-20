@@ -1,7 +1,7 @@
 // Using Sorting and then go one by one to check number is longest consecutive
 
 const findLongestConseqSubseq = (arr: number[], N: number) => {
-  arr = [...new Set(arr)].sort((a: number, b: number) => a - b);
+  arr = Array.from(new Set(arr)).sort((a: number, b: number) => a - b);
   let maxCount = 0;
   let previousNumber = 0;
   let count = 0;

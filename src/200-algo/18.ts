@@ -39,7 +39,7 @@ console.log(subarraySum(nums, k));
 //   return false;
 // };
 
-const isHappy = (n: string, i = 0) => {
+const isHappy = (n, i = 0) => {
   const squares = {
     '0': 0,
     '1': 1,

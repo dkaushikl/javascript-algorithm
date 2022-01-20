@@ -30,6 +30,5 @@ const find3Numbers = (a: number[], n: number, x: number) => {
   return arr;
 };
 
-const arr = [5, 8, 5, 4, 7, 6, 10, 1];
 const x = 13;
-console.log(find3Numbers(arr, arr.length, x));
+console.log(find3Numbers([5, 8, 5, 4, 7, 6, 10, 1], arr.length, x));
