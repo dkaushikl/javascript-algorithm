@@ -1,6 +1,6 @@
 // Return Kth to Last: Implement an algorithm to find the kth to last element of a singly linked list
 
-import { LinkedList } from '../../../structure/linked-list/single-linked-list';
+import { LinkedList } from '../../../data-structure/linkedList/single-linked-list.ts';
 
 const returnKthToLastElement = (list: LinkedList, k: number) => {
   const result = null;
