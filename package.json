@@ -9,21 +9,14 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "jest",
     "lint": "tslint --fix -c tslint.json 'src/**/*{.ts}'",
-    "deploy": "gh-pages -d dist -b gh-pages",
-    "doc": "npm run doc:build && npm run doc:view",
-    "doc:build": "npm run build && jsdoc -c doc-config.json",
-    "doc:view": "live-server dist --port=9124",
     "pretty": "prettier --write \"./**/*.{ts,json}\"",
-    "check-pretty": "prettier --check \"./**/*.{js,ts,json}\"",
-    "npm-deploy": "npm deploy"
+    "check-pretty": "prettier --check \"./**/*.{js,ts,json}\""
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "pretty-quick --staged && npm run lint",
-      "pre-push": "npm run doc:build && npm run test"
+      "pre-commit": "pretty-quick --staged && npm run lint"
     }
   },
   "lint-staged": {
@@ -54,17 +47,11 @@
   "homepage": "https://github.com/dkaushikl/algorithm-practice#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^8.2.0",
-    "@jeremyckahn/minami": "^1.3.1",
-    "@types/jest": "^26.0.22",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "commitlint": "^8.2.0",
-    "gh-pages": "^1.1.0",
     "husky": "^4.3.0",
-    "jest": "^26.6.3",
-    "jsdoc": "^3.6.4",
     "lint-staged": "^10.5.1",
-    "live-server": "^1.2.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^1.11.1",
     "ts-node": "^9.1.1",
@@ -74,8 +61,6 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "global": "^4.4.0",
-    "ts-jest": "^26.5.5",
     "tslint-plugin-prettier": "^2.3.0"
   }
 }
