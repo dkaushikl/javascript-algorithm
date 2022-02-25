@@ -1,48 +1,33 @@
 const removeNthFromEnd = (head, n) => {
-  if (!head) return null;
+  const dummy = {
+    val: 0,
+    next: head
+  };
 
-  const map = {};
-  let i = 0;
-  let current = head;
-
-  while (current) {
-    map[i] = current;
-    current = current.next;
-    i++;
+  let left = dummy,
+    right = dummy;
+  while (n > -1) {
+    right = right.next;
+    n--;
   }
 
-  head = null;
+  console.log(JSON.stringify(left));
+  console.log(JSON.stringify(right));
+  console.log(JSON.stringify(dummy));
 
-  for (const item of Object.entries(map)) {
-    if (parseInt(item[0]) !== i - n) {
-      if (head == null) {
-        head = {
-          val: item[1] && item[1].val,
-          next: null
-        };
-      } else {
-        if (head.next === null) {
-          head.next = {
-            val: item[1] && item[1].val,
-            next: null
-          };
-          continue;
-        }
-
-        let current = head.next;
-        while (current.next) {
-          current = current.next;
-        }
-
-        current.next = {
-          val: item[1] && item[1].val,
-          next: null
-        };
-      }
-    }
+  while (right) {
+    left = left.next;
+    right = right.next;
   }
 
-  return head;
+  console.log(JSON.stringify(dummy));
+  console.log(JSON.stringify(left));
+  console.log(JSON.stringify(right));
+  console.log(JSON.stringify(dummy));
+
+  left.next = left.next.next;
+
+  return dummy.next;
 };
 
 const removeNode = {
@@ -53,10 +38,16 @@ const removeNode = {
       val: 3,
       next: {
         val: 4,
-        next: null
+        next: {
+          val: 5,
+          next: {
+            val: 6,
+            next: null
+          }
+        }
       }
     }
   }
 };
 
-console.log(removeNthFromEnd(removeNode, 2));
+console.log(JSON.stringify(removeNthFromEnd(removeNode, 3)));
