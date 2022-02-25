@@ -1,34 +1,21 @@
 function isBalanced(s: string): string {
-  let isResult = true;
-  const arr = [];
+  const stack = [];
 
   for (let i = 0; i < s.length; i++) {
-    const item = s[i];
-    if (item === '(' || item === '{' || item === '[') {
-      arr.push(item);
+    if (
+      (s[i] === ')' && stack[stack.length - 1] === '(') ||
+      (s[i] === '}' && stack[stack.length - 1] === '{') ||
+      (s[i] === ']' && stack[stack.length - 1] === '[')
+    ) {
+      stack.pop();
+    } else if (s[i] === '(' || s[i] === '{' || s[i] === '[') {
+      stack.push(s[i]);
     } else {
-      const lastChar = arr[arr.length - 1];
-      if (item === ']' && lastChar != '[') {
-        isResult = false;
-        break;
-      }
-
-      if (item === '}' && lastChar != '{') {
-        isResult = false;
-        break;
-      }
-
-      if (item === ')' && lastChar != '(') {
-        isResult = false;
-        break;
-      }
-
-      arr.pop();
+      return 'NO';
     }
   }
 
-  if (arr.length > 0) return 'NO';
-  return isResult ? 'YES' : 'NO';
+  return stack.length > 0 ? 'NO' : 'YES';
 }
 
 function isBalanced1(s: string): string {
@@ -51,6 +38,6 @@ function isBalanced1(s: string): string {
   return stack.length > 0 ? 'NO' : 'YES';
 }
 
-console.log(isBalanced1('{[()]}'));
-console.log(isBalanced1('{[(])}'));
+console.log(isBalanced('{[()]}'));
+console.log(isBalanced('{[(])}'));
 console.log(isBalanced('{{[[(())]]}}'));

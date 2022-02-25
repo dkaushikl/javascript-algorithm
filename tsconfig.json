@@ -4,6 +4,7 @@
     "lib": ["es5", "es6", "dom", "dom.iterable"],
     "allowJs": true,
     "target": "es5",
+    "downlevelIteration": true,
     "module": "commonjs",
     "declaration": true,
     "strict": false,
@@ -15,7 +16,6 @@
     "moduleResolution": "node",
     "esModuleInterop": true
   },
-  "files": ["src/index.ts"],
   "include": ["src/**/*.ts"],
   "exclude": [
     "node_modules",

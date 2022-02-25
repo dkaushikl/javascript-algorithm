@@ -67,3 +67,7 @@
 [what happens when](https://github.com/alex/what-happens-when)
 
 https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/1_leetcode_java_two_sum__medium.html
+https://github.com/khansamad99/Javascript-Concepts/
+https://github.com/Annahcj/javascript-algorithms-and-data-structures
+https://github.com/Annahcj/javascript-design-patterns
+https://github.com/henrychen222/Leetcode/tree/JSCode
